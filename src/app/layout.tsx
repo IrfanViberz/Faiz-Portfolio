@@ -30,6 +30,11 @@ export const metadata: Metadata = {
     'Portfolio',
   ],
   authors: [{ name: 'Mohamad Faiz Irfan' }],
+  icons: {
+    icon: '/logo.png',
+    shortcut: '/logo.png',
+    apple: '/logo.png',
+  },
   openGraph: {
     title: 'Faiz Irfan — Growth Engineer',
     description:
