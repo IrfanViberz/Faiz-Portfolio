@@ -85,11 +85,13 @@ export default function ContactForm() {
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-6" noValidate>
         {/* Name */}
         <div>
-          <label className="block text-sm font-medium text-[var(--text-secondary)] mb-2">
+          <label htmlFor="contact-name" className="block text-sm font-medium text-[var(--text-secondary)] mb-2">
             Name / Organization
           </label>
           <input
+            id="contact-name"
             type="text"
+            autoComplete="name"
             {...register('name')}
             placeholder="Your name or company"
             className={inputClass}
@@ -99,11 +101,13 @@ export default function ContactForm() {
 
         {/* Email */}
         <div>
-          <label className="block text-sm font-medium text-[var(--text-secondary)] mb-2">
+          <label htmlFor="contact-email" className="block text-sm font-medium text-[var(--text-secondary)] mb-2">
             Email Address
           </label>
           <input
+            id="contact-email"
             type="email"
+            autoComplete="email"
             {...register('email')}
             placeholder="you@company.com"
             className={inputClass}
@@ -113,10 +117,12 @@ export default function ContactForm() {
 
         {/* Message */}
         <div>
-          <label className="block text-sm font-medium text-[var(--text-secondary)] mb-2">
+          <label htmlFor="contact-message" className="block text-sm font-medium text-[var(--text-secondary)] mb-2">
             Project Details / Inquiry
           </label>
           <textarea
+            id="contact-message"
+            autoComplete="off"
             {...register('message')}
             rows={5}
             placeholder="Describe your project, role opportunity, or how I can help..."
