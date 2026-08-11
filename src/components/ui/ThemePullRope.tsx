@@ -42,12 +42,12 @@ export default function ThemePullRope() {
       />
       {/* Handle */}
       <div
-        className="w-6 h-12 rounded-full border-2 border-[var(--border-color)] bg-[var(--bg-primary)] shadow-sm flex items-center justify-center transition-all duration-300 ease-in-out group hover:border-[var(--text-tertiary)]"
+        className="w-6 h-12 rounded-full border-2 border-[var(--invert-bg)] bg-[var(--invert-bg)] shadow-md flex items-center justify-center transition-all duration-300 ease-in-out group hover:scale-105"
         style={{
           transform: isPulling ? 'translateY(60px)' : 'translateY(0)',
         }}
       >
-        <div className="w-2 h-4 rounded-full bg-[var(--border-color)] group-hover:bg-[var(--text-tertiary)] transition-colors" />
+        <div className="w-2 h-4 rounded-full bg-[var(--invert-text)] group-hover:opacity-80 transition-opacity" />
       </div>
     </div>
   );
