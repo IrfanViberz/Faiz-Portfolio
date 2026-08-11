@@ -8,8 +8,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const navLinks = [
   { href: '/', label: 'Overview' },
-  { href: '/about', label: 'About' },
   { href: '/projects', label: 'Side Projects' },
+  { href: '/about', label: 'About' },
   { href: '/contact', label: 'Contact' },
 ];
 
@@ -77,17 +77,6 @@ export default function Navbar() {
                 Overview
               </Link>
               <Link
-                href="/about"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={`text-left text-sm font-medium transition-colors ${
-                  pathname === '/about'
-                    ? 'text-[var(--text-primary)]'
-                    : 'text-[var(--text-tertiary)]'
-                }`}
-              >
-                About
-              </Link>
-              <Link
                 href="/projects"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className={`text-left text-sm font-medium transition-colors ${
@@ -97,6 +86,17 @@ export default function Navbar() {
                 }`}
               >
                 Side Projects (Laboratory)
+              </Link>
+              <Link
+                href="/about"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`text-left text-sm font-medium transition-colors ${
+                  pathname === '/about'
+                    ? 'text-[var(--text-primary)]'
+                    : 'text-[var(--text-tertiary)]'
+                }`}
+              >
+                About
               </Link>
               <Link
                 href="/contact"

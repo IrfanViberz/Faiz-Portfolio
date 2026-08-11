@@ -47,7 +47,7 @@ export default function AIUGCSection() {
             {/* Link */}
             <div className="flex flex-col gap-3 min-w-[160px] shrink-0 sm:self-center">
               <LinkButton
-                href="https://www.tiktok.com/@snowwies_?is_from_webapp=1&sender_device=pc"
+                href="https://www.tiktok.com/@snowwies_"
                 icon={ArrowUpRight}
                 primary
               >

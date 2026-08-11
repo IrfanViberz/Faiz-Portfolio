@@ -83,14 +83,25 @@ export const stackItems = [
 
 export const webProjects: ProjectItem[] = [
   {
-    title: 'Teacher Hub — Lesson Plan & Timetable Management',
-    subtitle: 'Teacher Management & Lesson Portal',
+    title: 'SpecFlow — AI Requirements Engineering & Developer Handoff Platform',
+    subtitle: 'Software Specification & Developer Handoff Platform',
+    statusTag: 'Project Demo',
+    icon: 'Server',
+    image: '/projects/specflow_banner.png',
+    description:
+      'An interactive software requirements engineering and developer handoff platform built for technical leads and product managers. Takes raw client briefs or PDF requirements and transforms them through a 13-stage pipeline: AI document OCR parsing, ambiguity validation, Gherkin user stories, interactive node workflows (@xyflow/react), PostgreSQL schemas, REST API specs, NestJS/React code samples, test suites with visual proof upload, and AI task routing.',
+    tags: ['Next.js 14', 'TypeScript', 'Tailwind CSS', '@xyflow/react', 'AI Automation', 'Lucide React'],
+    link: 'https://specflowai.netlify.app/',
+  },
+  {
+    title: 'Teacher Hub — AI School Management & Automated Lesson Generator',
+    subtitle: 'AI-Driven Teacher Portal & Automated Lesson Assistant',
     statusTag: 'Project Demo',
     icon: 'GraduationCap',
     image: '/projects/teacher-hub.png',
     description:
-      'A comprehensive teacher portal and school management platform designed for educators to manage lesson plans, view timetables, track student attendance, and monitor weekly duties. Features a Principal module for clash-free automated timetable generation across faculty, as well as 1-click lesson plan form auto-generation (built to scale into AI-driven generation).',
-    tags: ['HTML5', 'CSS3', 'JavaScript', 'Lesson Plan Automation', 'School Management'],
+      'A comprehensive AI-assisted teacher portal and school management platform. Empowers educators to generate lesson plans instantly via intelligent auto-generation engines, view faculty timetables, track student attendance, and manage weekly duties. Features an administrative Principal module for clash-free automated timetable generation and 1-click AI lesson form synthesis.',
+    tags: ['AI Lesson Generator', 'School Management', 'AI Automation', 'HTML5', 'CSS3', 'JavaScript'],
     link: 'https://kise-testin-env.netlify.app/',
   },
   {

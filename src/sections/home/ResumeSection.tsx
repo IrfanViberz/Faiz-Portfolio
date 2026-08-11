@@ -71,9 +71,9 @@ export default function ResumeSection() {
               <a
                 href={ver.viewUrl}
                 download={ver.downloadName}
-                className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-medium rounded-md bg-[var(--invert-bg)] text-[var(--invert-text)] hover:opacity-80 transition-all duration-300"
+                className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-medium rounded-md bg-blue-600 text-white hover:bg-blue-500 shadow-sm transition-all duration-300"
               >
-                <Download className="w-4 h-4 shrink-0" />
+                <Download className="w-4 h-4 shrink-0 text-white" />
                 Download CV
               </a>
             </div>
