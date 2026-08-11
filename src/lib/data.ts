@@ -1,4 +1,4 @@
-import type { ExperienceItem, ValueItem, ProjectItem } from '@/types';
+import type { ExperienceItem, ValueItem, ProjectItem, N8nWorkflowItem } from '@/types';
 
 export const obsessionsList: string[] = [
   'Exploring Google Flow for TikTok AI UGC automation...',
@@ -131,6 +131,72 @@ export const webProjects: ProjectItem[] = [
       'A modern automotive workshop showcase and online booking platform built for high-performance car tuning centers. Features workshop service catalogs, custom Dyno tuning session scheduling, real-time booking management, and service showcase.',
     tags: ['Next.js', 'PostgreSQL', 'TypeScript', 'PHP', 'Blade', 'Workshop Booking'],
     link: 'https://stealthxperformance.netlify.app/',
+  },
+];
+
+export const n8nWorkflows: N8nWorkflowItem[] = [
+  {
+    id: 'whatsapp-ai-support-bot',
+    title: 'WhatsApp AI Support Bot with Human Handoff',
+    subtitle: 'WhatsApp Cloud API + Claude Sonnet + FAQ Base + Telegram Alert',
+    description:
+      'An intelligent customer support bot built in n8n that auto-replies to customer WhatsApp messages using an FAQ knowledge base & conversation memory. Automatically detects when a request is out of scope, sensitive, or requires human intervention (refunds, cancellations, frustrated users), triggers a human takeover state, alerts the support team on Telegram with customer details, and goes silent so a human agent can seamlessly take over.',
+    schedule: 'Event Trigger (WhatsApp Webhook)',
+    nodesUsed: [
+      'WhatsApp Trigger',
+      'Normalize Code Node',
+      'Google Sheets (Chat State & FAQ)',
+      'Claude Sonnet LLM',
+      'Buffer Window Memory',
+      'LangChain Agent',
+      'Telegram Alert Bot',
+      'WhatsApp API',
+    ],
+    tags: ['n8n', 'WhatsApp API', 'Claude Sonnet', 'Human Handoff', 'Telegram', 'LangChain'],
+    image: '/workflows/whatsapp-ai-support-bot-workflow.png',
+    jsonPath: '/workflows/whatsapp-ai-support-bot.json',
+  },
+  {
+    id: 'youtube-automation',
+    title: 'Autonomous YouTube Shorts Video Generation Pipeline',
+    subtitle: 'GPT-4o + ElevenLabs + Flux AI + Creatomate + YouTube API',
+    description:
+      'An end-to-end automated YouTube Shorts creation & publishing pipeline. Generates punchy video scripts with GPT-4o, synthesizes high-quality voiceovers with ElevenLabs, renders 9:16 AI visuals using Replicate/Flux, stitches audio/visual layers dynamically via Creatomate API, uploads the final video to YouTube, and dispatches a notification to Slack.',
+    schedule: 'Daily at 9:00 AM (Cron: 0 9 * * *)',
+    nodesUsed: [
+      'Cron Trigger',
+      'OpenAI GPT-4o',
+      'ElevenLabs TTS',
+      'Replicate/Flux AI',
+      'Google Drive API',
+      'Creatomate Video Renderer',
+      'YouTube Data API',
+      'Slack Bot',
+    ],
+    tags: ['n8n', 'GPT-4o', 'ElevenLabs', 'Flux AI', 'Creatomate', 'YouTube API', 'Slack'],
+    image: '/workflows/youtube-automation-workflow.png',
+    jsonPath: '/workflows/youtube-automation.json',
+  },
+  {
+    id: 'email-reader-telegram',
+    title: 'Automated Daily Email Reader & AI Telegram Digest',
+    subtitle: 'Gmail + Ollama LLM + Telegram Bot Workflow',
+    description:
+      'A scheduled cron workflow that fetches unread/last 24h emails from Gmail, combines email headers & snippets into a single context payload, routes them through a local Ollama AI Agent to generate key takeaways, and dispatches a structured Markdown digest to Telegram.',
+    schedule: 'Daily at 10:00 AM (Cron: 0 10 * * *)',
+    nodesUsed: [
+      'Cron Trigger',
+      'Gmail API',
+      'JS Code Transformer',
+      'IF Condition',
+      'Ollama Chat LLM',
+      'LangChain AI Agent',
+      'Simple Memory',
+      'Telegram Bot API',
+    ],
+    tags: ['n8n', 'Ollama AI', 'Gmail API', 'Telegram Bot', 'LangChain', 'Automation'],
+    image: '/workflows/email-reader-workflow.png',
+    jsonPath: '/workflows/email-reader-automation.json',
   },
 ];
 

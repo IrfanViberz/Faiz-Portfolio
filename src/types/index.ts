@@ -35,6 +35,18 @@ export interface ProjectItem {
   image?: string;
 }
 
+export interface N8nWorkflowItem {
+  id: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  schedule: string;
+  nodesUsed: string[];
+  tags: string[];
+  image?: string;
+  jsonPath: string;
+}
+
 export interface ContactFormData {
   name: string;
   email: string;

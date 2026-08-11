@@ -1,0 +1,731 @@
+{
+  "name": "Youtube Automation",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 9
+            }
+          ]
+        }
+      },
+      "id": "55a9f465-9586-465d-8fe8-429077ce0ac6",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        208,
+        368
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.openai.com/v1/chat/completions",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "openAiApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({\n  model: \"gpt-4o\",\n  response_format: { type: \"json_object\" },\n  messages: [\n    {\n      role: \"system\",\n      content: \"You are a YouTube shorts scriptwriter. Return ONLY valid JSON with this exact shape: {\\\"title\\\": string, \\\"description\\\": string, \\\"tags\\\": string[], \\\"scenes\\\": [{\\\"narration\\\": string, \\\"visual_prompt\\\": string, \\\"duration_seconds\\\": number}]}. Produce 5-8 scenes, each narration under 20 words, each duration 3-6 seconds.\"\n    },\n    {\n      role: \"user\",\n      content: \"Write a short-form video script about: interesting science facts. Make it punchy and hook-driven.\"\n    }\n  ]\n}) }}",
+        "options": {}
+      },
+      "id": "da556802-ee41-4619-9789-aa6397c365ad",
+      "name": "Generate Script (OpenAI)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        480,
+        368
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Parse OpenAI response, validate structure, flatten into items (one per scene)\nconst raw = $input.first().json.choices[0].message.content;\nlet parsed;\ntry {\n  parsed = JSON.parse(raw);\n} catch (e) {\n  throw new Error('Failed to parse script JSON from LLM: ' + e.message);\n}\n\nif (!parsed.scenes || !Array.isArray(parsed.scenes) || parsed.scenes.length === 0) {\n  throw new Error('No scenes returned by script generator');\n}\n\n// Store video-level metadata on every item so it survives the loop\nconst videoMeta = {\n  title: parsed.title,\n  description: parsed.description,\n  tags: parsed.tags || []\n};\n\nreturn parsed.scenes.map((scene, index) => ({\n  json: {\n    sceneIndex: index,\n    narration: scene.narration,\n    visual_prompt: scene.visual_prompt,\n    duration_seconds: scene.duration_seconds || 4,\n    videoMeta\n  }\n}));"
+      },
+      "id": "86de6fd2-139b-4bfd-b75f-5a79017cc1eb",
+      "name": "Parse & Validate Script",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        704,
+        368
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "980ae088-ccd8-4318-9c64-2fc4b1809826",
+      "name": "Loop Over Scenes",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        928,
+        368
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.elevenlabs.io/v1/text-to-speech/YOUR_VOICE_ID",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "xi-api-key",
+              "value": "={{ $credentials.elevenLabsApi.apiKey }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ text: $json.narration, model_id: \"eleven_turbo_v2\" }) }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "file"
+            }
+          }
+        }
+      },
+      "id": "d9bbde9e-f5d2-40ae-99b4-676c09b7baac",
+      "name": "Generate Voiceover (ElevenLabs)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1376,
+        176
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.replicate.com/v1/predictions",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "replicateApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({\n  version: \"YOUR_FLUX_MODEL_VERSION_ID\",\n  input: {\n    prompt: $json.visual_prompt,\n    aspect_ratio: \"9:16\"\n  }\n}) }}",
+        "options": {}
+      },
+      "id": "8b47c1f2-b1c1-4135-ac2d-5f166e6cb744",
+      "name": "Generate Image (Replicate/Flux)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1152,
+        704
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "2fe13b8f-3611-41c5-a70a-a12246ac7b57",
+      "name": "Wait for Image Render",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1376,
+        704
+      ],
+      "webhookId": "eb845788-a918-419a-a0f5-9adb8b975382"
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.urls.get }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "replicateApi",
+        "options": {}
+      },
+      "id": "7273d836-233d-40c2-bb15-2d08a600ee71",
+      "name": "Poll Image Status",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1600,
+        704
+      ]
+    },
+    {
+      "parameters": {
+        "name": "=scene-{{ $json.sceneIndex }}-audio.mp3",
+        "driveId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "My Drive"
+        },
+        "folderId": {
+          "mode": "list",
+          "value": "YOUR_FOLDER_ID"
+        },
+        "options": {}
+      },
+      "id": "b59c11cf-b599-448a-b6cd-10a0d5578417",
+      "name": "Upload Audio to Drive",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        1600,
+        176
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineByPosition",
+        "options": {}
+      },
+      "id": "7956f633-521e-45d2-9768-92a2d0ff2bac",
+      "name": "Merge Audio + Image URLs",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.1,
+      "position": [
+        1824,
+        176
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Runs once per scene inside the loop. Attach public URLs for downstream assembly.\nconst item = $input.first().json;\nreturn [{\n  json: {\n    sceneIndex: item.sceneIndex,\n    narration: item.narration,\n    duration_seconds: item.duration_seconds,\n    audio_url: item.webViewLink || item.webContentLink,\n    image_url: item.output ? item.output[0] : item.image_url,\n    videoMeta: item.videoMeta\n  }\n}];"
+      },
+      "id": "9dbeeeba-a22c-4e59-8f70-228711c2d33e",
+      "name": "Normalize Scene Data",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2048,
+        176
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "fa05bcb3-9c7e-4fbb-80b3-171dbb4ac832",
+      "name": "Merge Loop Back",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        2272,
+        272
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// After the Loop Over Scenes node finishes iterating, all scene items land here.\n// Build the Creatomate render template.\nconst items = $input.all().map(i => i.json);\nconst videoMeta = items[0].videoMeta;\n\nconst elements = [];\nlet track = 1;\nfor (const scene of items) {\n  elements.push({\n    type: \"image\",\n    track,\n    source: scene.image_url,\n    duration: scene.duration_seconds\n  });\n  elements.push({\n    type: \"audio\",\n    track: track + 1,\n    source: scene.audio_url,\n    duration: scene.duration_seconds\n  });\n  elements.push({\n    type: \"text\",\n    track: track + 2,\n    text: scene.narration,\n    duration: scene.duration_seconds,\n    y: \"80%\",\n    font_family: \"Montserrat\",\n    font_weight: \"700\",\n    fill_color: \"#ffffff\",\n    background_color: \"rgba(0,0,0,0.6)\"\n  });\n  track += 3;\n}\n\nreturn [{\n  json: {\n    source: {\n      output_format: \"mp4\",\n      width: 1080,\n      height: 1920,\n      elements\n    },\n    videoMeta\n  }\n}];"
+      },
+      "id": "b7650f9c-9011-4922-9b3f-966029cfc21d",
+      "name": "Build Creatomate Template",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1152,
+        464
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.creatomate.com/v1/renders",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $credentials.creatomateApi.apiKey }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json.source) }}",
+        "options": {}
+      },
+      "id": "af89fe23-46bf-4236-acb1-6ffb6ee09db2",
+      "name": "Submit Render (Creatomate)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1376,
+        464
+      ]
+    },
+    {
+      "parameters": {
+        "amount": 20
+      },
+      "id": "40c9ddeb-7c81-417d-be92-64f437738dd0",
+      "name": "Wait for Render",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1600,
+        464
+      ],
+      "webhookId": "32f0d151-9e27-4bc4-bedb-868f54fa9210"
+    },
+    {
+      "parameters": {
+        "url": "=https://api.creatomate.com/v1/renders/{{ $('Submit Render (Creatomate)').item.json[0].id }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $credentials.creatomateApi.apiKey }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "680268da-38cd-4aa4-913a-3ac6c81de2b7",
+      "name": "Poll Render Status",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1824,
+        464
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 1
+          },
+          "conditions": [
+            {
+              "leftValue": "={{ $json[0].status }}",
+              "rightValue": "succeeded",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "7bdcb26c-725c-4df8-ba8a-15f81e8086f0",
+      "name": "Render Succeeded?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2048,
+        416
+      ]
+    },
+    {
+      "parameters": {
+        "url": "={{ $json[0].url }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "file"
+            }
+          }
+        }
+      },
+      "id": "4856be2d-a2bf-46e8-a37c-d6859ebc8fd6",
+      "name": "Download Final Video",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2272,
+        464
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "video",
+        "operation": "upload",
+        "title": "={{ $('Build Creatomate Template').item.json.videoMeta.title }}",
+        "regionCode": "US",
+        "categoryId": "28",
+        "options": {
+          "description": "={{ $('Build Creatomate Template').item.json.videoMeta.description }}",
+          "privacyStatus": "public",
+          "tags": "={{ $('Build Creatomate Template').item.json.videoMeta.tags.join(',') }}"
+        }
+      },
+      "id": "72c926dd-aef9-463a-ab47-1321db134ad7",
+      "name": "Upload to YouTube",
+      "type": "n8n-nodes-base.youTube",
+      "typeVersion": 1,
+      "position": [
+        2496,
+        464
+      ]
+    },
+    {
+      "parameters": {
+        "select": "channel",
+        "channelId": {
+          "mode": "list",
+          "value": "YOUR_CHANNEL_ID"
+        },
+        "text": "=✅ New video uploaded: {{ $('Build Creatomate Template').item.json.videoMeta.title }}\nhttps://youtube.com/watch?v={{ $json.id }}",
+        "otherOptions": {}
+      },
+      "id": "38c38067-a45a-4daa-860c-ac9f25e37182",
+      "name": "Notify Slack",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.3,
+      "position": [
+        2720,
+        464
+      ],
+      "webhookId": "17fb6b9d-b100-40ea-b751-433129aabcb5"
+    },
+    {
+      "parameters": {
+        "amount": 20
+      },
+      "id": "03000996-7ba3-4720-b3b0-5a2c658b3d45",
+      "name": "Wait Before Retry Poll",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        2272,
+        656
+      ],
+      "webhookId": "42ff421b-4f3c-46f1-8a29-7329b149bda8"
+    },
+    {
+      "parameters": {
+        "content": "Generate the script for the  and voiceover for the video",
+        "height": 608
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        416,
+        160
+      ],
+      "typeVersion": 1,
+      "id": "863b4220-2a84-410a-9659-e5295ca925dc",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "Voiceover generation using elevenlabs\n",
+        "height": 288,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1296,
+        80
+      ],
+      "typeVersion": 1,
+      "id": "7d8c90bf-68df-452f-bfa8-ef51bace95e3",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "content": "Image generation",
+        "height": 256,
+        "width": 624,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1120,
+        656
+      ],
+      "typeVersion": 1,
+      "id": "3962a4ce-4e57-4302-8d12-c899109b5120",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "content": "Audio and Image rendering connection",
+        "height": 288,
+        "width": 416,
+        "color": 2
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1776,
+        80
+      ],
+      "typeVersion": 1,
+      "id": "cc7b62d8-e17a-4108-b943-6df62e2977c3",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "content": "YOUTUBE AUTOMATION",
+        "height": 944,
+        "width": 3088,
+        "color": "#949494"
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        0,
+        0
+      ],
+      "typeVersion": 1,
+      "id": "2d73994a-bcbe-4b42-89c1-b9f680dd672b",
+      "name": "Sticky Note5"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Generate Script (OpenAI)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Script (OpenAI)": {
+      "main": [
+        [
+          {
+            "node": "Parse & Validate Script",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse & Validate Script": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Scenes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Scenes": {
+      "main": [
+        [
+          {
+            "node": "Build Creatomate Template",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Generate Voiceover (ElevenLabs)",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Generate Image (Replicate/Flux)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Voiceover (ElevenLabs)": {
+      "main": [
+        [
+          {
+            "node": "Upload Audio to Drive",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Image (Replicate/Flux)": {
+      "main": [
+        [
+          {
+            "node": "Wait for Image Render",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait for Image Render": {
+      "main": [
+        [
+          {
+            "node": "Poll Image Status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Poll Image Status": {
+      "main": [
+        [
+          {
+            "node": "Merge Audio + Image URLs",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Upload Audio to Drive": {
+      "main": [
+        [
+          {
+            "node": "Merge Audio + Image URLs",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge Audio + Image URLs": {
+      "main": [
+        [
+          {
+            "node": "Normalize Scene Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Normalize Scene Data": {
+      "main": [
+        [
+          {
+            "node": "Merge Loop Back",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge Loop Back": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Scenes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Creatomate Template": {
+      "main": [
+        [
+          {
+            "node": "Submit Render (Creatomate)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Submit Render (Creatomate)": {
+      "main": [
+        [
+          {
+            "node": "Wait for Render",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait for Render": {
+      "main": [
+        [
+          {
+            "node": "Poll Render Status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Poll Render Status": {
+      "main": [
+        [
+          {
+            "node": "Render Succeeded?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Render Succeeded?": {
+      "main": [
+        [
+          {
+            "node": "Download Final Video",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait Before Retry Poll",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download Final Video": {
+      "main": [
+        [
+          {
+            "node": "Upload to YouTube",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload to YouTube": {
+      "main": [
+        [
+          {
+            "node": "Notify Slack",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait Before Retry Poll": {
+      "main": [
+        [
+          {
+            "node": "Poll Render Status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "8a8bc9e4-0474-49ec-92fb-941ac5f1e7e6",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "66cafceff170ce432562dff8dd63d09eb42411fd1c89337b13b75fe77044becf"
+  },
+  "nodeGroups": [],
+  "id": "DeY8NbaLSXwEoFRY",
+  "tags": []
+}

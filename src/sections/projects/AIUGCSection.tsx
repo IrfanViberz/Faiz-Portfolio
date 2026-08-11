@@ -5,7 +5,7 @@ import LinkButton from '@/components/ui/LinkButton';
 
 export default function AIUGCSection() {
   return (
-    <Section title="02. AI UGC Automation & Marketing">
+    <Section title="03. AI UGC Automation & Marketing">
       <div className="border border-[var(--border-color)] rounded-md p-6 sm:p-8 bg-[var(--bg-secondary)] transition-colors duration-500 relative z-10 border-l-4 border-l-[var(--invert-bg)]">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 w-full">
