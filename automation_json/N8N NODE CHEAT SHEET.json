@@ -1,0 +1,625 @@
+{
+  "name": "N8N NODE CHEAT SHEET",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "# 📘 N8N NODE CHEAT SHEET\n\nEach node below is placed on its own with a note explaining what it does. Nothing is connected — this is just a reference so you can quickly look up \"what does this node do again?\"\n\nScroll down to see: Triggers → Actions → Logic → AI nodes.",
+        "height": 252,
+        "width": 2388
+      },
+      "id": "7e62494f-d0de-4151-bbfb-630a6edc5331",
+      "name": "TITLE",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        4752,
+        11104
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "0e5984d0-22fd-4fc5-bfde-83fcefcae22d",
+      "name": "Manual Trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        4752,
+        11408
+      ]
+    },
+    {
+      "parameters": {
+        "content": "**Manual Trigger**\nStarts the workflow when YOU click the \"Execute Workflow\" button. Used for testing.",
+        "height": 140,
+        "width": 320,
+        "color": 4
+      },
+      "id": "e80d96ac-d618-41c6-947f-e34eb3ed4aa5",
+      "name": "Note 1",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        5120,
+        11408
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 8 * * *"
+            }
+          ]
+        }
+      },
+      "id": "d688b44d-bbd5-42a1-a81a-550b1f6a96c3",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        5632,
+        11408
+      ]
+    },
+    {
+      "parameters": {
+        "content": "**Schedule Trigger**\nStarts the workflow automatically on a timer, e.g. every day at 8am. Good for daily reports, reminders, cleanup jobs.",
+        "height": 140,
+        "width": 320,
+        "color": 4
+      },
+      "id": "874c906d-cc88-4a8f-8109-b152f6c333d2",
+      "name": "Note 2",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        6000,
+        11408
+      ]
+    },
+    {
+      "parameters": {
+        "path": "a42f8732-8f4c-4610-98af-82deaebadf80",
+        "options": {}
+      },
+      "id": "6d24b6a3-5662-45ac-8378-259039d2e3fa",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        6464,
+        11408
+      ],
+      "webhookId": "a42f8732-8f4c-4610-98af-82deaebadf80"
+    },
+    {
+      "parameters": {
+        "content": "**Webhook**\nGives you a unique URL. Starts the workflow whenever something (an app, a form, another system) sends a request to that URL. Used to connect external systems to n8n.",
+        "height": 140,
+        "width": 320,
+        "color": 4
+      },
+      "id": "a14f8d44-282d-4a53-b28d-6a862bd844cb",
+      "name": "Note 3",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        6832,
+        11408
+      ]
+    },
+    {
+      "parameters": {
+        "additionalFields": {}
+      },
+      "id": "89e594ec-e2ed-44ee-bd8d-71e105ea4672",
+      "name": "Telegram Trigger",
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        4752,
+        12320
+      ],
+      "webhookId": "fe6fe61a-51fc-41e4-a75d-bb2b1bfde6dc"
+    },
+    {
+      "parameters": {
+        "content": "**Telegram Trigger**\nStarts the workflow whenever someone sends a message to your Telegram bot. Common for chatbots and notification systems.",
+        "height": 140,
+        "width": 320,
+        "color": 4
+      },
+      "id": "2cace770-ffe1-4d48-8ec0-1a00e9c50f99",
+      "name": "Note 4",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        5120,
+        12320
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://api.example.com",
+        "options": {}
+      },
+      "id": "e3c9b95e-9e82-4770-ad55-f2c9cf2d35b3",
+      "name": "HTTP Request",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        4752,
+        11616
+      ]
+    },
+    {
+      "parameters": {
+        "content": "**HTTP Request**\nCalls any API or website — fetch data, send data, trigger another service. The \"universal connector\" node for anything with an API.",
+        "height": 140,
+        "width": 320,
+        "color": 5
+      },
+      "id": "67c5baf2-7ed6-4d84-8434-0709612e54f8",
+      "name": "Note 5",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        5120,
+        11616
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "return items;"
+      },
+      "id": "e218f078-7493-4f58-98fe-960757049ea6",
+      "name": "Code",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        5632,
+        11616
+      ]
+    },
+    {
+      "parameters": {
+        "content": "**Code**\nWrite your own JavaScript. Used when no built-in node can do what you need — cleaning data, custom formatting, math, parsing text.",
+        "height": 140,
+        "width": 320,
+        "color": 5
+      },
+      "id": "48dadb8d-4d99-40b1-a0e6-9b8721684a3a",
+      "name": "Note 6",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        6000,
+        11616
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": []
+        },
+        "options": {}
+      },
+      "id": "b5d9e5d4-082a-41a7-9ac5-ff80bd28649b",
+      "name": "Edit Fields (Set)",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        6464,
+        11616
+      ]
+    },
+    {
+      "parameters": {
+        "content": "**Edit Fields (Set)**\nAdd, remove, or rename fields on your data WITHOUT writing code. The no-code version of the Code node for simple changes.",
+        "height": 140,
+        "width": 320,
+        "color": 5
+      },
+      "id": "6e9560db-3f56-4822-8a35-15d1d8d94fd1",
+      "name": "Note 7",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        6832,
+        11616
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 1
+          },
+          "conditions": [],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "a89a75f4-a4ed-4f2c-ada1-5f74071d9b26",
+      "name": "IF",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        4752,
+        11840
+      ]
+    },
+    {
+      "parameters": {
+        "content": "**IF**\nChecks a condition and splits into two paths: TRUE or FALSE. Used for decisions, like \"is this urgent?\" or \"is the value over 100?\"",
+        "height": 140,
+        "width": 320,
+        "color": 3
+      },
+      "id": "5372ac4e-d388-4e11-a1e9-20fa8a3ee9c9",
+      "name": "Note 8",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        5120,
+        11840
+      ]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": []
+        },
+        "options": {}
+      },
+      "id": "5cd363f5-522a-4607-b20e-6fb63b25bafc",
+      "name": "Switch",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        5632,
+        11840
+      ]
+    },
+    {
+      "parameters": {
+        "content": "**Switch**\nLike IF, but splits into MULTIPLE paths (not just two). Used when you have several possible categories, e.g. \"route by department: Sales / Support / Billing.\"",
+        "height": 140,
+        "width": 320,
+        "color": 3
+      },
+      "id": "0f35c7bb-8f02-4e4c-baf3-c54365b1dd43",
+      "name": "Note 9",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        6000,
+        11840
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "c0d1ad7e-cf33-4eff-bf21-24cea63f4b58",
+      "name": "Merge",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        6464,
+        11840
+      ]
+    },
+    {
+      "parameters": {
+        "content": "**Merge**\nCombines data from two different branches back into one. Used after an IF/Switch splits data, when you need to bring the paths back together.",
+        "height": 140,
+        "width": 320,
+        "color": 3
+      },
+      "id": "722e926e-d935-4e61-be86-dffe922e505e",
+      "name": "Note 10",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        6832,
+        11840
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "b9070f0e-75df-4d7d-810e-15b88dd6e6e0",
+      "name": "Loop Over Items (Split in Batches)",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        4752,
+        12080
+      ]
+    },
+    {
+      "parameters": {
+        "content": "**Loop Over Items**\nProcesses a big list of items in smaller batches (or one at a time) instead of all at once. Used for rate-limited APIs or heavy processing.",
+        "height": 140,
+        "width": 320,
+        "color": 3
+      },
+      "id": "8a793654-875a-4087-b5b3-f1a2e3e0ef25",
+      "name": "Note 11",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        5120,
+        12080
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "23319158-29c8-47c2-976b-8cf455a85678",
+      "name": "Wait",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        5632,
+        12080
+      ],
+      "webhookId": "527ee3b2-d4c9-40d9-a94d-3a556da522f0"
+    },
+    {
+      "parameters": {
+        "content": "**Wait**\nPauses the workflow for a set amount of time (or until a webhook/date). Used to slow down, throttle, or delay a step.",
+        "height": 140,
+        "width": 320,
+        "color": 3
+      },
+      "id": "d4291a3b-56f0-4fb4-8074-bc3b430586e8",
+      "name": "Note 12",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        6000,
+        12080
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "options": {}
+      },
+      "id": "e1312f70-b2b7-454e-8c65-eba545bda078",
+      "name": "AI Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.9,
+      "position": [
+        5632,
+        12560
+      ]
+    },
+    {
+      "parameters": {
+        "content": "**AI Agent**\nAn AI that can THINK and decide which tool to use before answering (not just a single question→answer). Needs a Chat Model connected, and optionally Memory + Tools.",
+        "height": 140,
+        "width": 320,
+        "color": 7
+      },
+      "id": "d0b2af6c-08ce-4c36-b528-638d11d55446",
+      "name": "Note 13",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        6000,
+        12560
+      ]
+    },
+    {
+      "parameters": {
+        "model": "claude-sonnet-4-6",
+        "options": {}
+      },
+      "id": "a6590633-42ad-4a9e-bf7e-5f659785ca44",
+      "name": "Anthropic Chat Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.3,
+      "position": [
+        6464,
+        12576
+      ]
+    },
+    {
+      "parameters": {
+        "content": "**Chat Model (e.g. Anthropic/OpenAI)**\nThe actual AI \"brain\" that does the thinking. Plugs INTO an AI Agent node — without one, the Agent can't run.",
+        "height": 140,
+        "width": 320,
+        "color": 7
+      },
+      "id": "9f961c3b-3138-4dfd-991b-812c840dd0de",
+      "name": "Note 14",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        6832,
+        12576
+      ]
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "example",
+        "contextWindowLength": 10
+      },
+      "id": "bde36dfd-79e6-410f-94a6-7ab36dec09b6",
+      "name": "Memory (Buffer Window)",
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        5632,
+        12832
+      ]
+    },
+    {
+      "parameters": {
+        "content": "**Memory**\nLets an AI Agent remember earlier messages in the same conversation, so it doesn't forget context between messages.",
+        "height": 140,
+        "width": 320,
+        "color": 7
+      },
+      "id": "22257ad3-765f-4433-a843-a46bf08f920e",
+      "name": "Note 15",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        6000,
+        12832
+      ]
+    },
+    {
+      "parameters": {
+        "toolDescription": "Example tool",
+        "url": "https://api.example.com",
+        "options": {}
+      },
+      "id": "7f84490b-8693-4430-9020-569b457bca5c",
+      "name": "HTTP Request Tool",
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.2,
+      "position": [
+        6464,
+        12080
+      ]
+    },
+    {
+      "parameters": {
+        "content": "**Tool (e.g. HTTP Request Tool)**\nAn extra ability you give an AI Agent, like \"search the web\" or \"create a calendar event.\" The Agent decides on its own when to use it.",
+        "height": 140,
+        "width": 320,
+        "color": 7
+      },
+      "id": "0cdbbcbd-7e89-418f-840d-52b58d93c753",
+      "name": "Note 16",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        6832,
+        12080
+      ]
+    },
+    {
+      "parameters": {
+        "additionalFields": {}
+      },
+      "id": "d935b5f0-4f84-47bb-a9b2-3f8abf019519",
+      "name": "Telegram (Send Message)",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        5632,
+        12320
+      ],
+      "webhookId": "81dcbc14-9bec-4338-a477-287e37838d05"
+    },
+    {
+      "parameters": {
+        "content": "**Telegram (Send Message)**\nSends a message, document, or file to a Telegram chat. Common as the last step in a workflow to notify or deliver results.",
+        "height": 140,
+        "width": 320,
+        "color": 4
+      },
+      "id": "d2dcebe2-61e6-45c4-9c04-296de071ff7c",
+      "name": "Note 17",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        6000,
+        12320
+      ]
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        }
+      },
+      "id": "0d56043a-2a2c-4fc7-8ce0-0bbd8cfac539",
+      "name": "Google Sheets",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        6464,
+        12320
+      ]
+    },
+    {
+      "parameters": {
+        "content": "**Google Sheets**\nRead, write, update, or search rows in a Google Sheet. Often used as a simple database for logging, tracking state, or storing lists.",
+        "height": 140,
+        "width": 320,
+        "color": 4
+      },
+      "id": "55c4c117-b52f-4764-aa57-452c76a610eb",
+      "name": "Note 18",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        6832,
+        12320
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "72096134-2ce2-44be-91f6-ac71aff56bed",
+      "name": "Gmail",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        4752,
+        12560
+      ],
+      "webhookId": "55a4e645-0914-4290-8c80-226084f4087d"
+    },
+    {
+      "parameters": {
+        "content": "**Gmail**\nRead, send, or search emails in a Gmail account. Used for email digests, auto-replies, or sending reports.",
+        "height": 140,
+        "width": 320,
+        "color": 4
+      },
+      "id": "9c3097f7-940c-4ca9-b9d0-a7e88a6957a4",
+      "name": "Note 19",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        5120,
+        12560
+      ]
+    }
+  ],
+  "pinData": {},
+  "connections": {},
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "33a989f5-a853-4b8e-8551-7401381c9b31",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "66cafceff170ce432562dff8dd63d09eb42411fd1c89337b13b75fe77044becf"
+  },
+  "nodeGroups": [],
+  "id": "IqDLRFCBKN4UrFwv",
+  "tags": []
+}

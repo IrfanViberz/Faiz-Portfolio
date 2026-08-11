@@ -33,6 +33,7 @@ export interface ProjectItem {
   subtitle?: string;
   icon?: string;
   image?: string;
+  statusTag?: 'Project Demo' | 'Finished Project' | string;
 }
 
 export interface N8nWorkflowItem {

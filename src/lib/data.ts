@@ -85,6 +85,7 @@ export const webProjects: ProjectItem[] = [
   {
     title: 'Teacher Hub — Lesson Plan & Timetable Management',
     subtitle: 'Teacher Management & Lesson Portal',
+    statusTag: 'Project Demo',
     icon: 'GraduationCap',
     image: '/projects/teacher-hub.png',
     description:
@@ -93,8 +94,20 @@ export const webProjects: ProjectItem[] = [
     link: 'https://kise-testin-env.netlify.app/',
   },
   {
+    title: 'MenuCraft (CiptaMenu) — SaaS Menu & QR Generator',
+    subtitle: 'Bilingual SaaS Menu Builder & QR Platform',
+    statusTag: 'Project Demo',
+    icon: 'QrCode',
+    image: '/projects/menucraft.png',
+    description:
+      'A modern SaaS platform that empowers restaurants, cafés, food stalls, and bakeries to generate professional digital, printable (PNG/PDF), and QR-code menus instantly without design software like Canva or Adobe. Features bilingual support (BM & EN), dynamic menu building, template customization, and business profile management built with Next.js, NestJS, Tailwind CSS, and PostgreSQL.',
+    tags: ['Next.js', 'NestJS', 'PostgreSQL', 'Tailwind CSS', 'TypeScript', 'SaaS'],
+    link: 'https://ciptamenu.netlify.app/ms/dashboard',
+  },
+  {
     title: 'Kelantan Bites — Food & Event Discovery Platform',
     subtitle: 'Food Hunting & Local Event Finder',
+    statusTag: 'Project Demo',
     icon: 'UtensilsCrossed',
     image: '/projects/kelantan-bites.png',
     description:
@@ -105,6 +118,7 @@ export const webProjects: ProjectItem[] = [
   {
     title: 'Burger Grill Anak Muda — WhatsApp Direct Ordering System',
     subtitle: 'F&B Digital Menu & WhatsApp Direct Checkout',
+    statusTag: 'Project Demo',
     icon: 'Flame',
     image: '/projects/burger-grill.png',
     description:
@@ -113,22 +127,13 @@ export const webProjects: ProjectItem[] = [
     link: 'https://burgergrillanakmuda.netlify.app/',
   },
   {
-    title: 'MenuCraft (CiptaMenu) — SaaS Menu & QR Generator',
-    subtitle: 'Bilingual SaaS Menu Builder & QR Platform',
-    icon: 'QrCode',
-    image: '/projects/menucraft.png',
-    description:
-      'A modern SaaS platform that empowers restaurants, cafés, food stalls, and bakeries to generate professional digital, printable (PNG/PDF), and QR-code menus instantly without design software like Canva or Adobe. Features bilingual support (BM & EN), dynamic menu building, template customization, and business profile management built with Next.js, NestJS, Tailwind CSS, and PostgreSQL.',
-    tags: ['Next.js', 'NestJS', 'PostgreSQL', 'Tailwind CSS', 'TypeScript', 'SaaS'],
-    link: 'https://ciptamenu.netlify.app/',
-  },
-  {
     title: 'StealthX Performance — Workshop & Dyno Booking Platform',
     subtitle: 'Automotive Tuning & Dyno Booking Portal',
+    statusTag: 'Finished Project',
     icon: 'Gauge',
     image: '/projects/stealthx.png',
     description:
-      'A modern automotive workshop showcase and online booking platform built for high-performance car tuning centers. Features workshop service catalogs, custom Dyno tuning session scheduling, real-time booking management, and service showcase.',
+      'A modern automotive workshop showcase and online booking platform built for high-performance car tuning centers during my internship. Features workshop service catalogs, custom Dyno tuning session scheduling, real-time booking management, and service showcase.',
     tags: ['Next.js', 'PostgreSQL', 'TypeScript', 'PHP', 'Blade', 'Workshop Booking'],
     link: 'https://stealthxperformance.netlify.app/',
   },
@@ -155,6 +160,24 @@ export const n8nWorkflows: N8nWorkflowItem[] = [
     tags: ['n8n', 'WhatsApp API', 'Claude Sonnet', 'Human Handoff', 'Telegram', 'LangChain'],
     image: '/workflows/whatsapp-ai-support-bot-workflow.png',
     jsonPath: '/workflows/whatsapp-ai-support-bot.json',
+  },
+  {
+    id: 'n8n-node-cheat-sheet',
+    title: 'n8n Node Cheat Sheet (Visual Reference Workflow)',
+    subtitle: '17 Core Nodes + Plain-English Explanations',
+    description:
+      'A visual reference guide detailing 17 of the most essential n8n nodes across Triggers, Actions, Logic, and AI capabilities. Each node is paired with a sticky note explaining its exact function in plain English. Built for quick lookups, developer reference, and team/client onboarding.',
+    schedule: 'Reference Guide (Non-Executable Workflow)',
+    nodesUsed: [
+      'Triggers (Webhook, Schedule, Manual)',
+      'Actions (HTTP Request, Code, Set)',
+      'Logic (IF, Switch, Merge, Loop, Wait)',
+      'AI & LangChain (AI Agent, LLM, Memory, Tool)',
+      'Integrations (Telegram, Gmail, Sheets)',
+    ],
+    tags: ['n8n', 'Cheat Sheet', 'Reference', 'Documentation', 'LangChain', 'Node Guide'],
+    image: '/workflows/n8n-node-cheat-sheet-workflow.png',
+    jsonPath: '/workflows/n8n-node-cheat-sheet.json',
   },
   {
     id: 'youtube-automation',

@@ -23,9 +23,12 @@ export default function ExperienceSection() {
               <div className="text-sm font-mono text-[var(--text-tertiary)] mb-1 transition-colors duration-500">
                 {item.period}
               </div>
-              <h3 className="text-base font-medium text-[var(--text-primary)] transition-colors duration-500">
+              <h3 className="text-lg font-semibold text-cyan-400 transition-colors duration-500">
                 {item.company}
               </h3>
+              <p className="text-xs font-mono text-amber-300/80 mt-1.5 transition-colors duration-500 font-normal">
+                *Reference Contact Available Upon Request*
+              </p>
             </div>
 
             {/* Projects List */}
@@ -49,8 +52,8 @@ export default function ExperienceSection() {
                   </p>
 
                   {/* Business Impact callout */}
-                  <div className="p-3 bg-[var(--bg-tertiary)] border border-[var(--border-color)] rounded-md mb-5 border-l-4 border-l-[var(--invert-bg)]">
-                    <span className="text-xs font-mono font-bold text-[var(--text-primary)] uppercase tracking-wider block mb-1 transition-colors duration-500">
+                  <div className="p-3 bg-[var(--bg-tertiary)] border border-[var(--border-color)] rounded-md mb-5 border-l-4 border-l-amber-500">
+                    <span className="text-xs font-mono font-bold text-amber-500 uppercase tracking-wider block mb-1 transition-colors duration-500">
                       Business Impact:
                     </span>
                     <span className="text-sm text-[var(--text-secondary)] transition-colors duration-500">
