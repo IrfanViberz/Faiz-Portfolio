@@ -12,7 +12,7 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen">
       <ContactHeader />
-      <section className="py-24">
+      <section className="pt-10 pb-24">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-16">
           <ContactForm />
           <DirectChannels />

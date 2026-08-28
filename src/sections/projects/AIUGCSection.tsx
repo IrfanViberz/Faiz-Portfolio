@@ -5,7 +5,10 @@ import LinkButton from '@/components/ui/LinkButton';
 
 export default function AIUGCSection() {
   return (
-    <Section title="03. AI UGC Automation & Marketing">
+    <Section
+      title="03. AI UGC Automation & Marketing"
+      subtitle="Autonomous content creation pipelines and paid advertising campaigns scaling organic user acquisition."
+    >
       <div className="space-y-6 relative z-10">
         {/* TikTok AI UGC Card */}
         <div className="border border-[var(--border-color)] rounded-md p-6 sm:p-8 bg-[var(--bg-secondary)] transition-colors duration-500 border-l-4 border-l-[var(--invert-bg)]">
@@ -57,9 +60,9 @@ export default function AIUGCSection() {
           </div>
         </div>
 
-        {/* YouTube Shorts AI Channel Card */}
+        {/* YouTube Shorts AI & Video Edits Channel Card */}
         <div className="border border-[var(--border-color)] rounded-md p-6 sm:p-8 bg-[var(--bg-secondary)] transition-colors duration-500 border-l-4 border-l-red-500">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 w-full">
               {/* Icon */}
               <div className="mt-1 shrink-0">
@@ -75,29 +78,41 @@ export default function AIUGCSection() {
               {/* Content */}
               <div className="flex-grow max-w-2xl">
                 <h3 className="text-xl font-medium text-[var(--text-primary)] mb-2 transition-colors duration-500">
-                  YouTube Shorts AI Channel (@beforeyouscroll26)
+                  YouTube Shorts: AI Pipelines &amp; Creative Video Edits
                 </h3>
                 <p className="text-sm text-[var(--text-secondary)] leading-relaxed mb-4 transition-colors duration-500">
-                  A high-volume YouTube Shorts channel showcasing a hybrid workflow: combining automated daily n8n pipelines (scripting via `GPT-4o`, `ElevenLabs` TTS, `Flux AI`, and `Creatomate`) alongside custom content created manually using Google Flow and the Omni Flash model.
+                  Operating two YouTube channels highlighting both ends of content production: an automated AI pipeline channel (<strong className="text-[var(--text-primary)]">@beforeyouscroll26</strong>) powered by automated n8n workflows, GPT-4o scripting, ElevenLabs voiceovers, and Flux AI; alongside a dedicated video editing channel (<strong className="text-[var(--text-primary)]">@winking2608</strong>) where I craft motivational and narrative video edits, demonstrating hands-on video editing mastery, pacing, and visual storytelling.
                 </p>
-                <div className="flex gap-2 flex-wrap mb-6 sm:mb-0">
+                <div className="flex gap-2 flex-wrap mb-4 sm:mb-0">
+                  <Badge highlight>Video Editing &amp; Storytelling</Badge>
                   <Badge highlight>n8n Automation</Badge>
-                  <Badge highlight>Google Flow (Omni Flash)</Badge>
-                  <Badge>GPT-4o & ElevenLabs</Badge>
-                  <Badge>Flux AI & Creatomate</Badge>
+                  <Badge>Google Flow (Omni Flash)</Badge>
+                  <Badge>GPT-4o &amp; ElevenLabs</Badge>
+                  <Badge>Flux AI &amp; Creatomate</Badge>
                 </div>
               </div>
             </div>
 
-            {/* Link */}
-            <div className="flex flex-col gap-3 min-w-[160px] shrink-0 sm:self-center">
-              <LinkButton
-                href="https://www.youtube.com/@beforeyouscroll26"
-                icon={ArrowUpRight}
-                primary
+            {/* Links */}
+            <div className="flex flex-col sm:flex-row lg:flex-col gap-2.5 min-w-[210px] shrink-0 lg:self-center">
+              <a
+                href="https://youtube.com/@winking2608?si=RfJ8sTNXnMuD_Ufn"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-medium rounded-md bg-white text-zinc-900 border border-zinc-200 hover:bg-zinc-100 hover:border-zinc-300 shadow-xs transition-all duration-300 cursor-pointer"
               >
-                View YouTube Channel
-              </LinkButton>
+                <ArrowUpRight className="w-4 h-4 text-red-600 shrink-0" />
+                <span>View Video Edits (@winking2608)</span>
+              </a>
+              <a
+                href="https://www.youtube.com/@beforeyouscroll26"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-medium rounded-md bg-white text-zinc-900 border border-zinc-200 hover:bg-zinc-100 hover:border-zinc-300 shadow-xs transition-all duration-300 cursor-pointer"
+              >
+                <ArrowUpRight className="w-4 h-4 text-cyan-600 shrink-0" />
+                <span>View AI Channel (@beforeyouscroll26)</span>
+              </a>
             </div>
           </div>
         </div>

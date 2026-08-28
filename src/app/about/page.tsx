@@ -7,9 +7,9 @@ import PersonalValuesSection from '@/sections/about/PersonalValuesSection';
 import CurrentGoalsSection from '@/sections/about/CurrentGoalsSection';
 
 export const metadata: Metadata = {
-  title: 'About — Faiz Irfan',
+  title: 'About | Faiz Irfan',
   description:
-    'Personal background, education journey, engineering mindset and values of Mohamad Faiz Irfan — Software Developer.',
+    'Personal background, education journey, engineering mindset and values of Mohamad Faiz Irfan, Software Developer.',
 };
 
 export default function AboutPage() {

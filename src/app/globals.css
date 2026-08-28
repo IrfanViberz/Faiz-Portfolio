@@ -8,6 +8,8 @@
   --font-mono: var(--font-geist-mono);
 }
 
+@custom-variant dark (&:where(.theme-dark, .theme-dark *));
+
 /* ============================================
    DARK THEME (default)
    ============================================ */
@@ -25,6 +27,11 @@
   --invert-bg: #f4f4f5;
   --invert-text: #09090b;
   --rope-color: #52525b;
+  --dot-color: rgba(63, 63, 70, 0.45);
+  --glow-tl: rgba(6, 182, 212, 0.07);
+  --glow-br: rgba(16, 185, 129, 0.06);
+  --glow-center: rgba(139, 92, 246, 0.04);
+  --vignette: rgba(9, 9, 11, 0.55);
 }
 
 /* ============================================
@@ -43,6 +50,57 @@
   --invert-bg: #09090b;
   --invert-text: #fafafa;
   --rope-color: #d4d4d8;
+  --dot-color: rgba(161, 161, 170, 0.22);
+  --glow-tl: rgba(6, 182, 212, 0.06);
+  --glow-br: rgba(16, 185, 129, 0.05);
+  --glow-center: rgba(139, 92, 246, 0.03);
+  --vignette: rgba(250, 250, 250, 0.6);
+}
+
+/* ============================================
+   BACKGROUND PATTERN — dot grid + glow blobs
+   ============================================ */
+.theme-dark,
+.theme-light {
+  position: relative;
+}
+
+/* Dot grid layer */
+.theme-dark::before,
+.theme-light::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle, var(--dot-color) 1px, transparent 1px);
+  background-size: 30px 30px;
+  transition: background-image 0.5s ease;
+}
+
+/* Gradient glow blobs + vignette layer */
+.theme-dark::after,
+.theme-light::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 600px 600px at 10% 10%, var(--glow-tl), transparent 70%),
+    radial-gradient(ellipse 700px 700px at 90% 90%, var(--glow-br), transparent 70%),
+    radial-gradient(ellipse 800px 800px at 50% 50%, var(--glow-center), transparent 60%),
+    radial-gradient(ellipse at center, transparent 45%, var(--vignette) 100%);
+  transition: background 0.5s ease;
+}
+
+/* Ensure main content sits above the pattern */
+.theme-dark > main,
+.theme-light > main,
+.theme-dark > footer,
+.theme-light > footer {
+  position: relative;
+  z-index: 1;
 }
 
 /* ============================================
@@ -97,12 +155,18 @@ body {
   }
 }
 
-.cursor-blink {
-  animation: blink 1s step-end infinite;
+@keyframes float-subtle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
 }
 
-.animate-fade-in {
-  animation: fadeInUp 0.6s ease-out forwards;
+.animate-float-subtle {
+  animation: float-subtle 4s ease-in-out infinite;
+  will-change: transform;
 }
 
 /* ============================================
@@ -112,3 +176,4 @@ body {
   transition: background-color 0.5s ease, color 0.5s ease,
     border-color 0.5s ease;
 }
+

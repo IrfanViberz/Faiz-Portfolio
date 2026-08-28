@@ -22,7 +22,10 @@ export default function WebAppsSection() {
   const visibleProjects = showAll ? webProjects : webProjects.slice(0, 3);
 
   return (
-    <Section title="01. Side Projects">
+    <Section
+      title="01. Side Projects & Web Applications"
+      subtitle="Full-stack SaaS platforms, client tools, and production UI/UX applications built for real users."
+    >
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10">
         <AnimatePresence mode="sync">
           {visibleProjects.map((project, i) => {
@@ -106,10 +109,10 @@ export default function WebAppsSection() {
         <div className="mt-8 text-center relative z-10">
           <button
             onClick={() => setShowAll((prev) => !prev)}
-            className="inline-flex items-center gap-2 px-5 py-2.5 text-xs font-mono rounded border border-[var(--border-color)] bg-[var(--bg-secondary)] text-[var(--text-primary)] hover:bg-[var(--bg-tertiary)] hover:border-[var(--text-tertiary)] transition-colors duration-300"
+            className="inline-flex items-center gap-2.5 px-6 py-3 text-xs font-mono font-medium rounded-lg border border-[var(--border-color)] bg-[var(--bg-tertiary)] text-[var(--text-primary)] hover:bg-cyan-500/10 hover:border-cyan-500/40 hover:text-cyan-400 dark:hover:text-cyan-300 transition-all duration-300 shadow-sm hover:shadow-md cursor-pointer"
           >
             <span>{showAll ? 'Show Less' : `Show More (${webProjects.length - 3} more projects)`}</span>
-            {showAll ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+            {showAll ? <ChevronUp className="w-4 h-4 text-cyan-400" /> : <ChevronDown className="w-4 h-4 text-cyan-400" />}
           </button>
         </div>
       )}

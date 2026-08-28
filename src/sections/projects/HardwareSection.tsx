@@ -4,7 +4,10 @@ import Badge from '@/components/ui/Badge';
 
 export default function HardwareSection() {
   return (
-    <Section title="04. Hardware Arbitrage & E-commerce">
+    <Section
+      title="04. Hardware Arbitrage & E-commerce"
+      subtitle="Physical component diagnostics, laptop restoration, and full-lifecycle ad-driven flipping operations."
+    >
       <div className="border border-[var(--border-color)] rounded-md p-6 sm:p-8 bg-[var(--bg-secondary)] transition-colors duration-500 relative z-10 border-l-4 border-l-[var(--invert-bg)]">
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 w-full">
           {/* Icon */}

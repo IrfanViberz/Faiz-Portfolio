@@ -6,6 +6,7 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import ThemePullRope from '@/components/ui/ThemePullRope';
 
+
 const geistSans = Geist({
   variable: '--font-geist-sans',
   subsets: ['latin'],

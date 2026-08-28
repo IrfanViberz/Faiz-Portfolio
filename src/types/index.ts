@@ -4,20 +4,28 @@ export interface ProjectExperience {
   title: string;
   role: string;
   description: string;
-  impact: string;
+  impact?: string;
   tags: string[];
+  image?: string;
+  images?: { url: string; label: string; caption?: string }[];
+  docs?: { label: string; viewUrl: string; downloadName: string; description?: string }[];
+  siteLink?: string;
 }
 
 export interface ExperienceItem {
   period: string;
   company: string;
+  referenceContact?: boolean;
   projects: ProjectExperience[];
 }
 
 export interface StackItem {
-  iconName: 'Terminal' | 'Smartphone' | 'Database' | 'Activity';
+  iconName: 'Terminal' | 'Smartphone' | 'Database' | 'Activity' | 'Code' | 'Layout' | 'Layers';
   title: string;
-  text: string;
+  tagline?: string;
+  skills?: string[];
+  text?: string;
+  accent?: string;
 }
 
 export interface ValueItem {

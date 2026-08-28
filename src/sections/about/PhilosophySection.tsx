@@ -36,8 +36,8 @@ export default function PhilosophySection() {
             Software engineering is not only about writing code.
           </h2>
           <p className="text-sm text-[var(--text-secondary)] mt-4 leading-relaxed transition-colors duration-500">
-            The real craft is in the decisions made before, during, and after — how a system is
-            shaped, how a team communicates, and how technology translates to real-world value.
+            The real craft is in the decisions made before, during, and after, shaping how a system is
+            built, how a team communicates, and how technology translates to real-world value.
           </p>
         </div>
 

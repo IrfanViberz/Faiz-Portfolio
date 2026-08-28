@@ -24,26 +24,83 @@ export const valueItems: ValueItem[] = [
 
 export const experienceItems: ExperienceItem[] = [
   {
+    period: '2024',
+    company: 'Universiti Malaysia Pahang Al-Sultan Abdullah (UMPSA)',
+    projects: [
+      {
+        title: 'Heavy Vehicle Recognition System',
+        role: 'Final Year Project (FYP) — Machine Learning Research',
+        description:
+          'Developed a deep learning system to classify heavy vehicles into small, medium, and large categories based on side-view images. Built using a CNN architecture with ResNet50 as the backbone, trained and evaluated in TensorFlow and Python. The system processes real-world vehicle images captured from road-side angles and outputs accurate size classification to support traffic monitoring and road safety applications.',
+        tags: ['TensorFlow', 'Python', 'CNN', 'ResNet50', 'Machine Learning', 'Computer Vision'],
+        docs: [
+          {
+            label: 'FYP Certificate',
+            description: 'Official University Completion & Approval Certificate',
+            viewUrl: '/FYP_Certificate.pdf',
+            downloadName: 'FYP_Certificate_Faiz_Irfan.pdf',
+          },
+          {
+            label: 'Research Paper / Journal',
+            description: 'Full Academic Research Paper & Technical Methodology',
+            viewUrl: '/FYP_Paper.pdf',
+            downloadName: 'FYP_Paper_Faiz_Irfan.pdf',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    period: '2025',
+    company: 'StealthX Performance SDN BHD',
+    projects: [
+      {
+        title: 'Workshop & Dyno Booking Platform',
+        role: 'Web Developer Intern',
+        description:
+          'Designed and developed a full-stack car workshop landing page and booking system, including an admin-facing management dashboard. Built with Next.js, Laravel, TypeScript, and MySQL. Features online booking flows, service catalog management, dyno session scheduling, and an admin panel for staff to manage appointments and reduce manual workload.',
+        impact:
+          'Reduced booking errors by 80% by replacing manual phone-based bookings with a structured online system. Cut staff workload by 90% through automated appointment tracking and admin dashboard tooling.',
+        tags: ['Next.js', 'Laravel', 'TypeScript', 'MySQL', 'PHP', 'Admin Dashboard'],
+        image: '/projects/stealthx.png',
+        siteLink: 'https://stealthxperformance.netlify.app/',
+      },
+    ],
+  },
+  {
     period: '2025 — 2026',
     company: 'Bugz Studio SDN BHD',
+    referenceContact: true,
     projects: [
       {
         title: 'Rest N Go (RNG) Ecosystem',
         role: 'Mobile App & Admin Architecture',
         description:
-          'Led the UI/UX redesign and core feature implementation, integrating hardware-level QR scanners. Engineered a robust Angular-based admin portal for centralized promotion management.',
+          'Led the mobile application UI/UX overhaul from Figma design phase through to live production on iOS and Android. Engineered core mobile features with hardware-level QR scanners and built a robust Angular-based admin portal for centralized device and promotion management.',
+        images: [
+          {
+            url: '/projects/rng-figma.png',
+            label: 'Figma UI/UX Design Phase',
+            caption: 'Design wireframes & UI prototyping for the iOS / Android mobile application overhaul.',
+          },
+          {
+            url: '/projects/rng-production.jpg',
+            label: 'Production Release (App Store & Play Store)',
+            caption: 'Live production mobile app with integrated hardware QR scanning & real-time transaction processing.',
+          },
+        ],
         impact:
           'Enhanced overall user experience by delivering a more intuitive and visually refined interface, improving platform usability for customers and internal teams. Strengthened operational efficiency by streamlining promotion management workflows and ensuring more accurate transaction data representation.',
-        tags: ['Ionic', 'Angular', 'TypeScript', 'Flutter'],
+        tags: ['Ionic', 'Angular', 'TypeScript', 'Android Studio', 'Figma', 'Mobile UI/UX'],
       },
       {
         title: 'Ekajaya Cement Distribution',
         role: 'Logistics Frontend Module',
         description:
-          'Architected core frontend modules and dynamic document generation utilizing Stimulsoft for specialized reporting.',
+          'Architected core frontend modules and dynamic document generation utilizing Stimulsoft Report JS for specialized reporting.',
         impact:
           'Improved operational scalability by designing a structured frontend architecture capable of handling complex order workflows and large-scale distribution operations. Increased reporting efficiency by implementing dynamic document generation, enabling faster access to accurate business insights.',
-        tags: ['Angular', 'Stimulsoft', 'High-Concurrency'],
+        tags: ['Angular', 'Stimulsoft Report JS', 'High-Concurrency'],
       },
       {
         title: 'UMSC Q-Care & Doctor Portal',
@@ -52,32 +109,44 @@ export const experienceItems: ExperienceItem[] = [
           'Developed comprehensive patient and doctor dashboards seamlessly integrated with highly regulated healthcare backends.',
         impact:
           'Improved healthcare service accessibility by developing streamlined patient and doctor workflows, reducing friction in appointment-related processes. Enhanced operational efficiency through automation of insurance-related queries, allowing users to access important information faster.',
-        tags: ['NestJS', 'Angular', 'Stimulsoft', 'Healthcare compliance'],
+        tags: ['NestJS', 'Angular', 'Stimulsoft Report JS', 'Healthcare compliance'],
       },
     ],
   },
 ];
 
-export const stackItems = [
+export const stackItems: StackItem[] = [
   {
-    iconName: 'Terminal' as const,
+    iconName: 'Terminal',
     title: 'Languages',
+    tagline: 'Core Programming & Data',
+    accent: 'amber',
+    skills: ['JavaScript (ES6+)', 'TypeScript', 'HTML5', 'CSS3', 'SQL', 'Python'],
     text: 'JavaScript, TypeScript, HTML5, CSS3, SQL',
   },
   {
-    iconName: 'Smartphone' as const,
+    iconName: 'Smartphone',
     title: 'Frontend & Mobile',
+    tagline: 'Interactive UI & Native Apps',
+    accent: 'cyan',
+    skills: ['Next.js 15', 'Angular', 'Ionic', 'Tailwind CSS', 'Framer Motion', 'RxJS'],
     text: 'Angular, Ionic, Flutter, Next.js, RxJS',
   },
   {
-    iconName: 'Database' as const,
+    iconName: 'Database',
     title: 'Backend & Databases',
+    tagline: 'Scalable APIs & Data Logic',
+    accent: 'emerald',
+    skills: ['NestJS', 'Node.js', 'MySQL', 'PostgreSQL', 'Firebase', 'REST APIs'],
     text: 'NestJS, Node.js, MySQL, Firebase',
   },
   {
-    iconName: 'Activity' as const,
+    iconName: 'Activity',
     title: 'Growth & Tools',
-    text: 'Meta/TikTok/Shopee Ads, Git, Android Studio, Stimulsoft',
+    tagline: 'ROI, Systems & Diagnostics',
+    accent: 'purple',
+    skills: ['Meta / TikTok Ads', 'Shopee Ads', 'Git & GitHub', 'Android Studio', 'Stimulsoft Report JS', 'Figma'],
+    text: 'Meta/TikTok/Shopee Ads, Git, Android Studio, Stimulsoft Report JS',
   },
 ];
 
@@ -116,6 +185,17 @@ export const webProjects: ProjectItem[] = [
     link: 'https://ciptamenu.netlify.app/ms/dashboard',
   },
   {
+    title: 'KISE — Main Landing Page Redesign Example',
+    subtitle: 'Institutional Portal Modernization & UI/UX Redesign',
+    statusTag: 'Project Demo',
+    icon: 'GraduationCap',
+    image: '/projects/kise-redesign.png',
+    description:
+      'A comprehensive UI/UX overhaul and modern landing page concept designed for an educational institution. Demonstrates modern visual hierarchy, responsive layout architecture, dynamic interaction patterns, and clean brand presentation to replace legacy institutional interfaces.',
+    tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'UI/UX Redesign', 'Responsive Design', 'Framer Motion'],
+    link: 'https://kise-redesign-example.netlify.app/',
+  },
+  {
     title: 'Kelantan Bites — Food & Event Discovery Platform',
     subtitle: 'Food Hunting & Local Event Finder',
     statusTag: 'Project Demo',
@@ -140,7 +220,7 @@ export const webProjects: ProjectItem[] = [
   {
     title: 'StealthX Performance — Workshop & Dyno Booking Platform',
     subtitle: 'Automotive Tuning & Dyno Booking Portal',
-    statusTag: 'Finished Project',
+    statusTag: 'Project Demo',
     icon: 'Gauge',
     image: '/projects/stealthx.png',
     description:

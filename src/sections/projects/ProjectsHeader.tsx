@@ -5,7 +5,7 @@ export default function ProjectsHeader() {
         <h1 className="text-3xl sm:text-4xl font-medium tracking-tighter text-[var(--text-primary)] mb-4 transition-colors duration-500">
           The Laboratory.
         </h1>
-        <p className="text-[var(--text-secondary)] max-w-2xl text-lg transition-colors duration-500">
+        <p className="text-[var(--text-secondary)] text-lg transition-colors duration-500">
           Where I push boundaries. A showcase of independent web development, AI pipelines,
           hardware repair, and paid acquisition marketing.
         </p>

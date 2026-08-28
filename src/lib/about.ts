@@ -10,6 +10,7 @@ export interface InterestItem {
   title: string;
   description: string;
   icon: string;
+  image: string;
 }
 
 export interface ValueAboutItem {
@@ -23,15 +24,15 @@ export interface GoalItem {
 
 export const timeline: TimelineEntry[] = [
   {
-    period: '2007 — 2012',
+    period: '2007 to 2012',
     institution: 'Sekolah Kebangsaan Kampung Baharu',
     location: 'Besut, Terengganu',
     field: 'Primary Education',
     description:
-      'Early education foundation that developed curiosity in learning and a natural drive toward problem-solving and exploration.',
+      'Early education foundation that developed curiosity in learning and a natural drive toward problem solving and exploration.',
   },
   {
-    period: '2013 — 2016',
+    period: '2013 to 2016',
     institution: 'Sekolah Menengah Kebangsaan Tengku Mahmud (TMS)',
     location: 'Terengganu',
     field: 'Science Major',
@@ -44,18 +45,18 @@ export const timeline: TimelineEntry[] = [
     location: 'Kelantan',
     field: 'Science Major',
     description:
-      'Continued strengthening scientific and analytical skills, adapting to a new environment — building resilience and adaptability.',
+      'Continued strengthening scientific and analytical skills, adapting to a new environment while building resilience and adaptability.',
   },
   {
-    period: '2018 — 2020',
+    period: '2018 to 2020',
     institution: 'Kolej Matrikulasi Kelantan',
     location: 'Kelantan',
     field: 'Science Major',
     description:
-      'Built stronger foundations in mathematics, science, and structured problem-solving. Prepared academically for an engineering-focused university journey.',
+      'Built stronger foundations in mathematics, science, and structured problem solving. Prepared academically for an engineering focused university journey.',
   },
   {
-    period: '2021 — 2025',
+    period: '2021 to 2025',
     institution: 'Universiti Malaysia Pahang Al-Sultan Abdullah (UMPSA)',
     location: 'Pahang',
     field: 'Bachelor of Computer Science (Software Engineering) with Honours',
@@ -68,38 +69,44 @@ export const interests: InterestItem[] = [
   {
     title: 'TikTok Affiliate & Digital Marketing',
     icon: 'ShoppingBag',
+    image: '/interests/tiktok.jpg',
     description:
-      'Applying marketing strategies, content analytics, and conversion funnels to drive real e-commerce sales and user acquisition.',
+      'Started doing TikTok affiliate out of curiosity and ended up genuinely enjoying the content creation side of it. I like understanding what makes people click, buy, and come back. Its part creative, part data.',
   },
   {
     title: 'Hardware & Laptop Repair',
     icon: 'Wrench',
+    image: '/interests/hardware.png',
     description:
-      'Hands-on hardware diagnostics, laptop repair, and system assembly as a technical hobby — understanding performance from silicon to software.',
+      'I actually enjoy taking laptops apart and figuring out what is wrong with them. There is something satisfying about diagnosing a dead machine and bringing it back to life. Its like a puzzle every single time.',
   },
   {
     title: 'Gaming & Strategy',
     icon: 'Gamepad2',
+    image: '/interests/gaming.png',
     description:
-      'Gaming sharpens creativity, strategic thinking, and pattern recognition — skills that directly translate to better system design and user experience understanding.',
+      'Gaming is just something I genuinely love. I am drawn to games that make you think, whether its outplaying someone or figuring out the best strategy on the fly. Its my go to way to unwind and have fun.',
   },
   {
     title: 'Fitness & Gym',
     icon: 'Dumbbell',
+    image: '/interests/fitness.jpg',
     description:
-      'Consistent training builds discipline and mental resilience. The principles of showing up daily and tracking progress apply equally to writing software as they do to physical development.',
+      'Gym has become a big part of my routine. It keeps me grounded, clears my head, and honestly the discipline you build from showing up consistently carries into everything else in life.',
   },
   {
     title: 'Technology Exploration',
     icon: 'Cpu',
+    image: '/interests/tech.png',
     description:
-      'Constantly exploring new AI tools, frameworks, and modern development workflows. Staying curious keeps the engineering approach fresh and practical.',
+      'I am always poking around new tools, gadgets, and tech that catches my eye. Whether its a new AI app or some random piece of hardware, if its interesting, I am probably already looking into it.',
   },
   {
     title: 'Continuous Learning',
     icon: 'BookOpen',
+    image: '/interests/learning.png',
     description:
-      'Whether through documentation, open-source projects, or industry blogs — always looking for better ways to build, ship, and improve software systems.',
+      'I genuinely like learning new things, not because I have to, but because I enjoy it. Could be a new skill, a concept I stumbled on, or just something I got curious about. Staying curious keeps things interesting.',
   },
 ];
 
