@@ -1,4 +1,4 @@
-import type { ExperienceItem, ValueItem, ProjectItem, N8nWorkflowItem } from '@/types';
+import type { ExperienceItem, ValueItem, ProjectItem, N8nWorkflowItem, StackItem } from '@/types';
 
 export const obsessionsList: string[] = [
   'Exploring Google Flow for TikTok AI UGC automation...',
