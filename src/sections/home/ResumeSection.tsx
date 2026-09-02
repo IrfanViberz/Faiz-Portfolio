@@ -4,33 +4,21 @@ import { motion } from 'framer-motion';
 import { FileText, Download, ExternalLink, Globe } from 'lucide-react';
 import Section from '@/components/ui/Section';
 import Badge from '@/components/ui/Badge';
+import { useTranslations } from 'next-intl';
 
-const resumeVersions = [
-  {
-    lang: 'English',
-    badge: 'EN',
-    title: 'Resume — English Version',
-    description:
-      'Official English CV detailing full-stack software development, tech stack, and engineering achievements.',
-    viewUrl: '/resume-en.pdf',
-    downloadName: 'Mohamad_Faiz_Irfan_Resume_EN.pdf',
-  },
-  {
-    lang: 'Bahasa Melayu',
-    badge: 'BM',
-    title: 'Resume — Versi Bahasa Melayu',
-    description:
-      'Resume versi Bahasa Melayu merangkumi pengalaman pembangunan perisian, kepakaran teknikal, dan pencapaian projek.',
-    viewUrl: '/resume-bm.pdf',
-    downloadName: 'Mohamad_Faiz_Irfan_Resume_BM.pdf',
-  },
+const resumeUrls = [
+  { viewUrl: '/resume-en.pdf', downloadName: 'Mohamad_Faiz_Irfan_Resume_EN.pdf' },
+  { viewUrl: '/resume-bm.pdf', downloadName: 'Mohamad_Faiz_Irfan_Resume_BM.pdf' },
 ];
 
 export default function ResumeSection() {
+  const t = useTranslations('resume');
+  const items = t.raw('items') as { lang: string; badge: string; title: string; description: string }[];
+
   return (
-    <Section id="resume" title="Curriculum Vitae / Resume">
+    <Section id="resume" title={t('title')}>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10">
-        {resumeVersions.map((ver, idx) => (
+        {items.map((ver, idx) => (
           <motion.div
             key={idx}
             initial={{ opacity: 0, y: 14 }}
@@ -60,21 +48,21 @@ export default function ResumeSection() {
 
             <div className="flex items-center gap-3 pt-4 border-t border-[var(--border-color)]">
               <a
-                href={ver.viewUrl}
+                href={resumeUrls[idx].viewUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-medium rounded-md bg-transparent text-[var(--text-primary)] border border-[var(--border-color)] hover:bg-[var(--bg-tertiary)] transition-all duration-300"
               >
                 <ExternalLink className="w-4 h-4 shrink-0" />
-                View PDF
+                {t('viewPdf')}
               </a>
               <a
-                href={ver.viewUrl}
-                download={ver.downloadName}
+                href={resumeUrls[idx].viewUrl}
+                download={resumeUrls[idx].downloadName}
                 className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-medium rounded-md bg-blue-600 text-white hover:bg-blue-500 shadow-sm transition-all duration-300"
               >
                 <Download className="w-4 h-4 shrink-0 text-white" />
-                Download CV
+                {t('downloadCv')}
               </a>
             </div>
           </motion.div>

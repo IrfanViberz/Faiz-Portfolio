@@ -15,7 +15,9 @@ import {
 } from 'lucide-react';
 import Section from '@/components/ui/Section';
 import Badge from '@/components/ui/Badge';
+import { useTranslations } from 'next-intl';
 import { experienceItems } from '@/lib/data';
+import type { ExperienceItem } from '@/types';
 
 interface LightboxState {
   url: string;
@@ -24,7 +26,9 @@ interface LightboxState {
 }
 
 export default function ExperienceSection() {
+  const t = useTranslations('experience');
   const [lightboxImage, setLightboxImage] = useState<LightboxState | null>(null);
+  const translatedItems = t.raw('items') as ExperienceItem[] | undefined;
 
   // Close on Escape key
   useEffect(() => {
@@ -40,9 +44,11 @@ export default function ExperienceSection() {
   }, [lightboxImage]);
 
   return (
-    <Section id="experience" title="Professional ROI & Experience">
+    <Section id="experience" title={t('title')}>
       <div className="space-y-10">
-        {experienceItems.map((item, i) => (
+        {experienceItems.map((item, i) => {
+          const transCompany = translatedItems?.[i]?.company || item.company;
+          return (
           <motion.div
             key={i}
             initial={{ opacity: 0, y: 16 }}
@@ -58,34 +64,40 @@ export default function ExperienceSection() {
                   {item.period}
                 </div>
                 <h3 className="text-xl font-bold text-[var(--text-primary)] transition-colors duration-500 mt-1 leading-snug">
-                  {item.company}
+                  {transCompany}
                 </h3>
 
                 {item.referenceContact && (
                   <p className="text-xs font-mono text-amber-300/90 mt-3 transition-colors duration-500 font-normal">
-                    *Reference Contact Available Upon Request*
+                    *{t('referenceAvailable')}*
                   </p>
                 )}
               </div>
 
               {/* Projects List */}
               <div className="md:col-span-8 space-y-10">
-                {item.projects.map((proj, pIdx) => (
+                {item.projects.map((proj, pIdx) => {
+                  const transProj = translatedItems?.[i]?.projects?.[pIdx];
+                  const displayTitle = transProj?.title || proj.title;
+                  const displayRole = transProj?.role || proj.role;
+                  const displayDesc = transProj?.description || proj.description;
+                  const displayImpact = transProj?.impact !== undefined ? transProj.impact : proj.impact;
+                  return (
                   <div
                     key={pIdx}
                     className={pIdx > 0 ? 'pt-8 border-t border-[var(--border-color)]' : ''}
                   >
                     <div className="mb-3">
                       <h4 className="text-lg font-semibold text-[var(--text-primary)] transition-colors duration-500">
-                        {proj.title}
+                        {displayTitle}
                       </h4>
                       <p className="text-sm font-medium text-cyan-400/90 mt-1 transition-colors duration-500">
-                        {proj.role}
+                        {displayRole}
                       </p>
                     </div>
 
                     <p className="text-sm text-[var(--text-secondary)] leading-relaxed mt-3 mb-5 transition-colors duration-500">
-                      {proj.description}
+                      {displayDesc}
                     </p>
 
                     {/* Multi-Image Project Showcase (e.g., Figma Design & Production App) */}
@@ -189,7 +201,7 @@ export default function ExperienceSection() {
                     {proj.impact && (
                       <div className="p-4 bg-[var(--bg-tertiary)] border border-[var(--border-color)] rounded-lg mb-5 border-l-4 border-l-amber-500">
                         <span className="text-xs font-mono font-bold text-amber-500 uppercase tracking-wider block mb-1 transition-colors duration-500">
-                          Business Impact:
+                          {t('impact')}:
                         </span>
                         <span className="text-sm text-[var(--text-secondary)] transition-colors duration-500">
                           {proj.impact}
@@ -210,7 +222,7 @@ export default function ExperienceSection() {
                         <div className="flex items-center gap-2 mb-3">
                           <FileCheck className="w-4 h-4 text-cyan-400" />
                           <span className="text-xs font-mono font-semibold uppercase tracking-wider text-[var(--text-primary)]">
-                            Official Documents & Publications
+                            {t('docs')}
                           </span>
                         </div>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
@@ -247,7 +259,7 @@ export default function ExperienceSection() {
                                   className="flex-1 inline-flex items-center justify-center gap-1.5 px-2.5 py-1.5 text-xs font-medium rounded bg-white dark:bg-zinc-900 text-zinc-800 dark:text-zinc-200 border border-zinc-300 dark:border-zinc-700 hover:bg-zinc-50 dark:hover:bg-zinc-800 hover:text-cyan-500 dark:hover:text-cyan-400 transition-all duration-200"
                                 >
                                   <ExternalLink className="w-3 h-3 shrink-0" />
-                                  View PDF
+                                  {t('viewDoc')}
                                 </a>
                                 <a
                                   href={doc.viewUrl}
@@ -255,7 +267,7 @@ export default function ExperienceSection() {
                                   className="flex-1 inline-flex items-center justify-center gap-1.5 px-2.5 py-1.5 text-xs font-medium rounded bg-blue-600 text-white hover:bg-blue-500 shadow-sm transition-all duration-200"
                                 >
                                   <Download className="w-3 h-3 shrink-0 text-white" />
-                                  Download
+                                  {t('downloadDoc')}
                                 </a>
                               </div>
                             </div>
@@ -274,16 +286,18 @@ export default function ExperienceSection() {
                           className="inline-flex items-center gap-2 px-4 py-2.5 text-sm font-medium rounded-md bg-transparent text-[var(--text-primary)] border border-[var(--border-color)] hover:bg-[var(--bg-tertiary)] hover:border-[var(--text-tertiary)] transition-all duration-300"
                         >
                           <ExternalLink className="w-4 h-4 shrink-0 text-cyan-400" />
-                          View Site
+                          {t('viewSite')}
                         </a>
                       </div>
                     )}
                   </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           </motion.div>
-        ))}
+          );
+        })}
       </div>
 
       {/* Interactive Lightbox Modal */}

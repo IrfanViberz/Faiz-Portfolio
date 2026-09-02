@@ -6,8 +6,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Section from '@/components/ui/Section';
 import Badge from '@/components/ui/Badge';
 import { n8nWorkflows } from '@/lib/data';
+import { useTranslations } from 'next-intl';
 
 export default function N8nWorkflowsSection() {
+  const t = useTranslations('projects.n8n');
   const [activeJson, setActiveJson] = useState<{ title: string; content: string } | null>(null);
   const [activeImage, setActiveImage] = useState<{ title: string; src: string } | null>(null);
   const [copied, setCopied] = useState(false);
@@ -41,8 +43,8 @@ export default function N8nWorkflowsSection() {
 
   return (
     <Section
-      title="02. n8n Automation Workflows"
-      subtitle="Production-ready webhook automations, AI agent pipelines, and system integrations with downloadable workflow JSON files."
+      title={t('title')}
+      subtitle={t('subtitle')}
     >
       <div className="grid grid-cols-1 gap-8 relative z-10">
         <AnimatePresence mode="sync">
@@ -73,7 +75,7 @@ export default function N8nWorkflowsSection() {
                       <div className="p-2.5 rounded-full bg-black/70 border border-white/20 shadow-lg">
                         <Maximize2 className="w-5 h-5 text-amber-400" />
                       </div>
-                      <span>Click to View Full Canvas</span>
+                      <span>{t('clickToView')}</span>
                     </div>
                   </div>
                 ) : (
@@ -106,12 +108,12 @@ export default function N8nWorkflowsSection() {
                   <div className="space-y-2 mb-5 text-xs text-[var(--text-secondary)] bg-[var(--bg-tertiary)] p-3 rounded border border-[var(--border-color)]">
                     <div className="flex items-center gap-2">
                       <Clock className="w-3.5 h-3.5 text-[var(--text-tertiary)] shrink-0" />
-                      <span><strong className="text-[var(--text-primary)]">Trigger:</strong> {workflow.schedule}</span>
+                      <span><strong className="text-[var(--text-primary)]">{t('trigger')}:</strong> {workflow.schedule}</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <Layers className="w-3.5 h-3.5 text-[var(--text-tertiary)] shrink-0" />
                       <span>
-                        <strong className="text-[var(--text-primary)]">Core Nodes:</strong> {workflow.nodesUsed.join(', ')}
+                        <strong className="text-[var(--text-primary)]">{t('coreNodes')}:</strong> {workflow.nodesUsed.join(', ')}
                       </span>
                     </div>
                   </div>
@@ -132,7 +134,7 @@ export default function N8nWorkflowsSection() {
                     className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2 text-xs font-medium rounded border border-[var(--border-color)] bg-[var(--bg-tertiary)] text-[var(--text-primary)] hover:border-[var(--text-tertiary)] transition-colors duration-300"
                   >
                     <Download className="w-3.5 h-3.5" />
-                    Download JSON
+                    {t('downloadJson')}
                   </a>
 
                   <button
@@ -141,7 +143,7 @@ export default function N8nWorkflowsSection() {
                     className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2 text-xs font-medium rounded bg-[var(--invert-bg)] text-[var(--invert-text)] hover:opacity-90 transition-opacity duration-300"
                   >
                     <Code className="w-3.5 h-3.5" />
-                    View JSON Code
+                    {t('viewJson')}
                   </button>
                 </div>
               </div>
@@ -157,7 +159,11 @@ export default function N8nWorkflowsSection() {
             onClick={() => setShowAll((prev) => !prev)}
             className="inline-flex items-center gap-2.5 px-6 py-3 text-xs font-mono font-medium rounded-lg border border-[var(--border-color)] bg-[var(--bg-tertiary)] text-[var(--text-primary)] hover:bg-cyan-500/10 hover:border-cyan-500/40 hover:text-cyan-400 dark:hover:text-cyan-300 transition-all duration-300 shadow-sm hover:shadow-md cursor-pointer"
           >
-            <span>{showAll ? 'Show Less' : `Show More (${n8nWorkflows.length - 1} more automation)`}</span>
+            <span>
+              {showAll
+                ? t('showLess')
+                : t('showMore', { count: n8nWorkflows.length - 1 })}
+            </span>
             {showAll ? <ChevronUp className="w-4 h-4 text-cyan-400" /> : <ChevronDown className="w-4 h-4 text-cyan-400" />}
           </button>
         </div>
@@ -230,7 +236,7 @@ export default function N8nWorkflowsSection() {
                     className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-mono rounded border border-[var(--border-color)] bg-[var(--bg-secondary)] text-[var(--text-primary)] hover:border-[var(--text-tertiary)] transition-colors"
                   >
                     {copied ? <Check className="w-3.5 h-3.5 text-green-500" /> : <Copy className="w-3.5 h-3.5" />}
-                    <span>{copied ? 'Copied!' : 'Copy Code'}</span>
+                    <span>{copied ? t('copied') : t('copyCode')}</span>
                   </button>
                   <button
                     onClick={() => setActiveJson(null)}

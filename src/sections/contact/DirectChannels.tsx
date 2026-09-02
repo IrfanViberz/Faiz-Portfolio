@@ -1,11 +1,16 @@
+'use client';
+
 import { Mail, MessageSquare } from 'lucide-react';
 import { WHATSAPP_NUMBER, WHATSAPP_TEXT, OWNER_EMAIL } from '@/lib/data';
+import { useTranslations } from 'next-intl';
 
 export default function DirectChannels() {
+  const t = useTranslations('contact.channels');
+
   return (
     <div>
       <h2 className="text-sm font-mono text-[var(--text-tertiary)] uppercase tracking-widest mb-8 transition-colors duration-500">
-        Direct Channels
+        {t('heading')}
       </h2>
 
       <div className="flex flex-col gap-4">
@@ -21,11 +26,9 @@ export default function DirectChannels() {
           </div>
           <div>
             <h3 className="text-base font-medium text-[var(--text-primary)] mb-1 group-hover:text-[var(--accent)] transition-colors">
-              WhatsApp Priority
+              {t('whatsappTitle')}
             </h3>
-            <p className="text-sm text-[var(--text-secondary)]">
-              Fastest response time for immediate opportunities.
-            </p>
+            <p className="text-sm text-[var(--text-secondary)]">{t('whatsappDesc')}</p>
           </div>
         </a>
 
@@ -39,11 +42,9 @@ export default function DirectChannels() {
           </div>
           <div>
             <h3 className="text-base font-medium text-[var(--text-primary)] mb-1 transition-colors">
-              Standard Email
+              {t('emailTitle')}
             </h3>
-            <p className="text-sm text-[var(--text-secondary)]">
-              For formal proposals and documentation.
-            </p>
+            <p className="text-sm text-[var(--text-secondary)]">{t('emailDesc')}</p>
           </div>
         </a>
       </div>

@@ -2,13 +2,16 @@
 
 import { motion } from 'framer-motion';
 import Section from '@/components/ui/Section';
-import { valueItems } from '@/lib/data';
+import { useTranslations } from 'next-intl';
 
 export default function ValueSection() {
+  const t = useTranslations('value');
+  const items = t.raw('items') as { title: string; desc: string }[];
+
   return (
-    <Section id="value" title="Why I am an Asset (Not just an employee)">
+    <Section id="value" title={t('title')}>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {valueItems.map((item, i) => (
+        {items.map((item, i) => (
           <motion.div
             key={i}
             initial={{ opacity: 0, y: 14 }}

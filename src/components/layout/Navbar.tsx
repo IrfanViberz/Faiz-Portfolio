@@ -1,25 +1,27 @@
 'use client';
 
 import { useState } from 'react';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { Link, usePathname } from '@/i18n/routing';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-
-const navLinks = [
-  { href: '/', label: 'Overview' },
-  { href: '/projects', label: 'Side Projects' },
-  { href: '/about', label: 'About' },
-  { href: '/contact', label: 'Contact' },
-];
+import { useTranslations } from 'next-intl';
+import LanguageSwitcher from '@/components/ui/LanguageSwitcher';
 
 export default function Navbar() {
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const t = useTranslations('nav');
+
+  const navLinks = [
+    { href: '/', label: t('overview') },
+    { href: '/projects', label: t('projects') },
+    { href: '/about', label: t('about') },
+    { href: '/contact', label: t('contact') },
+  ];
 
   return (
     <nav className="fixed top-0 z-50 w-full bg-[var(--bg-nav)] backdrop-blur-md border-b border-[var(--border-color)] transition-colors duration-500">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between pr-16 sm:pr-24">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between pr-16 sm:pr-4">
         {/* Logo */}
         <Link
           href="/"
@@ -44,16 +46,20 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
+          <LanguageSwitcher />
         </div>
 
         {/* Mobile Hamburger */}
-        <button
-          className="sm:hidden text-[var(--text-primary)] p-2 -mr-2"
-          onClick={() => setIsMobileMenuOpen((prev) => !prev)}
-          aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
-        >
-          {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-        </button>
+        <div className="sm:hidden flex items-center gap-3">
+          <LanguageSwitcher />
+          <button
+            className="text-[var(--text-primary)] p-2 -mr-2"
+            onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+            aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+          >
+            {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Drawer */}
@@ -67,48 +73,22 @@ export default function Navbar() {
             className="sm:hidden absolute top-16 left-0 w-full bg-[var(--bg-nav)] backdrop-blur-md border-b border-[var(--border-color)] shadow-xl"
           >
             <div className="flex flex-col px-6 py-4 space-y-4">
-              <Link
-                href="/"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={`text-left text-sm font-medium transition-colors ${
-                  pathname === '/' ? 'text-[var(--text-primary)]' : 'text-[var(--text-tertiary)]'
-                }`}
-              >
-                Overview
-              </Link>
-              <Link
-                href="/projects"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={`text-left text-sm font-medium transition-colors ${
-                  pathname === '/projects'
-                    ? 'text-[var(--text-primary)]'
-                    : 'text-[var(--text-tertiary)]'
-                }`}
-              >
-                Side Projects (Laboratory)
-              </Link>
-              <Link
-                href="/about"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={`text-left text-sm font-medium transition-colors ${
-                  pathname === '/about'
-                    ? 'text-[var(--text-primary)]'
-                    : 'text-[var(--text-tertiary)]'
-                }`}
-              >
-                About
-              </Link>
-              <Link
-                href="/contact"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={`text-left text-sm font-medium transition-colors pt-4 border-t border-[var(--border-color)] ${
-                  pathname === '/contact'
-                    ? 'text-[var(--text-primary)]'
-                    : 'text-[var(--text-tertiary)]'
-                }`}
-              >
-                Contact
-              </Link>
+              {navLinks.map((link, i) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={`text-left text-sm font-medium transition-colors ${
+                    i === navLinks.length - 1 ? 'pt-4 border-t border-[var(--border-color)]' : ''
+                  } ${
+                    pathname === link.href
+                      ? 'text-[var(--text-primary)]'
+                      : 'text-[var(--text-tertiary)]'
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              ))}
             </div>
           </motion.div>
         )}

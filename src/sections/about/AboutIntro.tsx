@@ -2,8 +2,12 @@
 
 import { motion } from 'framer-motion';
 import { MapPin, Code2 } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 export default function AboutIntro() {
+  const t = useTranslations('about.intro');
+  const profileFields = t.raw('profileFields') as { label: string; value: string }[];
+
   return (
     <motion.section
       initial={{ opacity: 0, y: 12 }}
@@ -16,7 +20,7 @@ export default function AboutIntro() {
         <div className="flex items-center gap-3 mb-6">
           <div className="w-2 h-2 rounded-full bg-[var(--accent)] animate-pulse transition-colors duration-500" />
           <span className="text-xs font-mono text-[var(--text-tertiary)] uppercase tracking-wider transition-colors duration-500">
-            The person behind the code
+            {t('badge')}
           </span>
         </div>
 
@@ -30,24 +34,20 @@ export default function AboutIntro() {
             <div className="flex flex-wrap items-center gap-3 mb-8">
               <div className="flex items-center gap-2 text-sm font-mono text-[var(--text-tertiary)] transition-colors duration-500 bg-[var(--bg-secondary)] px-2.5 py-1 rounded-md border border-[var(--border-color)]">
                 <Code2 className="w-4 h-4 text-[var(--accent)]" />
-                <span>Software Developer</span>
+                <span>{t('role')}</span>
               </div>
               <span className="text-[var(--border-color)]">/</span>
               <div className="flex items-center gap-2 text-sm font-mono text-[var(--text-tertiary)] transition-colors duration-500 bg-[var(--bg-secondary)] px-2.5 py-1 rounded-md border border-[var(--border-color)]">
                 <MapPin className="w-4 h-4 text-[var(--accent)]" />
-                <span>Born 2001, Kelantan, Malaysia</span>
+                <span>{t('location')}</span>
               </div>
             </div>
 
             <p className="text-lg text-[var(--text-secondary)] leading-relaxed mb-5 max-w-2xl transition-colors duration-500">
-              I am a software developer passionate about building scalable digital solutions that
-              solve real-world problems and create genuine value for users and businesses.
+              {t('bio1')}
             </p>
             <p className="text-lg text-[var(--text-secondary)] leading-relaxed max-w-2xl transition-colors duration-500">
-              My approach combines a strong engineering foundation with a product mindset. I care
-              deeply about why something is built, not just how. I bring the same energy to
-              architecting a backend system as I do to understanding the business problem it&apos;s
-              meant to solve.
+              {t('bio2')}
             </p>
           </div>
 
@@ -56,7 +56,7 @@ export default function AboutIntro() {
             <div className="p-6 rounded-md border border-[var(--border-color)] bg-[var(--bg-secondary)] transition-colors duration-500 shadow-sm">
               <div className="flex items-center justify-between gap-2 mb-4">
                 <span className="text-xs font-mono text-[var(--text-tertiary)] uppercase tracking-widest transition-colors duration-500">
-                  Quick Profile
+                  {t('quickProfile')}
                 </span>
                 <div className="relative overflow-hidden rounded-md border border-[var(--border-color)] animate-float-subtle shadow-sm hover:scale-105 transition-transform duration-300 cursor-pointer shrink-0">
                   <img
@@ -68,12 +68,7 @@ export default function AboutIntro() {
                 </div>
               </div>
               <div className="space-y-3">
-                {[
-                  { label: 'Full Name', value: 'Mohamad Faiz Irfan bin Mohamad Zaid' },
-                  { label: 'Role', value: 'Software Developer' },
-                  { label: 'Specialisation', value: 'Frontend & Mobile Engineering' },
-                  { label: 'Stack', value: 'Angular · NestJS · Ionic · Flutter' },
-                ].map(({ label, value }) => (
+                {profileFields.map(({ label, value }) => (
                   <div
                     key={label}
                     className="flex flex-col gap-0.5 pb-3 border-b border-[var(--border-color)] last:border-0 last:pb-0 transition-colors duration-500"

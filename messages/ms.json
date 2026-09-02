@@ -1,0 +1,374 @@
+{
+  "nav": {
+    "overview": "Gambaran Keseluruhan",
+    "projects": "Projek Sampingan",
+    "about": "Tentang",
+    "contact": "Hubungi",
+    "projectsMobile": "Projek Sampingan (Makmal)"
+  },
+  "hero": {
+    "badge": "Mudah Suai. Minda Berkembang.",
+    "headline": "Saya bukan sekadar menulis kod. Saya membina sistem dan memacu pemerolehan pengguna.",
+    "description": "Hai, saya Faiz — Pembangun Perisian yang merapatkan jurang antara seni bina perisian berskala (Angular/NestJS) dan ROI pemasaran digital. Saya menganggap cabaran teknikal sebagai masalah perniagaan, menggabungkan kod yang kukuh dengan iklan berbayar berasaskan data (Meta/TikTok/Shopee) untuk mengembangkan operasi.",
+    "ctaHire": "Ambil Saya Untuk Impak",
+    "ctaProjects": "Lihat Operasi Sampingan Saya"
+  },
+  "value": {
+    "title": "Mengapa Saya Aset (Bukan Sekadar Pekerja)",
+    "items": [
+      {
+        "title": "Fokus Kepada Hasil & Pertumbuhan",
+        "desc": "Kod tidak bermakna jika tiada yang menggunakannya. Saya memahami seni bina backend berkapasiti tinggi dan corong pemasaran yang diperlukan untuk mendapatkan pengguna."
+      },
+      {
+        "title": "Pembelajaran Aktif",
+        "desc": "Teknologi bergerak terlalu pantas untuk menunggu tutorial. Saya sentiasa menyelidik sistem, menguji potensi AI, dan membongkar perkakasan untuk memahami keseluruhan tindanan."
+      },
+      {
+        "title": "Pelaksanaan Sedia Produksi",
+        "desc": "Pengalaman terbukti menghantar kod dalam persekitaran yang sangat dikawal (Penjagaan Kesihatan/Logistik). Saya menulis seni bina yang bersih, mudah diselenggara, dan berskala."
+      }
+    ]
+  },
+  "experience": {
+    "title": "Pengalaman Profesional",
+    "role": "Peranan",
+    "impact": "Impak Utama",
+    "docs": "Dokumen",
+    "viewDoc": "Lihat",
+    "downloadDoc": "Muat Turun",
+    "viewSite": "Lihat Laman Langsung",
+    "referenceAvailable": "Rujukan Tersedia",
+    "items": [
+      {
+        "period": "2024",
+        "company": "Universiti Malaysia Pahang Al-Sultan Abdullah (UMPSA)",
+        "projects": [
+          {
+            "title": "Sistem Pengenalan Kenderaan Berat",
+            "role": "Projek Tahun Akhir (FYP) — Penyelidikan Pembelajaran Mesin",
+            "description": "Membangunkan sistem pembelajaran mendalam untuk mengklasifikasikan kenderaan berat kepada kategori kecil, sederhana, dan besar berdasarkan imej pandangan sisi. Dibina menggunakan seni bina CNN dengan ResNet50 sebagai tulang belakang, dilatih dan dinilai dalam TensorFlow dan Python. Sistem ini memproses imej kenderaan dunia sebenar yang diambil dari sudut tepi jalan dan menghasilkan klasifikasi saiz yang tepat untuk menyokong pemantauan trafik dan aplikasi keselamatan jalan raya.",
+            "impact": "",
+            "docs": [
+              { "label": "Sijil FYP", "description": "Sijil Penyiapan & Kelulusan Universiti Rasmi" },
+              { "label": "Kertas Penyelidikan / Jurnal", "description": "Kertas Penyelidikan Akademik Lengkap & Metodologi Teknikal" }
+            ]
+          }
+        ]
+      },
+      {
+        "period": "2025",
+        "company": "StealthX Performance SDN BHD",
+        "projects": [
+          {
+            "title": "Platform Tempahan Bengkel & Dyno",
+            "role": "Pelatih Pembangun Web",
+            "description": "Mereka bentuk dan membangunkan laman web bengkel kereta full-stack dan sistem tempahan, termasuk papan pemuka pengurusan berorientasikan pentadbir. Dibina dengan Next.js, Laravel, TypeScript, dan MySQL. Menampilkan aliran tempahan dalam talian, pengurusan katalog perkhidmatan, penjadualan sesi dyno, dan panel pentadbir untuk kakitangan menguruskan temujanji dan mengurangkan beban kerja manual.",
+            "impact": "Mengurangkan ralat tempahan sebanyak 80% dengan menggantikan tempahan berasaskan telefon manual dengan sistem dalam talian yang berstruktur. Mengurangkan beban kerja kakitangan sebanyak 90% melalui pengesanan temujanji automatik dan alatan papan pemuka pentadbir."
+          }
+        ]
+      },
+      {
+        "period": "2025 — 2026",
+        "company": "Bugz Studio SDN BHD",
+        "projects": [
+          {
+            "title": "Ekosistem Rest N Go (RNG)",
+            "role": "Seni Bina Aplikasi Mudah Alih & Pentadbir",
+            "description": "Memimpin pengemaskinian UI/UX aplikasi mudah alih dari fasa reka bentuk Figma hingga ke pengeluaran langsung di iOS dan Android. Merekayasa ciri-ciri mudah alih teras dengan pengimbas QR peringkat perkakasan dan membina portal pentadbir berasaskan Angular yang teguh untuk pengurusan peranti dan promosi secara berpusat.",
+            "impact": "Meningkatkan pengalaman pengguna keseluruhan dengan menyampaikan antara muka yang lebih intuitif dan halus secara visual, meningkatkan kebolehgunaan platform untuk pelanggan dan pasukan dalaman. Mengukuhkan kecekapan operasi dengan memperkemas aliran kerja pengurusan promosi dan memastikan perwakilan data transaksi yang lebih tepat."
+          },
+          {
+            "title": "Pengedaran Simen Ekajaya",
+            "role": "Modul Frontend Logistik",
+            "description": "Merekabentuk modul-modul frontend teras dan penjanaan dokumen dinamik menggunakan Stimulsoft Report JS untuk pelaporan khusus.",
+            "impact": "Meningkatkan skalabiliti operasi dengan mereka bentuk seni bina frontend berstruktur yang mampu mengendalikan aliran kerja pesanan yang kompleks dan operasi pengedaran berskala besar. Meningkatkan kecekapan pelaporan dengan melaksanakan penjanaan dokumen dinamik, membolehkan akses lebih pantas kepada pandangan perniagaan yang tepat."
+          },
+          {
+            "title": "Portal UMSC Q-Care & Doktor",
+            "role": "Aplikasi Berorientasikan Pesakit & Doktor",
+            "description": "Membangunkan papan pemuka pesakit dan doktor yang komprehensif dengan integrasi lancar kepada backend penjagaan kesihatan yang sangat dikawal.",
+            "impact": "Meningkatkan kebolehcapaian perkhidmatan penjagaan kesihatan dengan membangunkan aliran kerja pesakit dan doktor yang lebih lancar, mengurangkan halangan dalam proses berkaitan temujanji. Meningkatkan kecekapan operasi melalui automasi pertanyaan berkaitan insurans, membolehkan pengguna mengakses maklumat penting dengan lebih pantas."
+          },
+          {
+            "title": "Pembangunan & Pengujian Dibantu AI",
+            "role": "Automasi Aliran Kerja AI",
+            "description": "Membangunkan aliran kerja pembangunan dan pengujian dibantu AI menggunakan OpenClaw dan Telegram untuk memantau kemajuan pengekodan, mengautomasikan pengujian laman web, mengenal pasti kemungkinan pepijat, dan menyampaikan keputusan ujian serta kemas kini status melalui antara muka perbualan.",
+            "impact": "Memperkemas gelung maklum balas pembangunan dengan mengautomasikan pengujian laman web dan pengesanan pepijat, menyampaikan status pengekodan dan keputusan ujian secara masa nyata melalui Telegram, sekali gus mengurangkan dengan ketara overhed pemantauan manual."
+          }
+        ]
+      }
+    ]
+  },
+  "stack": {
+    "title": "Senjata Teknikal",
+    "productionReady": "Sedia Pengeluaran",
+    "coreTools": "Alat Teras",
+    "items": [
+      {
+        "title": "Bahasa",
+        "tagline": "Pengaturcaraan Teras & Data"
+      },
+      {
+        "title": "Frontend & Mudah Alih",
+        "tagline": "UI Interaktif & Aplikasi Asli"
+      },
+      {
+        "title": "Backend & Pangkalan Data",
+        "tagline": "API Berskala & Logik Data"
+      },
+      {
+        "title": "Pertumbuhan & Alatan",
+        "tagline": "ROI, Sistem & Diagnostik"
+      },
+      {
+        "title": "Automasi AI",
+        "tagline": "Aliran Kerja Pintar & Alatan AI"
+      }
+    ]
+  },
+  "resume": {
+    "title": "Curriculum Vitae / Resume",
+    "viewPdf": "Lihat PDF",
+    "downloadCv": "Muat Turun CV",
+    "items": [
+      {
+        "lang": "English",
+        "badge": "EN",
+        "title": "Resume — Versi Bahasa Inggeris",
+        "description": "CV rasmi dalam Bahasa Inggeris yang memperincikan pembangunan perisian full-stack, tindanan teknologi, dan pencapaian kejuruteraan."
+      },
+      {
+        "lang": "Bahasa Melayu",
+        "badge": "BM",
+        "title": "Resume — Versi Bahasa Melayu",
+        "description": "Resume versi Bahasa Melayu merangkumi pengalaman pembangunan perisian, kepakaran teknikal, dan pencapaian projek."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Bersedia untuk mempercepatkan kejuruteraan anda?",
+    "description": "Saya terbuka untuk peranan baharu dan cabaran kompleks. Jika syarikat anda memerlukan jurutera yang menganggap masalah teknikal sebagai masalah perniagaan, mari kita berbincang.",
+    "button": "Mulakan Hubungan"
+  },
+  "footer": {
+    "rights": "© 2026 Mohamad Faiz Irfan. Hak cipta terpelihara.",
+    "tagline": "Direkayasa untuk Skala & ROI Perniagaan."
+  },
+  "about": {
+    "intro": {
+      "badge": "Insan di sebalik kod",
+      "role": "Pembangun Perisian",
+      "location": "Lahir 2001, Kelantan, Malaysia",
+      "bio1": "Saya adalah pembangun perisian yang bersemangat dalam membina penyelesaian digital berskala yang menyelesaikan masalah dunia sebenar dan mencipta nilai tulen untuk pengguna dan perniagaan.",
+      "bio2": "Pendekatan saya menggabungkan asas kejuruteraan yang kukuh dengan minda produk. Saya sangat mengambil berat tentang mengapa sesuatu dibina, bukan sekadar bagaimana. Saya membawa tenaga yang sama dalam merekabentuk sistem backend seperti dalam memahami masalah perniagaan yang ingin diselesaikannya.",
+      "quickProfile": "Profil Ringkas",
+      "profileFields": [
+        { "label": "Nama Penuh", "value": "Mohamad Faiz Irfan bin Mohamad Zaid" },
+        { "label": "Peranan", "value": "Pembangun Perisian" },
+        { "label": "Pengkhususan", "value": "Kejuruteraan Frontend & Mudah Alih" },
+        { "label": "Tindanan", "value": "Angular · NestJS · Ionic · Flutter" }
+      ]
+    },
+    "journey": {
+      "title": "02. Perjalanan & Pendidikan Saya",
+      "items": [
+        {
+          "period": "2007 hingga 2012",
+          "institution": "Sekolah Kebangsaan Kampung Baharu",
+          "location": "Besut, Terengganu",
+          "field": "Pendidikan Rendah",
+          "description": "Asas pendidikan awal yang membangunkan rasa ingin tahu dalam pembelajaran dan dorongan semula jadi ke arah penyelesaian masalah dan penerokaan."
+        },
+        {
+          "period": "2013 hingga 2016",
+          "institution": "Sekolah Menengah Kebangsaan Tengku Mahmud (TMS)",
+          "location": "Terengganu",
+          "field": "Aliran Sains",
+          "description": "Membina pemikiran analitikal dan asas saintifik. Aliran sains mengukuhkan kemahiran penaakulan logik yang kemudiannya akan membentuk minda kejuruteraan."
+        },
+        {
+          "period": "2017",
+          "institution": "Sekolah Menengah Kebangsaan Kubang Kerian",
+          "location": "Kelantan",
+          "field": "Aliran Sains",
+          "description": "Terus mengukuhkan kemahiran saintifik dan analitikal, menyesuaikan diri dengan persekitaran baharu sambil membina ketahanan dan kebolehsuaian."
+        },
+        {
+          "period": "2018 hingga 2020",
+          "institution": "Kolej Matrikulasi Kelantan",
+          "location": "Kelantan",
+          "field": "Aliran Sains",
+          "description": "Membina asas yang lebih kukuh dalam matematik, sains, dan penyelesaian masalah berstruktur. Bersedia secara akademik untuk perjalanan universiti berorientasikan kejuruteraan."
+        },
+        {
+          "period": "2021 hingga 2025",
+          "institution": "Universiti Malaysia Pahang Al-Sultan Abdullah (UMPSA)",
+          "location": "Pahang",
+          "field": "Sarjana Muda Sains Komputer (Kejuruteraan Perisian) dengan Kepujian",
+          "description": "Membangunkan kepakaran dalam pembangunan perisian, seni bina sistem, pembangunan aplikasi, dan amalan kejuruteraan. Di sinilah rasa ingin tahu teknikal menjadi keupayaan profesional."
+        }
+      ]
+    },
+    "philosophy": {
+      "title": "03. Falsafah Kejuruteraan",
+      "statement": "Kejuruteraan perisian bukan sekadar menulis kod.",
+      "statementDetail": "Kemahiran sebenar terletak pada keputusan yang dibuat sebelum, semasa, dan selepas, membentuk cara sistem dibina, cara pasukan berkomunikasi, dan cara teknologi diterjemahkan kepada nilai dunia sebenar.",
+      "points": [
+        {
+          "label": "Faham dahulu, baru kod",
+          "detail": "Sebelum menulis satu baris pun, saya berusaha memahami sepenuhnya masalah, kekangannya, dan orang yang terlibat. Kod yang baik bermula dengan soalan yang baik."
+        },
+        {
+          "label": "Bina untuk skalabiliti dan penyelenggaraan",
+          "detail": "Setiap keputusan seni bina dibuat dengan mengambil kira masa depan. Kod yang mudah diubah lebih berharga daripada kod yang pintar."
+        },
+        {
+          "label": "Cipta pengalaman pengguna yang bermakna",
+          "detail": "Perisian hanya berjaya apabila orang benar-benar menggunakannya. Merapatkan kualiti teknikal dengan keperluan pengguna sebenar adalah di mana kejuruteraan menjadi berimpak."
+        },
+        {
+          "label": "Hubungkan keputusan teknikal dengan matlamat perniagaan",
+          "detail": "Teknologi adalah cara, bukan tujuan. Saya menganggap pilihan kejuruteraan sebagai keputusan perniagaan, memastikan setiap penyelesaian menggerakkan jarum ke arah hasil yang betul."
+        }
+      ]
+    },
+    "beyondCoding": {
+      "title": "04. Di Luar Kod",
+      "description": "Apa yang membentuk seorang jurutera bukan hanya apa yang dibinanya, tetapi bagaimana dia hidup. Minat-minat ini memastikan minda sentiasa tajam, seimbang, dan berkembang.",
+      "interests": [
+        {
+          "title": "Affiliate TikTok & Pemasaran Digital",
+          "description": "Mula buat affiliate TikTok sebab ingin tahu dan akhirnya benar-benar menikmati bahagian penciptaan konten. Saya suka memahami apa yang membuatkan orang klik, beli, dan kembali lagi. Ia sebahagian kreatif, sebahagian data."
+        },
+        {
+          "title": "Perkakasan & Pembaikan Komputer Riba",
+          "description": "Saya sebenarnya suka membuka komputer riba dan mencari tahu apa yang rosak. Ada kepuasan tersendiri dalam mendiagnosis mesin yang mati dan menghidupkannya semula. Ia seperti teka-teki setiap kali."
+        },
+        {
+          "title": "Permainan & Strategi",
+          "description": "Bermain game adalah sesuatu yang saya benar-benar minati. Saya tertarik kepada permainan yang membuatkan anda berfikir, sama ada mengatasi seseorang atau merancang strategi terbaik dengan pantas. Ia cara utama saya untuk berehat dan berseronok."
+        },
+        {
+          "title": "Kecergasan & Gim",
+          "description": "Gim telah menjadi sebahagian besar rutin saya. Ia menjaga saya tetap seimbang, menjernihkan fikiran, dan jujurnya disiplin yang anda bina dari datang secara konsisten terbawa ke segala-galanya dalam kehidupan."
+        },
+        {
+          "title": "Teknologi & Pembelajaran Berterusan",
+          "description": "Sentiasa meneroka alat baharu, gajet, dan teknologi yang menarik perhatian. Sama ada aplikasi AI baharu atau sebahagian perkakasan rawak, saya mungkin sudah menyiasat tentangnya. Saya benar-benar menikmati pembelajaran perkara baharu, bukan kerana terpaksa, tetapi kerana kekal ingin tahu membuat semuanya menarik."
+        },
+        {
+          "title": "Sukan",
+          "description": "Di luar skrin saya kekal aktif melalui badminton dan boling. Badminton memastikan saya tajam dan lincah, manakala boling adalah tentang ketepatan dan konsistensi. Kedua-dua sukan mengajar kesabaran, fokus, dan dorongan untuk terus meningkat."
+        }
+      ]
+    },
+    "values": {
+      "title": "05. Nilai Peribadi",
+      "items": [
+        {
+          "title": "Minda Berkembang",
+          "description": "Setiap cabaran adalah peluang pembelajaran. Saya mendekati masalah dengan rasa ingin tahu, dan menganggap setiap gelung maklum balas sebagai peluang untuk memperbaiki diri."
+        },
+        {
+          "title": "Penyelesaian Masalah",
+          "description": "Menguraikan sistem kompleks kepada penyelesaian yang jelas dan praktikal. Saya fokus memahami masalah teras sebelum menulis satu baris kod."
+        },
+        {
+          "title": "Tanggungjawab",
+          "description": "Saya bertanggungjawab sepenuhnya terhadap kualiti dan hasil kerja saya. Menghantar sesuatu bermakna memiliki keandalannya, bukan sekadar penghantarannya."
+        },
+        {
+          "title": "Kerjasama",
+          "description": "Perisian terbaik dibina bersama. Komunikasi yang jelas, konteks bersama, dan rasa hormat bersama sama pentingnya dengan kemahiran teknikal."
+        }
+      ]
+    },
+    "goals": {
+      "title": "06. Fokus & Matlamat Semasa",
+      "heading": "Apa yang saya usahakan sekarang.",
+      "subtext": "Matlamat memastikan arah tetap jelas. Ini adalah bidang yang saya kembangkan secara aktif dan hasil yang saya fokuskan untuk dicapai.",
+      "cta": "Mari Bekerjasama",
+      "items": [
+        "Membina penyelesaian perisian berskala dengan seni bina yang bersih",
+        "Terus meningkatkan kedalaman kejuruteraan dan kualiti kod",
+        "Meneroka aliran kerja pembangunan dan automasi dibantu AI",
+        "Mencipta produk digital yang menyelesaikan masalah dunia sebenar",
+        "Berkembang sebagai jurutera full-stack merentasi domain frontend dan backend"
+      ]
+    }
+  },
+  "projects": {
+    "header": {
+      "title": "Makmal.",
+      "description": "Di mana saya menolak sempadan. Paparan pembangunan web bebas, saluran paip AI, pembaikan perkakasan, dan pemasaran pemerolehan berbayar."
+    },
+    "webApps": {
+      "title": "01. Projek Sampingan & Aplikasi Web",
+      "subtitle": "Platform SaaS full-stack, alatan klien, dan aplikasi UI/UX pengeluaran dibina untuk pengguna sebenar.",
+      "viewDemo": "Lihat Demo Projek",
+      "showMore": "Tunjuk Lebih ({count} projek lagi)",
+      "showLess": "Tunjuk Kurang"
+    },
+    "n8n": {
+      "title": "02. Aliran Kerja Automasi n8n",
+      "subtitle": "Automasi webhook sedia pengeluaran, saluran paip ejen AI, dan integrasi sistem dengan fail JSON aliran kerja yang boleh dimuat turun.",
+      "trigger": "Pencetus",
+      "coreNodes": "Nod Teras",
+      "downloadJson": "Muat Turun JSON",
+      "viewJson": "Lihat Kod JSON",
+      "clickToView": "Klik untuk Lihat Kanvas Penuh",
+      "showMore": "Tunjuk Lebih ({count} automasi lagi)",
+      "showLess": "Tunjuk Kurang",
+      "copied": "Disalin!",
+      "copyCode": "Salin Kod"
+    },
+    "aiUgc": {
+      "title": "03. Automasi AI UGC & Pemasaran",
+      "subtitle": "Saluran paip penciptaan kandungan autonomi dan kempen iklan berbayar yang mengembangkan pemerolehan pengguna organik.",
+      "tiktokTitle": "Saluran Paip AI TikTok + Penskalaan Iklan Berbayar",
+      "tiktokDesc": "Menggunakan Google Flow dan API generatif untuk mengskrip dan mengedit video User-Generated Content (UGC) secara pemrograman. Yang membezakannya adalah pelaksanaannya: saya terus menggunakan kandungan AI ini sebagai aset kreatif untuk Iklan TikTok, menguji had saluran paip automatik sambil mengoptimumkan perbelanjaan iklan untuk pengekalan dan penukaran penonton.",
+      "viewTiktok": "Lihat Bukti TikTok",
+      "youtubeTitle": "YouTube Shorts: Saluran Paip AI & Edit Video Kreatif",
+      "youtubeDesc": "Mengendalikan dua saluran YouTube yang menonjolkan kedua-dua hujung pengeluaran kandungan: saluran paip AI automatik (@beforeyouscroll26) dikuasakan oleh aliran kerja n8n automatik, skrip GPT-4o, suara ElevenLabs, dan Flux AI; bersama saluran pengeditan video khusus (@winking2608) di mana saya mencipta edit video motivasi dan naratif, menunjukkan penguasaan pengeditan video praktikal, pacing, dan penceritaan visual.",
+      "viewVideoEdits": "Lihat Edit Video (@winking2608)",
+      "viewAiChannel": "Lihat Saluran AI (@beforeyouscroll26)"
+    },
+    "hardware": {
+      "title": "04. Arbitraj Perkakasan & E-dagang",
+      "subtitle": "Diagnostik komponen fizikal, pemulihan komputer riba, dan operasi jualan semula dipacu iklan kitaran penuh.",
+      "cardTitle": "Pemulihan Peranti & Jualan Semula Dipacu Iklan",
+      "cardDesc": "Operasi sekunder secara langsung yang memberi tumpuan kepada mencari, mendiagnosis, dan membaiki komputer riba terpakai. Unit yang dipulihkan dihargai secara strategik dan dijual semula di platform seperti Carousell. Untuk meningkatkan volum, saya menjalankan Iklan Facebook dan Iklan Shopee yang disasarkan untuk mendapatkan pembeli dengan cekap. Ini membuktikan bahawa saya memahami kitaran penuh: infrastruktur perkakasan, pemasaran digital, dan ekonomi unit."
+    }
+  },
+  "contact": {
+    "header": {
+      "title": "Mulakan Hubungan.",
+      "description": "Hantar mesej terus ke peti masuk saya melalui borang di bawah, atau gunakan saluran langsung untuk respons segera."
+    },
+    "form": {
+      "heading": "Borang Penghantaran",
+      "namePlaceholder": "Nama atau syarikat anda",
+      "nameLabel": "Nama / Organisasi",
+      "emailLabel": "Alamat E-mel",
+      "emailPlaceholder": "anda@syarikat.com",
+      "messageLabel": "Butiran Projek / Pertanyaan",
+      "messagePlaceholder": "Huraikan projek, peluang peranan, atau bagaimana saya boleh membantu...",
+      "submit": "Hantar",
+      "submitting": "Menghantar...",
+      "successMsg": "Mesej telah dihantar. Saya akan membalas dalam masa 24–48 jam.",
+      "errorFallback": "Sesuatu telah silap. Sila cuba lagi.",
+      "networkError": "Ralat rangkaian. Sila semak sambungan anda dan cuba lagi.",
+      "validationName": "Nama mesti sekurang-kurangnya 2 aksara",
+      "validationEmail": "Sila masukkan e-mel yang sah",
+      "validationMessage": "Mesej mesti sekurang-kurangnya 10 aksara"
+    },
+    "channels": {
+      "heading": "Saluran Langsung",
+      "whatsappTitle": "Keutamaan WhatsApp",
+      "whatsappDesc": "Masa respons tercepat untuk peluang segera.",
+      "emailTitle": "E-mel Standard",
+      "emailDesc": "Untuk cadangan rasmi dan dokumentasi."
+    }
+  }
+}

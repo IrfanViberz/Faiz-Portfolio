@@ -2,35 +2,37 @@
 
 import { motion } from 'framer-motion';
 import Section from '@/components/ui/Section';
-import { currentGoals } from '@/lib/about';
 import { ArrowRight } from 'lucide-react';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
+import { useTranslations } from 'next-intl';
 
 export default function CurrentGoalsSection() {
+  const t = useTranslations('about.goals');
+  const goals = t.raw('items') as string[];
+
   return (
-    <Section id="goals" title="06. Current Focus & Goals">
+    <Section id="goals" title={t('title')}>
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
         {/* Left — Intro text */}
         <div className="lg:col-span-4">
           <h2 className="text-2xl font-medium tracking-tighter text-[var(--text-primary)] leading-snug mb-4 transition-colors duration-500">
-            What I&apos;m working toward right now.
+            {t('heading')}
           </h2>
           <p className="text-sm text-[var(--text-secondary)] leading-relaxed mb-8 transition-colors duration-500">
-            Goals keep the direction clear. These are the areas I am actively developing and the
-            outcomes I am focused on achieving.
+            {t('subtext')}
           </p>
           <Link
             href="/contact"
             className="inline-flex items-center gap-2 px-4 py-2.5 text-sm font-medium rounded-md bg-[var(--invert-bg)] text-[var(--invert-text)] hover:opacity-80 transition-all duration-300"
           >
-            Let&apos;s Collaborate
+            {t('cta')}
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
 
         {/* Right — Goals list */}
         <div className="lg:col-span-8 space-y-3">
-          {currentGoals.map((goal, i) => (
+          {goals.map((goal, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 10 }}

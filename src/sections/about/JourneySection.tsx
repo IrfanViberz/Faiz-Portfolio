@@ -1,11 +1,17 @@
+'use client';
+
 import Section from '@/components/ui/Section';
 import Timeline from '@/components/about/Timeline';
-import { timeline } from '@/lib/about';
+import { useTranslations } from 'next-intl';
+import type { TimelineEntry } from '@/lib/about';
 
 export default function JourneySection() {
+  const t = useTranslations('about.journey');
+  const items = t.raw('items') as TimelineEntry[];
+
   return (
-    <Section id="journey" title="02. My Journey & Education">
-      <Timeline items={timeline} />
+    <Section id="journey" title={t('title')}>
+      <Timeline items={items} />
     </Section>
   );
 }

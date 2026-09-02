@@ -1,12 +1,6 @@
-import type { Metadata } from 'next';
 import ContactHeader from '@/sections/contact/ContactHeader';
 import ContactForm from '@/sections/contact/ContactForm';
 import DirectChannels from '@/sections/contact/DirectChannels';
-
-export const metadata: Metadata = {
-  title: 'Contact — Faiz Irfan',
-  description: 'Get in touch with Faiz Irfan for engineering roles, projects, or collaboration.',
-};
 
 export default function ContactPage() {
   return (

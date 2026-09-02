@@ -20,7 +20,7 @@ export interface ExperienceItem {
 }
 
 export interface StackItem {
-  iconName: 'Terminal' | 'Smartphone' | 'Database' | 'Activity' | 'Code' | 'Layout' | 'Layers';
+  iconName: 'Terminal' | 'Smartphone' | 'Database' | 'Activity' | 'Code' | 'Layout' | 'Layers' | 'Bot';
   title: string;
   tagline?: string;
   skills?: string[];

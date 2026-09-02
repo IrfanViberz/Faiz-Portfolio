@@ -2,22 +2,24 @@
 
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
+import { zodResolver } from '@hookform/resolvers/zod';;
 import { z } from 'zod';
 import { Send, Loader2, CheckCircle, AlertCircle } from 'lucide-react';
 import type { ContactFormData, ContactApiResponse } from '@/types';
-
-const contactSchema = z.object({
-  name: z.string().min(2, 'Name must be at least 2 characters'),
-  email: z.string().email('Please enter a valid email'),
-  message: z.string().min(10, 'Message must be at least 10 characters'),
-});
+import { useTranslations } from 'next-intl';
 
 type FormStatus = 'idle' | 'loading' | 'success' | 'error';
 
 export default function ContactForm() {
+  const t = useTranslations('contact.form');
   const [status, setStatus] = useState<FormStatus>('idle');
   const [statusMessage, setStatusMessage] = useState('');
+
+  const contactSchema = z.object({
+    name: z.string().min(2, t('validationName')),
+    email: z.string().email(t('validationEmail')),
+    message: z.string().min(10, t('validationMessage')),
+  });
 
   const {
     register,
@@ -43,15 +45,15 @@ export default function ContactForm() {
 
       if (result.success) {
         setStatus('success');
-        setStatusMessage("Message transmitted. I'll get back to you within 24–48 hours.");
+        setStatusMessage(t('successMsg'));
         reset();
       } else {
         setStatus('error');
-        setStatusMessage(result.error ?? 'Something went wrong. Please try again.');
+        setStatusMessage(result.error ?? t('errorFallback'));
       }
     } catch {
       setStatus('error');
-      setStatusMessage('Network error. Please check your connection and try again.');
+      setStatusMessage(t('networkError'));
     }
   };
 
@@ -63,10 +65,9 @@ export default function ContactForm() {
   return (
     <div>
       <h2 className="text-sm font-mono text-[var(--text-tertiary)] uppercase tracking-widest mb-8 transition-colors duration-500">
-        Transmission Form
+        {t('heading')}
       </h2>
 
-      {/* Success feedback */}
       {status === 'success' && (
         <div className="mb-6 flex items-start gap-3 p-4 rounded-md border border-[var(--accent)] bg-[var(--bg-tertiary)]">
           <CheckCircle className="w-4 h-4 text-[var(--accent)] mt-0.5 shrink-0" />
@@ -74,7 +75,6 @@ export default function ContactForm() {
         </div>
       )}
 
-      {/* Error feedback */}
       {status === 'error' && (
         <div className="mb-6 flex items-start gap-3 p-4 rounded-md border border-red-500/40 bg-[var(--bg-tertiary)]">
           <AlertCircle className="w-4 h-4 text-red-400 mt-0.5 shrink-0" />
@@ -86,14 +86,14 @@ export default function ContactForm() {
         {/* Name */}
         <div>
           <label htmlFor="contact-name" className="block text-sm font-medium text-[var(--text-secondary)] mb-2">
-            Name / Organization
+            {t('nameLabel')}
           </label>
           <input
             id="contact-name"
             type="text"
             autoComplete="name"
             {...register('name')}
-            placeholder="Your name or company"
+            placeholder={t('namePlaceholder')}
             className={inputClass}
           />
           {errors.name && <p className={errorClass}>{errors.name.message}</p>}
@@ -102,14 +102,14 @@ export default function ContactForm() {
         {/* Email */}
         <div>
           <label htmlFor="contact-email" className="block text-sm font-medium text-[var(--text-secondary)] mb-2">
-            Email Address
+            {t('emailLabel')}
           </label>
           <input
             id="contact-email"
             type="email"
             autoComplete="email"
             {...register('email')}
-            placeholder="you@company.com"
+            placeholder={t('emailPlaceholder')}
             className={inputClass}
           />
           {errors.email && <p className={errorClass}>{errors.email.message}</p>}
@@ -118,14 +118,14 @@ export default function ContactForm() {
         {/* Message */}
         <div>
           <label htmlFor="contact-message" className="block text-sm font-medium text-[var(--text-secondary)] mb-2">
-            Project Details / Inquiry
+            {t('messageLabel')}
           </label>
           <textarea
             id="contact-message"
             autoComplete="off"
             {...register('message')}
             rows={5}
-            placeholder="Describe your project, role opportunity, or how I can help..."
+            placeholder={t('messagePlaceholder')}
             className={`${inputClass} resize-none`}
           />
           {errors.message && <p className={errorClass}>{errors.message.message}</p>}
@@ -140,12 +140,12 @@ export default function ContactForm() {
           {status === 'loading' ? (
             <>
               <Loader2 className="w-4 h-4 animate-spin" />
-              Submitting...
+              {t('submitting')}
             </>
           ) : (
             <>
               <Send className="w-4 h-4" />
-              Submit
+              {t('submit')}
             </>
           )}
         </button>

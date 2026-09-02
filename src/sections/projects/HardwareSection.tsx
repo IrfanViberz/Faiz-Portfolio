@@ -1,13 +1,15 @@
+'use client';
+
 import { Laptop } from 'lucide-react';
 import Section from '@/components/ui/Section';
 import Badge from '@/components/ui/Badge';
+import { useTranslations } from 'next-intl';
 
 export default function HardwareSection() {
+  const t = useTranslations('projects.hardware');
+
   return (
-    <Section
-      title="04. Hardware Arbitrage & E-commerce"
-      subtitle="Physical component diagnostics, laptop restoration, and full-lifecycle ad-driven flipping operations."
-    >
+    <Section title={t('title')} subtitle={t('subtitle')}>
       <div className="border border-[var(--border-color)] rounded-md p-6 sm:p-8 bg-[var(--bg-secondary)] transition-colors duration-500 relative z-10 border-l-4 border-l-[var(--invert-bg)]">
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 w-full">
           {/* Icon */}
@@ -20,16 +22,10 @@ export default function HardwareSection() {
           {/* Content */}
           <div className="flex-grow max-w-2xl">
             <h3 className="text-xl font-medium text-[var(--text-primary)] mb-2 transition-colors duration-500">
-              Device Restoration &amp; Ad-Driven Flipping
+              {t('cardTitle')}
             </h3>
             <p className="text-sm text-[var(--text-secondary)] leading-relaxed mb-4 transition-colors duration-500">
-              A hands-on secondary operation focused on sourcing, diagnosing, and repairing
-              second-hand laptops. Restored units are strategically priced and flipped on
-              platforms like Carousell. To scale volume, I run targeted{' '}
-              <strong className="text-[var(--text-primary)]">Facebook Ads</strong> and{' '}
-              <strong className="text-[var(--text-primary)]">Shopee Ads</strong> to acquire buyers
-              efficiently. This proves I understand the full lifecycle: hardware infrastructure,
-              digital marketing, and unit economics.
+              {t('cardDesc')}
             </p>
             <div className="flex gap-2 flex-wrap">
               <Badge highlight>Meta (Facebook) Ads</Badge>

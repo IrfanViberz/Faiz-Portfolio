@@ -11,6 +11,7 @@ export interface InterestItem {
   description: string;
   icon: string;
   image: string;
+  images?: string[];
 }
 
 export interface ValueAboutItem {
@@ -95,18 +96,19 @@ export const interests: InterestItem[] = [
       'Gym has become a big part of my routine. It keeps me grounded, clears my head, and honestly the discipline you build from showing up consistently carries into everything else in life.',
   },
   {
-    title: 'Technology Exploration',
+    title: 'Technology & Continuous Learning',
     icon: 'Cpu',
     image: '/interests/tech.png',
+    images: ['/interests/tech.png', '/interests/learning.png'],
     description:
-      'I am always poking around new tools, gadgets, and tech that catches my eye. Whether its a new AI app or some random piece of hardware, if its interesting, I am probably already looking into it.',
+      'Always poking around new tools, gadgets, and tech that catches my eye. Whether its a new AI app or some random piece of hardware, I am probably already looking into it. I genuinely enjoy learning new things, not because I have to, but because staying curious keeps things interesting.',
   },
   {
-    title: 'Continuous Learning',
-    icon: 'BookOpen',
-    image: '/interests/learning.png',
+    title: 'Sports',
+    icon: 'Trophy',
+    image: '/interests/sports.jpg',
     description:
-      'I genuinely like learning new things, not because I have to, but because I enjoy it. Could be a new skill, a concept I stumbled on, or just something I got curious about. Staying curious keeps things interesting.',
+      'Outside of screens I stay active through badminton and bowling. Badminton keeps me sharp and quick on my feet, while bowling is all about precision and consistency. Both sports teach patience, focus, and the drive to keep improving.',
   },
 ];
 

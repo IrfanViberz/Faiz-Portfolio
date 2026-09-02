@@ -111,6 +111,15 @@ export const experienceItems: ExperienceItem[] = [
           'Improved healthcare service accessibility by developing streamlined patient and doctor workflows, reducing friction in appointment-related processes. Enhanced operational efficiency through automation of insurance-related queries, allowing users to access important information faster.',
         tags: ['NestJS', 'Angular', 'Stimulsoft Report JS', 'Healthcare compliance'],
       },
+      {
+        title: 'AI-Assisted Development & Testing',
+        role: 'AI Workflow Automation',
+        description:
+          'Built an AI-assisted development and testing workflow using OpenClaw and Telegram to monitor coding progress, automate website testing, identify potential bugs, and communicate test results and status updates through a conversational interface.',
+        impact:
+          'Streamlined the development feedback loop by automating website testing and bug detection, delivering real-time coding status and test results directly via Telegram, significantly reducing manual monitoring overhead.',
+        tags: ['OpenClaw', 'Telegram Bot', 'AI API', 'Ollama', 'Test Automation', 'AI Workflow'],
+      },
     ],
   },
 ];
@@ -147,6 +156,14 @@ export const stackItems: StackItem[] = [
     accent: 'purple',
     skills: ['Meta / TikTok Ads', 'Shopee Ads', 'Git & GitHub', 'Android Studio', 'Stimulsoft Report JS', 'Figma'],
     text: 'Meta/TikTok/Shopee Ads, Git, Android Studio, Stimulsoft Report JS',
+  },
+  {
+    iconName: 'Bot',
+    title: 'AI Automation',
+    tagline: 'Intelligent Workflows & AI Tools',
+    accent: 'rose',
+    skills: ['OpenClaw', 'n8n', 'ChatGPT', 'Claude', 'Gemini', 'Ollama'],
+    text: 'OpenClaw, n8n, ChatGPT, Claude, Gemini, Ollama',
   },
 ];
 

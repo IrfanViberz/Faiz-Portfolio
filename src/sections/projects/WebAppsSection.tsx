@@ -7,6 +7,7 @@ import Section from '@/components/ui/Section';
 import Badge from '@/components/ui/Badge';
 import LinkButton from '@/components/ui/LinkButton';
 import { webProjects } from '@/lib/data';
+import { useTranslations } from 'next-intl';
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   GraduationCap,
@@ -18,14 +19,12 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 };
 
 export default function WebAppsSection() {
+  const t = useTranslations('projects.webApps');
   const [showAll, setShowAll] = useState(false);
   const visibleProjects = showAll ? webProjects : webProjects.slice(0, 3);
 
   return (
-    <Section
-      title="01. Side Projects & Web Applications"
-      subtitle="Full-stack SaaS platforms, client tools, and production UI/UX applications built for real users."
-    >
+    <Section title={t('title')} subtitle={t('subtitle')}>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10">
         <AnimatePresence mode="sync">
           {visibleProjects.map((project, i) => {
@@ -46,7 +45,6 @@ export default function WebAppsSection() {
                   rel="noopener noreferrer"
                   className="block w-full h-48 bg-[var(--bg-tertiary)] border-b border-[var(--border-color)] transition-colors duration-500 relative overflow-hidden group/img"
                 >
-                  {/* Status Tag Overlay on Image */}
                   {project.statusTag && (
                     <div className="absolute top-3 left-3 z-10">
                       <span
@@ -95,7 +93,7 @@ export default function WebAppsSection() {
                     ))}
                   </div>
                   <LinkButton href={project.link} icon={ExternalLink} variant="accent">
-                    View Project Demo
+                    {t('viewDemo')}
                   </LinkButton>
                 </div>
               </motion.div>
@@ -104,15 +102,22 @@ export default function WebAppsSection() {
         </AnimatePresence>
       </div>
 
-      {/* Show More / Show Less Toggle Button */}
       {webProjects.length > 3 && (
         <div className="mt-8 text-center relative z-10">
           <button
             onClick={() => setShowAll((prev) => !prev)}
             className="inline-flex items-center gap-2.5 px-6 py-3 text-xs font-mono font-medium rounded-lg border border-[var(--border-color)] bg-[var(--bg-tertiary)] text-[var(--text-primary)] hover:bg-cyan-500/10 hover:border-cyan-500/40 hover:text-cyan-400 dark:hover:text-cyan-300 transition-all duration-300 shadow-sm hover:shadow-md cursor-pointer"
           >
-            <span>{showAll ? 'Show Less' : `Show More (${webProjects.length - 3} more projects)`}</span>
-            {showAll ? <ChevronUp className="w-4 h-4 text-cyan-400" /> : <ChevronDown className="w-4 h-4 text-cyan-400" />}
+            <span>
+              {showAll
+                ? t('showLess')
+                : t('showMore', { count: webProjects.length - 3 })}
+            </span>
+            {showAll ? (
+              <ChevronUp className="w-4 h-4 text-cyan-400" />
+            ) : (
+              <ChevronDown className="w-4 h-4 text-cyan-400" />
+            )}
           </button>
         </div>
       )}

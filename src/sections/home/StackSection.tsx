@@ -12,15 +12,18 @@ import {
   Activity,
   LucideIcon,
   Sparkles,
+  Bot,
 } from 'lucide-react';
 import Section from '@/components/ui/Section';
 import { stackItems } from '@/lib/data';
+import { useTranslations } from 'next-intl';
 
 const iconMap: Record<string, LucideIcon> = {
   Terminal: Code2,
   Smartphone: Layout,
   Database: Server,
   Activity: TrendingUp,
+  Bot: Bot,
 };
 
 const categoryThemes: Record<
@@ -86,16 +89,35 @@ const categoryThemes: Record<
     badgeHoverBg: 'hover:bg-purple-500/5',
     footerStatusText: 'text-purple-400/90',
   },
+  rose: {
+    cardHoverBorder: 'hover:border-rose-500/50',
+    ambientGlow: 'from-rose-500/15',
+    iconHoverText: 'group-hover:text-rose-400',
+    iconHoverBorder: 'group-hover:border-rose-500/40',
+    iconHoverBg: 'group-hover:bg-rose-500/10',
+    badgeDot: 'bg-rose-400',
+    badgeHoverText: 'hover:text-rose-300',
+    badgeHoverBorder: 'hover:border-rose-500/40',
+    badgeHoverBg: 'hover:bg-rose-500/5',
+    footerStatusText: 'text-rose-400/90',
+  },
 };
 
 export default function StackSection() {
+  const t = useTranslations('stack');
+  const stackTitles = t.raw('items') as { title: string; tagline: string }[];
+
   return (
-    <Section id="stack" title="Technical Arsenal">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+    <Section id="stack" title={t('title')}>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5 sm:gap-6">
         {stackItems.map((stack, i) => {
           const Icon = iconMap[stack.iconName] || Code2;
           const accentKey = stack.accent || 'cyan';
           const theme = categoryThemes[accentKey] || categoryThemes.cyan;
+          // Use translated title/tagline if available, fall back to data
+          const translatedItem = stackTitles[i];
+          const displayTitle = translatedItem?.title ?? stack.title;
+          const displayTagline = translatedItem?.tagline ?? stack.tagline;
           const skillsList =
             stack.skills && stack.skills.length > 0
               ? stack.skills
@@ -131,11 +153,11 @@ export default function StackSection() {
                 </div>
 
                 <h4 className="text-base font-semibold text-[var(--text-primary)] mb-1 transition-colors duration-500">
-                  {stack.title}
+                  {displayTitle}
                 </h4>
-                {stack.tagline && (
+                {displayTagline && (
                   <p className="text-xs text-[var(--text-secondary)] font-normal mb-5 transition-colors duration-500">
-                    {stack.tagline}
+                    {displayTagline}
                   </p>
                 )}
 
@@ -157,10 +179,10 @@ export default function StackSection() {
               <div className="pt-3 border-t border-[var(--border-color)] flex items-center justify-between text-[11px] font-mono text-[var(--text-tertiary)]">
                 <span className="flex items-center gap-1.5">
                   <Sparkles className="w-3 h-3 text-[var(--text-tertiary)]" strokeWidth={1.5} />
-                  <span>{skillsList.length} Core Tools</span>
+                  <span>{skillsList.length} {t('coreTools')}</span>
                 </span>
                 <span className={`font-medium transition-colors duration-300 ${theme.footerStatusText}`}>
-                  Production Ready
+                  {t('productionReady')}
                 </span>
               </div>
             </motion.div>

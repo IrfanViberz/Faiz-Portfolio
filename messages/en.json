@@ -1,0 +1,374 @@
+{
+  "nav": {
+    "overview": "Overview",
+    "projects": "Side Projects",
+    "about": "About",
+    "contact": "Contact",
+    "projectsMobile": "Side Projects (Laboratory)"
+  },
+  "hero": {
+    "badge": "Fast Adaptable. Growth Mindset.",
+    "headline": "I don't just write code. I build systems and drive user acquisition.",
+    "description": "Hi, I'm Faiz — a Software Developer, bridging the gap between scalable software architecture (Angular/NestJS) and digital marketing ROI. I treat technical challenges as business problems to solve, combining solid code with data-driven paid advertising (Meta/TikTok/Shopee) to scale operations.",
+    "ctaHire": "Hire Me For Impact",
+    "ctaProjects": "See My Side Operations"
+  },
+  "value": {
+    "title": "Why I am an Asset (Not just an employee)",
+    "items": [
+      {
+        "title": "Revenue & Scale Focused",
+        "desc": "Code doesn't matter if nobody uses it. I understand both high-concurrency backend architecture and the marketing funnels required to acquire users."
+      },
+      {
+        "title": "Aggressive Learner",
+        "desc": "Technology moves too fast to wait for tutorials. I actively reverse-engineer systems, test AI potentials, and pull apart hardware to understand the full stack."
+      },
+      {
+        "title": "Production-Ready Execution",
+        "desc": "Proven experience shipping code in highly regulated environments (Healthcare/Logistics). I write clean, maintainable, and scalable architecture."
+      }
+    ]
+  },
+  "experience": {
+    "title": "Professional Experience",
+    "role": "Role",
+    "impact": "Key Impact",
+    "docs": "Documents",
+    "viewDoc": "View",
+    "downloadDoc": "Download",
+    "viewSite": "View Live Site",
+    "referenceAvailable": "Reference Available",
+    "items": [
+      {
+        "period": "2024",
+        "company": "Universiti Malaysia Pahang Al-Sultan Abdullah (UMPSA)",
+        "projects": [
+          {
+            "title": "Heavy Vehicle Recognition System",
+            "role": "Final Year Project (FYP) — Machine Learning Research",
+            "description": "Developed a deep learning system to classify heavy vehicles into small, medium, and large categories based on side-view images. Built using a CNN architecture with ResNet50 as the backbone, trained and evaluated in TensorFlow and Python. The system processes real-world vehicle images captured from road-side angles and outputs accurate size classification to support traffic monitoring and road safety applications.",
+            "impact": "",
+            "docs": [
+              { "label": "FYP Certificate", "description": "Official University Completion & Approval Certificate" },
+              { "label": "Research Paper / Journal", "description": "Full Academic Research Paper & Technical Methodology" }
+            ]
+          }
+        ]
+      },
+      {
+        "period": "2025",
+        "company": "StealthX Performance SDN BHD",
+        "projects": [
+          {
+            "title": "Workshop & Dyno Booking Platform",
+            "role": "Web Developer Intern",
+            "description": "Designed and developed a full-stack car workshop landing page and booking system, including an admin-facing management dashboard. Built with Next.js, Laravel, TypeScript, and MySQL. Features online booking flows, service catalog management, dyno session scheduling, and an admin panel for staff to manage appointments and reduce manual workload.",
+            "impact": "Reduced booking errors by 80% by replacing manual phone-based bookings with a structured online system. Cut staff workload by 90% through automated appointment tracking and admin dashboard tooling."
+          }
+        ]
+      },
+      {
+        "period": "2025 — 2026",
+        "company": "Bugz Studio SDN BHD",
+        "projects": [
+          {
+            "title": "Rest N Go (RNG) Ecosystem",
+            "role": "Mobile App & Admin Architecture",
+            "description": "Led the mobile application UI/UX overhaul from Figma design phase through to live production on iOS and Android. Engineered core mobile features with hardware-level QR scanners and built a robust Angular-based admin portal for centralized device and promotion management.",
+            "impact": "Enhanced overall user experience by delivering a more intuitive and visually refined interface, improving platform usability for customers and internal teams. Strengthened operational efficiency by streamlining promotion management workflows and ensuring more accurate transaction data representation."
+          },
+          {
+            "title": "Ekajaya Cement Distribution",
+            "role": "Logistics Frontend Module",
+            "description": "Architected core frontend modules and dynamic document generation utilizing Stimulsoft Report JS for specialized reporting.",
+            "impact": "Improved operational scalability by designing a structured frontend architecture capable of handling complex order workflows and large-scale distribution operations. Increased reporting efficiency by implementing dynamic document generation, enabling faster access to accurate business insights."
+          },
+          {
+            "title": "UMSC Q-Care & Doctor Portal",
+            "role": "Patient & Doctor Facing Applications",
+            "description": "Developed comprehensive patient and doctor dashboards seamlessly integrated with highly regulated healthcare backends.",
+            "impact": "Improved healthcare service accessibility by developing streamlined patient and doctor workflows, reducing friction in appointment-related processes. Enhanced operational efficiency through automation of insurance-related queries, allowing users to access important information faster."
+          },
+          {
+            "title": "AI-Assisted Development & Testing",
+            "role": "AI Workflow Automation",
+            "description": "Built an AI-assisted development and testing workflow using OpenClaw and Telegram to monitor coding progress, automate website testing, identify potential bugs, and communicate test results and status updates through a conversational interface.",
+            "impact": "Streamlined the development feedback loop by automating website testing and bug detection, delivering real-time coding status and test results directly via Telegram, significantly reducing manual monitoring overhead."
+          }
+        ]
+      }
+    ]
+  },
+  "stack": {
+    "title": "Technical Arsenal",
+    "productionReady": "Production Ready",
+    "coreTools": "Core Tools",
+    "items": [
+      {
+        "title": "Languages",
+        "tagline": "Core Programming & Data"
+      },
+      {
+        "title": "Frontend & Mobile",
+        "tagline": "Interactive UI & Native Apps"
+      },
+      {
+        "title": "Backend & Databases",
+        "tagline": "Scalable APIs & Data Logic"
+      },
+      {
+        "title": "Growth & Tools",
+        "tagline": "ROI, Systems & Diagnostics"
+      },
+      {
+        "title": "AI Automation",
+        "tagline": "Intelligent Workflows & AI Tools"
+      }
+    ]
+  },
+  "resume": {
+    "title": "Curriculum Vitae / Resume",
+    "viewPdf": "View PDF",
+    "downloadCv": "Download CV",
+    "items": [
+      {
+        "lang": "English",
+        "badge": "EN",
+        "title": "Resume — English Version",
+        "description": "Official English CV detailing full-stack software development, tech stack, and engineering achievements."
+      },
+      {
+        "lang": "Bahasa Melayu",
+        "badge": "BM",
+        "title": "Resume — Versi Bahasa Melayu",
+        "description": "Resume versi Bahasa Melayu merangkumi pengalaman pembangunan perisian, kepakaran teknikal, dan pencapaian projek."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Ready to accelerate your engineering?",
+    "description": "I am open for new roles and complex challenges. If your company needs an engineer who treats technical problems like business problems, let's talk.",
+    "button": "Initiate Contact"
+  },
+  "footer": {
+    "rights": "© 2026 Mohamad Faiz Irfan. All rights reserved.",
+    "tagline": "Engineered for Scale & Business ROI."
+  },
+  "about": {
+    "intro": {
+      "badge": "The person behind the code",
+      "role": "Software Developer",
+      "location": "Born 2001, Kelantan, Malaysia",
+      "bio1": "I am a software developer passionate about building scalable digital solutions that solve real-world problems and create genuine value for users and businesses.",
+      "bio2": "My approach combines a strong engineering foundation with a product mindset. I care deeply about why something is built, not just how. I bring the same energy to architecting a backend system as I do to understanding the business problem it's meant to solve.",
+      "quickProfile": "Quick Profile",
+      "profileFields": [
+        { "label": "Full Name", "value": "Mohamad Faiz Irfan bin Mohamad Zaid" },
+        { "label": "Role", "value": "Software Developer" },
+        { "label": "Specialisation", "value": "Frontend & Mobile Engineering" },
+        { "label": "Stack", "value": "Angular · NestJS · Ionic · Flutter" }
+      ]
+    },
+    "journey": {
+      "title": "02. My Journey & Education",
+      "items": [
+        {
+          "period": "2007 to 2012",
+          "institution": "Sekolah Kebangsaan Kampung Baharu",
+          "location": "Besut, Terengganu",
+          "field": "Primary Education",
+          "description": "Early education foundation that developed curiosity in learning and a natural drive toward problem solving and exploration."
+        },
+        {
+          "period": "2013 to 2016",
+          "institution": "Sekolah Menengah Kebangsaan Tengku Mahmud (TMS)",
+          "location": "Terengganu",
+          "field": "Science Major",
+          "description": "Built analytical thinking and scientific foundations. The science stream strengthened logical reasoning skills that would later shape an engineering mindset."
+        },
+        {
+          "period": "2017",
+          "institution": "Sekolah Menengah Kebangsaan Kubang Kerian",
+          "location": "Kelantan",
+          "field": "Science Major",
+          "description": "Continued strengthening scientific and analytical skills, adapting to a new environment while building resilience and adaptability."
+        },
+        {
+          "period": "2018 to 2020",
+          "institution": "Kolej Matrikulasi Kelantan",
+          "location": "Kelantan",
+          "field": "Science Major",
+          "description": "Built stronger foundations in mathematics, science, and structured problem solving. Prepared academically for an engineering focused university journey."
+        },
+        {
+          "period": "2021 to 2025",
+          "institution": "Universiti Malaysia Pahang Al-Sultan Abdullah (UMPSA)",
+          "location": "Pahang",
+          "field": "Bachelor of Computer Science (Software Engineering) with Honours",
+          "description": "Developed expertise in software development, system architecture, application development, and engineering practices. Where technical curiosity became professional capability."
+        }
+      ]
+    },
+    "philosophy": {
+      "title": "03. Engineering Philosophy",
+      "statement": "Software engineering is not only about writing code.",
+      "statementDetail": "The real craft is in the decisions made before, during, and after, shaping how a system is built, how a team communicates, and how technology translates to real-world value.",
+      "points": [
+        {
+          "label": "Understand first, code second",
+          "detail": "Before writing a single line, I seek to fully understand the problem, its constraints, and the people it affects. Good code starts with good questions."
+        },
+        {
+          "label": "Build for scalability and maintainability",
+          "detail": "Every architectural decision is made with the future in mind. Code that is easy to change is more valuable than code that is clever."
+        },
+        {
+          "label": "Craft meaningful user experiences",
+          "detail": "Software only succeeds when people actually use it. Bridging technical quality with real user needs is where engineering becomes impactful."
+        },
+        {
+          "label": "Connect technical decisions with business goals",
+          "detail": "Technology is a means, not an end. I treat engineering choices as business decisions, ensuring every solution moves the needle toward the right outcome."
+        }
+      ]
+    },
+    "beyondCoding": {
+      "title": "04. Beyond The Code",
+      "description": "What shapes an engineer is not only what they build, but how they live. These pursuits keep the mindset sharp, grounded, and always evolving.",
+      "interests": [
+        {
+          "title": "TikTok Affiliate & Digital Marketing",
+          "description": "Started doing TikTok affiliate out of curiosity and ended up genuinely enjoying the content creation side of it. I like understanding what makes people click, buy, and come back. Its part creative, part data."
+        },
+        {
+          "title": "Hardware & Laptop Repair",
+          "description": "I actually enjoy taking laptops apart and figuring out what is wrong with them. There is something satisfying about diagnosing a dead machine and bringing it back to life. Its like a puzzle every single time."
+        },
+        {
+          "title": "Gaming & Strategy",
+          "description": "Gaming is just something I genuinely love. I am drawn to games that make you think, whether its outplaying someone or figuring out the best strategy on the fly. Its my go to way to unwind and have fun."
+        },
+        {
+          "title": "Fitness & Gym",
+          "description": "Gym has become a big part of my routine. It keeps me grounded, clears my head, and honestly the discipline you build from showing up consistently carries into everything else in life."
+        },
+        {
+          "title": "Technology & Continuous Learning",
+          "description": "Always poking around new tools, gadgets, and tech that catches my eye. Whether its a new AI app or some random piece of hardware, I am probably already looking into it. I genuinely enjoy learning new things, not because I have to, but because staying curious keeps things interesting."
+        },
+        {
+          "title": "Sports",
+          "description": "Outside of screens I stay active through badminton and bowling. Badminton keeps me sharp and quick on my feet, while bowling is all about precision and consistency. Both sports teach patience, focus, and the drive to keep improving."
+        }
+      ]
+    },
+    "values": {
+      "title": "05. Personal Values",
+      "items": [
+        {
+          "title": "Growth Mindset",
+          "description": "Every challenge is a learning opportunity. I approach problems with curiosity, and treat every feedback loop as a chance to improve."
+        },
+        {
+          "title": "Problem Solving",
+          "description": "Breaking down complex systems into clear, practical solutions. I focus on understanding the root problem before writing a single line of code."
+        },
+        {
+          "title": "Ownership",
+          "description": "I take full responsibility for the quality and outcomes of my work. Shipping something means owning its reliability, not just its delivery."
+        },
+        {
+          "title": "Collaboration",
+          "description": "The best software is built together. Clear communication, shared context, and mutual respect are as important as technical skill."
+        }
+      ]
+    },
+    "goals": {
+      "title": "06. Current Focus & Goals",
+      "heading": "What I'm working toward right now.",
+      "subtext": "Goals keep the direction clear. These are the areas I am actively developing and the outcomes I am focused on achieving.",
+      "cta": "Let's Collaborate",
+      "items": [
+        "Building scalable software solutions with clean architecture",
+        "Continuously improving engineering depth and code quality",
+        "Exploring AI-assisted development workflows and automation",
+        "Creating digital products that solve real-world problems",
+        "Growing as a full-stack engineer across frontend and backend domains"
+      ]
+    }
+  },
+  "projects": {
+    "header": {
+      "title": "The Laboratory.",
+      "description": "Where I push boundaries. A showcase of independent web development, AI pipelines, hardware repair, and paid acquisition marketing."
+    },
+    "webApps": {
+      "title": "01. Side Projects & Web Applications",
+      "subtitle": "Full-stack SaaS platforms, client tools, and production UI/UX applications built for real users.",
+      "viewDemo": "View Project Demo",
+      "showMore": "Show More ({count} more projects)",
+      "showLess": "Show Less"
+    },
+    "n8n": {
+      "title": "02. n8n Automation Workflows",
+      "subtitle": "Production-ready webhook automations, AI agent pipelines, and system integrations with downloadable workflow JSON files.",
+      "trigger": "Trigger",
+      "coreNodes": "Core Nodes",
+      "downloadJson": "Download JSON",
+      "viewJson": "View JSON Code",
+      "clickToView": "Click to View Full Canvas",
+      "showMore": "Show More ({count} more automation)",
+      "showLess": "Show Less",
+      "copied": "Copied!",
+      "copyCode": "Copy Code"
+    },
+    "aiUgc": {
+      "title": "03. AI UGC Automation & Marketing",
+      "subtitle": "Autonomous content creation pipelines and paid advertising campaigns scaling organic user acquisition.",
+      "tiktokTitle": "TikTok AI Pipeline + Paid Ads Scaling",
+      "tiktokDesc": "Utilizing Google Flow and generative APIs to programmatically script and edit User-Generated Content (UGC) videos. What sets this apart is the execution: I directly deploy this AI content as creative assets for TikTok Ads, testing the limits of automated pipelines while optimizing ad spend for audience retention and conversion.",
+      "viewTiktok": "View TikTok Proof",
+      "youtubeTitle": "YouTube Shorts: AI Pipelines & Creative Video Edits",
+      "youtubeDesc": "Operating two YouTube channels highlighting both ends of content production: an automated AI pipeline channel (@beforeyouscroll26) powered by automated n8n workflows, GPT-4o scripting, ElevenLabs voiceovers, and Flux AI; alongside a dedicated video editing channel (@winking2608) where I craft motivational and narrative video edits, demonstrating hands-on video editing mastery, pacing, and visual storytelling.",
+      "viewVideoEdits": "View Video Edits (@winking2608)",
+      "viewAiChannel": "View AI Channel (@beforeyouscroll26)"
+    },
+    "hardware": {
+      "title": "04. Hardware Arbitrage & E-commerce",
+      "subtitle": "Physical component diagnostics, laptop restoration, and full-lifecycle ad-driven flipping operations.",
+      "cardTitle": "Device Restoration & Ad-Driven Flipping",
+      "cardDesc": "A hands-on secondary operation focused on sourcing, diagnosing, and repairing second-hand laptops. Restored units are strategically priced and flipped on platforms like Carousell. To scale volume, I run targeted Facebook Ads and Shopee Ads to acquire buyers efficiently. This proves I understand the full lifecycle: hardware infrastructure, digital marketing, and unit economics."
+    }
+  },
+  "contact": {
+    "header": {
+      "title": "Initiate Contact.",
+      "description": "Route a message directly to my inbox via the form below, or use the direct channels for an immediate response."
+    },
+    "form": {
+      "heading": "Transmission Form",
+      "namePlaceholder": "Your name or company",
+      "nameLabel": "Name / Organization",
+      "emailLabel": "Email Address",
+      "emailPlaceholder": "you@company.com",
+      "messageLabel": "Project Details / Inquiry",
+      "messagePlaceholder": "Describe your project, role opportunity, or how I can help...",
+      "submit": "Submit",
+      "submitting": "Submitting...",
+      "successMsg": "Message transmitted. I'll get back to you within 24–48 hours.",
+      "errorFallback": "Something went wrong. Please try again.",
+      "networkError": "Network error. Please check your connection and try again.",
+      "validationName": "Name must be at least 2 characters",
+      "validationEmail": "Please enter a valid email",
+      "validationMessage": "Message must be at least 10 characters"
+    },
+    "channels": {
+      "heading": "Direct Channels",
+      "whatsappTitle": "WhatsApp Priority",
+      "whatsappDesc": "Fastest response time for immediate opportunities.",
+      "emailTitle": "Standard Email",
+      "emailDesc": "For formal proposals and documentation."
+    }
+  }
+}
