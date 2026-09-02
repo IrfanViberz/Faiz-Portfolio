@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { MessageSquare, ChevronRight, User } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import React, { useState, useEffect } from 'react';
+import { useArcadeReady } from '@/lib/arcade-state';
 
 // ─── Clean Unified Entrance Animation ─────────────────────────────────────────
 const containerVariants = {
@@ -48,6 +49,7 @@ const imageVariants = {
 export default function HeroSection() {
   const t = useTranslations('hero');
   const [isFlipped, setIsFlipped] = useState(false);
+  const isReady = useArcadeReady();
 
   // Easter egg: auto flip back to original profile after 3 seconds
   useEffect(() => {
@@ -67,7 +69,7 @@ export default function HeroSection() {
     <motion.section
       variants={containerVariants}
       initial="hidden"
-      animate="visible"
+      animate={isReady ? 'visible' : 'hidden'}
       className="pt-32 pb-20 border-b border-[var(--border-color)] transition-colors duration-500 relative"
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">

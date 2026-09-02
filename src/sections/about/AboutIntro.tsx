@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { MapPin, Code2 } from 'lucide-react';
 import { useTranslations } from 'next-intl';
+import { useArcadeReady } from '@/lib/arcade-state';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -31,12 +32,13 @@ const itemVariants = {
 export default function AboutIntro() {
   const t = useTranslations('about.intro');
   const profileFields = t.raw('profileFields') as { label: string; value: string }[];
+  const isReady = useArcadeReady();
 
   return (
     <motion.section
       variants={containerVariants}
       initial="hidden"
-      animate="visible"
+      animate={isReady ? 'visible' : 'hidden'}
       className="pt-32 pb-24 border-b border-[var(--border-color)] transition-colors duration-500 relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">

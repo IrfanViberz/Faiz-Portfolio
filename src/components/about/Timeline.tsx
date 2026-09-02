@@ -71,7 +71,7 @@ const milestoneThemes = [
 ];
 
 export default function Timeline({ items }: TimelineProps) {
-  const [currentIndex, setCurrentIndex] = useState(items.length - 1);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState<1 | -1>(1);
   const containerRef = useRef<HTMLDivElement>(null);
 

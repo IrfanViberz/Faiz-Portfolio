@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { useTheme } from '@/lib/theme-context';
 import { useRouter, usePathname } from '@/i18n/routing';
+import { getArcadeDismissed, setArcadeDismissed } from '@/lib/arcade-state';
 import OfflineGame from './OfflineGame';
 
 const LOADING_MESSAGES = [
@@ -24,7 +25,14 @@ export default function ArcadeLoader() {
   const router = useRouter();
   const pathname = usePathname();
 
-  const [phase, setPhase] = useState<Phase>('loading');
+  // If already dismissed in this page lifecycle (e.g. language switch), skip immediately
+  const [phase, setPhase] = useState<Phase>(() => {
+    if (getArcadeDismissed()) {
+      return 'dismissed';
+    }
+    return 'loading';
+  });
+
   const [progress, setProgress] = useState(0);
   const [message, setMessage] = useState(LOADING_MESSAGES[0]);
   const [sliding, setSliding] = useState(false);
@@ -64,8 +72,13 @@ export default function ArcadeLoader() {
     }, 120);
   }, []);
 
-  // ─── Start on every page load / reload ──────────────────────────────────
+  // ─── Start loading unless already dismissed in this session lifecycle ───
   useEffect(() => {
+    if (getArcadeDismissed()) {
+      setPhase('dismissed');
+      return;
+    }
+
     if (typeof navigator !== 'undefined' && !navigator.onLine) {
       setPhase('offline');
     } else {
@@ -102,11 +115,13 @@ export default function ArcadeLoader() {
     };
   }, [phase, startLoading]);
 
-  // ─── Press Start handler (Always lands on Overview '/' upon entering) ───
+  // ─── Press Start handler (Navigates to Overview '/' upon entering) ───────
   const handleStart = () => {
     if (typeof navigator !== 'undefined' && !navigator.onLine) return;
 
-    // Reset location to Overview (home) on reload/start
+    setArcadeDismissed();
+
+    // Reset location to Overview (home) on start
     if (pathname !== '/') {
       router.replace('/');
     }
