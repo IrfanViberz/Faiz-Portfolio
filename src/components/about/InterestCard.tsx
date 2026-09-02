@@ -40,7 +40,7 @@ export default function InterestCard({ item, index }: InterestCardProps) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-40px' }}
       transition={{ duration: 0.45, delay: index * 0.07, ease: 'easeOut' }}
-      className="rounded-md border border-[var(--border-color)] bg-[var(--bg-secondary)] transition-colors duration-300 hover:border-[var(--text-tertiary)] group overflow-hidden"
+      className="rounded-md border border-[var(--border-color)] bg-[var(--bg-secondary)] transition-colors duration-300 group overflow-hidden"
     >
       {/* Image / Slideshow */}
       <div className="relative w-full h-72 overflow-hidden">

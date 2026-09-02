@@ -49,7 +49,7 @@ export const timeline: TimelineEntry[] = [
       'Continued strengthening scientific and analytical skills, adapting to a new environment while building resilience and adaptability.',
   },
   {
-    period: '2018 to 2020',
+    period: '2019 to 2021',
     institution: 'Kolej Matrikulasi Kelantan',
     location: 'Kelantan',
     field: 'Science Major',

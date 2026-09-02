@@ -25,10 +25,10 @@ export default function Navbar() {
         {/* Logo */}
         <Link
           href="/"
-          className="font-mono text-sm font-medium tracking-tight text-[var(--text-primary)] hover:opacity-70 transition-opacity"
+          className="font-mono text-sm font-semibold tracking-wider text-[var(--text-primary)] hover:opacity-70 transition-opacity"
           onClick={() => setIsMobileMenuOpen(false)}
         >
-          faiz_irfan<span className="text-[var(--text-tertiary)]">/</span>portfolio
+          FAIZ IRFAN
         </Link>
 
         {/* Desktop Nav */}

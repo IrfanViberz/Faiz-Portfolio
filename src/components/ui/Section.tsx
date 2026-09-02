@@ -38,10 +38,10 @@ export default function Section({
             {number ? (
               <div>
                 <div className="flex items-center gap-3 mb-2.5">
-                  <span className="inline-flex items-center justify-center px-2.5 py-0.5 rounded text-xs font-mono font-bold bg-cyan-500/15 text-cyan-900 border border-cyan-600/40 dark:bg-cyan-500/10 dark:text-cyan-400 dark:border-cyan-500/30 transition-colors duration-300">
+                  <span className="inline-flex items-center justify-center px-2.5 py-0.5 rounded text-xs font-mono font-bold bg-[var(--bg-secondary)] text-[var(--text-secondary)] border border-[var(--border-color)] transition-colors duration-300">
                     SECTION {number}
                   </span>
-                  <div className="h-px flex-1 max-w-xs bg-gradient-to-r from-cyan-600/40 dark:from-cyan-500/30 via-[var(--border-color)] to-transparent transition-colors duration-300" />
+                  <div className="h-px flex-1 max-w-xs bg-[var(--border-color)] transition-colors duration-300" />
                 </div>
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[var(--text-primary)] transition-colors duration-500">
                   {cleanTitle}

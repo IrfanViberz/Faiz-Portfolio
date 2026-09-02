@@ -4,34 +4,61 @@ import { motion } from 'framer-motion';
 import { MapPin, Code2 } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.12,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 24, filter: 'blur(6px)' },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: 'blur(0px)',
+    transition: {
+      duration: 0.7,
+      ease: [0.16, 1, 0.3, 1] as const,
+    },
+  },
+};
+
 export default function AboutIntro() {
   const t = useTranslations('about.intro');
   const profileFields = t.raw('profileFields') as { label: string; value: string }[];
 
   return (
     <motion.section
-      initial={{ opacity: 0, y: 12 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, ease: 'easeOut' }}
-      className="pt-32 pb-24 border-b border-[var(--border-color)] transition-colors duration-500"
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+      className="pt-32 pb-24 border-b border-[var(--border-color)] transition-colors duration-500 relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Status badge */}
-        <div className="flex items-center gap-3 mb-6">
+        <motion.div variants={itemVariants} className="flex items-center gap-3 mb-6">
           <div className="w-2 h-2 rounded-full bg-[var(--accent)] animate-pulse transition-colors duration-500" />
           <span className="text-xs font-mono text-[var(--text-tertiary)] uppercase tracking-wider transition-colors duration-500">
             {t('badge')}
           </span>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
           {/* Text */}
-          <div className="lg:col-span-8">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tighter leading-[1.1] text-[var(--text-primary)] mb-6 transition-colors duration-500">
+          <div className="lg:col-span-8 space-y-5">
+            <motion.h1
+              variants={itemVariants}
+              className="text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tighter leading-[1.1] text-[var(--text-primary)] transition-colors duration-500"
+            >
               Mohamad Faiz Irfan
-            </h1>
+            </motion.h1>
 
-            <div className="flex flex-wrap items-center gap-3 mb-8">
+            <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-3">
               <div className="flex items-center gap-2 text-sm font-mono text-[var(--text-tertiary)] transition-colors duration-500 bg-[var(--bg-secondary)] px-2.5 py-1 rounded-md border border-[var(--border-color)]">
                 <Code2 className="w-4 h-4 text-[var(--accent)]" />
                 <span>{t('role')}</span>
@@ -41,19 +68,25 @@ export default function AboutIntro() {
                 <MapPin className="w-4 h-4 text-[var(--accent)]" />
                 <span>{t('location')}</span>
               </div>
-            </div>
+            </motion.div>
 
-            <p className="text-lg text-[var(--text-secondary)] leading-relaxed mb-5 max-w-2xl transition-colors duration-500">
+            <motion.p
+              variants={itemVariants}
+              className="text-lg text-[var(--text-secondary)] leading-relaxed max-w-2xl transition-colors duration-500"
+            >
               {t('bio1')}
-            </p>
-            <p className="text-lg text-[var(--text-secondary)] leading-relaxed max-w-2xl transition-colors duration-500">
+            </motion.p>
+            <motion.p
+              variants={itemVariants}
+              className="text-lg text-[var(--text-secondary)] leading-relaxed max-w-2xl transition-colors duration-500"
+            >
               {t('bio2')}
-            </p>
+            </motion.p>
           </div>
 
           {/* Right summary card */}
-          <div className="lg:col-span-4">
-            <div className="p-6 rounded-md border border-[var(--border-color)] bg-[var(--bg-secondary)] transition-colors duration-500 shadow-sm">
+          <motion.div variants={itemVariants} className="lg:col-span-4">
+            <div className="p-6 rounded-2xl border border-[var(--border-color)] bg-[var(--bg-secondary)] transition-colors duration-500 shadow-md">
               <div className="flex items-center justify-between gap-2 mb-4">
                 <span className="text-xs font-mono text-[var(--text-tertiary)] uppercase tracking-widest transition-colors duration-500">
                   {t('quickProfile')}
@@ -83,7 +116,7 @@ export default function AboutIntro() {
                 ))}
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </motion.section>

@@ -1,10 +1,13 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
+import { Press_Start_2P } from 'next/font/google';
 import '../globals.css';
 import { ThemeProvider } from '@/lib/theme-context';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import ThemePullRope from '@/components/ui/ThemePullRope';
+import ArcadeLoader from '@/components/arcade/ArcadeLoader';
+import OfflineDetector from '@/components/arcade/OfflineDetector';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
@@ -17,6 +20,12 @@ const geistSans = Geist({
 
 const geistMono = Geist_Mono({
   variable: '--font-geist-mono',
+  subsets: ['latin'],
+});
+
+const pressStart2P = Press_Start_2P({
+  variable: '--font-press-start',
+  weight: '400',
   subsets: ['latin'],
 });
 
@@ -67,14 +76,19 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} className={`${geistSans.variable} ${geistMono.variable}`} suppressHydrationWarning>
+    <html lang={locale} className={`${geistSans.variable} ${geistMono.variable} ${pressStart2P.variable}`} suppressHydrationWarning>
       <body className="antialiased" suppressHydrationWarning>
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider>
+            {/* Retro Arcade Loading Overlay — renders on top of everything */}
+            <ArcadeLoader />
             <Navbar />
             <ThemePullRope />
-            <main className="min-h-[85vh]">{children}</main>
-            <Footer />
+            {/* Offline Detector — swaps to game when connection drops */}
+            <OfflineDetector>
+              <main className="min-h-[85vh]">{children}</main>
+              <Footer />
+            </OfflineDetector>
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>

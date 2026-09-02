@@ -11,50 +11,50 @@
 @custom-variant dark (&:where(.theme-dark, .theme-dark *));
 
 /* ============================================
-   DARK THEME (default)
+   DARK THEME (Sleek Dark Slate Gray / Cool Navy Tone)
    ============================================ */
 :root,
 .theme-dark {
-  --bg-primary: #09090b;
-  --bg-nav: rgba(9, 9, 11, 0.95);
-  --bg-secondary: rgba(39, 39, 42, 0.3);
-  --bg-tertiary: #18181b;
-  --text-primary: #f4f4f5;
-  --text-secondary: #a1a1aa;
-  --text-tertiary: #71717a;
-  --border-color: #27272a;
+  --bg-primary: #0e131b;
+  --bg-nav: rgba(14, 19, 27, 0.95);
+  --bg-secondary: rgba(26, 35, 48, 0.65);
+  --bg-tertiary: #192230;
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --text-tertiary: #64748b;
+  --border-color: #233044;
   --accent: #10b981;
-  --invert-bg: #f4f4f5;
-  --invert-text: #09090b;
-  --rope-color: #52525b;
-  --dot-color: rgba(63, 63, 70, 0.45);
-  --glow-tl: rgba(6, 182, 212, 0.07);
-  --glow-br: rgba(16, 185, 129, 0.06);
-  --glow-center: rgba(139, 92, 246, 0.04);
-  --vignette: rgba(9, 9, 11, 0.55);
+  --invert-bg: #f1f5f9;
+  --invert-text: #0e131b;
+  --rope-color: #475569;
+  --dot-color: rgba(148, 163, 184, 0.3);
+  --glow-tl: rgba(56, 189, 248, 0.08);
+  --glow-br: rgba(99, 102, 241, 0.07);
+  --glow-center: rgba(59, 130, 246, 0.04);
+  --vignette: rgba(14, 19, 27, 0.5);
 }
 
 /* ============================================
-   LIGHT THEME
+   LIGHT THEME (Soft Light Slate Gray)
    ============================================ */
 .theme-light {
-  --bg-primary: #fafafa;
-  --bg-nav: rgba(250, 250, 250, 0.95);
-  --bg-secondary: #ffffff;
-  --bg-tertiary: #f4f4f5;
-  --text-primary: #09090b;
-  --text-secondary: #52525b;
-  --text-tertiary: #a1a1aa;
-  --border-color: #e4e4e7;
+  --bg-primary: #ebeef2;
+  --bg-nav: rgba(235, 238, 242, 0.95);
+  --bg-secondary: #f6f8fa;
+  --bg-tertiary: #e1e5eb;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-tertiary: #64748b;
+  --border-color: #d4d9e2;
   --accent: #059669;
-  --invert-bg: #09090b;
-  --invert-text: #fafafa;
-  --rope-color: #d4d4d8;
-  --dot-color: rgba(161, 161, 170, 0.22);
-  --glow-tl: rgba(6, 182, 212, 0.06);
-  --glow-br: rgba(16, 185, 129, 0.05);
-  --glow-center: rgba(139, 92, 246, 0.03);
-  --vignette: rgba(250, 250, 250, 0.6);
+  --invert-bg: #0f172a;
+  --invert-text: #f8fafc;
+  --rope-color: #cbd5e1;
+  --dot-color: rgba(148, 163, 184, 0.35);
+  --glow-tl: rgba(56, 189, 248, 0.12);
+  --glow-br: rgba(99, 102, 241, 0.08);
+  --glow-center: rgba(59, 130, 246, 0.06);
+  --vignette: rgba(235, 238, 242, 0.65);
 }
 
 /* ============================================
@@ -175,5 +175,116 @@ body {
 .theme-transition {
   transition: background-color 0.5s ease, color 0.5s ease,
     border-color 0.5s ease;
+}
+
+/* ============================================
+   ARCADE LOADER — Retro Font & Effects
+   ============================================ */
+
+/* Retro pixel font for arcade UI (loaded via Next.js font in layout.tsx) */
+.retro-font {
+  font-family: var(--font-press-start), 'Press Start 2P', monospace;
+  text-transform: uppercase;
+}
+
+/* CRT scanline overlay (Dark Mode) */
+.crt::before {
+  content: ' ';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(
+      rgba(18, 16, 16, 0) 50%,
+      rgba(0, 0, 0, 0.25) 50%
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 0, 0, 0.06),
+      rgba(0, 255, 0, 0.02),
+      rgba(0, 0, 255, 0.06)
+    );
+  z-index: 50;
+  background-size: 100% 3px, 3px 100%;
+  pointer-events: none;
+}
+
+/* CRT scanline overlay (Light Mode) */
+.crt-light::before {
+  content: ' ';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0) 50%,
+      rgba(0, 0, 0, 0.06) 50%
+    ),
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.03),
+      rgba(0, 0, 0, 0.01),
+      rgba(0, 0, 0, 0.03)
+    );
+  z-index: 50;
+  background-size: 100% 3px, 3px 100%;
+  pointer-events: none;
+}
+
+/* Blinking text for arcade "PRESS START" */
+.arcade-blink {
+  animation: arcade-blinker 1s step-end infinite;
+}
+@keyframes arcade-blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Slide-up transition when loader dismisses */
+.arcade-slide-up {
+  animation: arcadeSlideUp 0.8s cubic-bezier(0.75, 0, 0.25, 1) forwards;
+}
+@keyframes arcadeSlideUp {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* Arcade game canvas */
+.arcade-canvas {
+  image-rendering: pixelated;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
+  background: linear-gradient(to bottom, #0a0a0a, #1a1a2e);
+  width: 100%;
+  aspect-ratio: 16/9;
+}
+
+/* Mobile action buttons for game controls */
+.arcade-action-btn {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 2px solid #444;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  font-size: 1.5rem;
+  transition: background-color 0.1s, border-color 0.1s;
+}
+.arcade-action-btn:active {
+  background-color: #0ff;
+  border-color: #0ff;
+  color: black;
 }
 
