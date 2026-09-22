@@ -24,50 +24,6 @@ export const valueItems: ValueItem[] = [
 
 export const experienceItems: ExperienceItem[] = [
   {
-    period: '2024',
-    company: 'Universiti Malaysia Pahang Al-Sultan Abdullah (UMPSA)',
-    projects: [
-      {
-        title: 'Heavy Vehicle Recognition System',
-        role: 'Final Year Project (FYP) — Machine Learning Research',
-        description:
-          'Developed a deep learning system to classify heavy vehicles into small, medium, and large categories based on side-view images. Built using a CNN architecture with ResNet50 as the backbone, trained and evaluated in TensorFlow and Python. The system processes real-world vehicle images captured from road-side angles and outputs accurate size classification to support traffic monitoring and road safety applications.',
-        tags: ['TensorFlow', 'Python', 'CNN', 'ResNet50', 'Machine Learning', 'Computer Vision'],
-        docs: [
-          {
-            label: 'FYP Certificate',
-            description: 'Official University Completion & Approval Certificate',
-            viewUrl: '/FYP_Certificate.pdf',
-            downloadName: 'FYP_Certificate_Faiz_Irfan.pdf',
-          },
-          {
-            label: 'Research Paper / Journal',
-            description: 'Full Academic Research Paper & Technical Methodology',
-            viewUrl: '/FYP_Paper.pdf',
-            downloadName: 'FYP_Paper_Faiz_Irfan.pdf',
-          },
-        ],
-      },
-    ],
-  },
-  {
-    period: '2025',
-    company: 'StealthX Performance SDN BHD',
-    projects: [
-      {
-        title: 'Workshop & Dyno Booking Platform',
-        role: 'Web Developer Intern',
-        description:
-          'Designed and developed a full-stack car workshop landing page and booking system, including an admin-facing management dashboard. Built with Next.js, Laravel, TypeScript, and MySQL. Features online booking flows, service catalog management, dyno session scheduling, and an admin panel for staff to manage appointments and reduce manual workload.',
-        impact:
-          'Reduced booking errors by 80% by replacing manual phone-based bookings with a structured online system. Cut staff workload by 90% through automated appointment tracking and admin dashboard tooling.',
-        tags: ['Next.js', 'Laravel', 'TypeScript', 'MySQL', 'PHP', 'Admin Dashboard'],
-        image: '/projects/stealthx.png',
-        siteLink: 'https://stealthxperformance.netlify.app/',
-      },
-    ],
-  },
-  {
     period: '2025 — 2026',
     company: 'Bugz Studio SDN BHD',
     referenceContact: true,
@@ -119,6 +75,75 @@ export const experienceItems: ExperienceItem[] = [
         impact:
           'Streamlined the development feedback loop by automating website testing and bug detection, delivering real-time coding status and test results directly via Telegram, significantly reducing manual monitoring overhead.',
         tags: ['OpenClaw', 'Telegram Bot', 'AI API', 'Ollama', 'Test Automation', 'AI Workflow'],
+      },
+    ],
+  },
+  {
+    period: '2025',
+    company: 'StealthX Performance SDN BHD',
+    projects: [
+      {
+        title: 'Workshop & Dyno Booking Platform',
+        role: 'Web Developer Intern',
+        description:
+          'Designed and developed a full-stack car workshop landing page and booking system, including an admin-facing management dashboard. Built with Next.js, Laravel, TypeScript, and MySQL. Features online booking flows, service catalog management, dyno session scheduling, and an admin panel for staff to manage appointments and reduce manual workload.',
+        impact:
+          'Reduced booking errors by 80% by replacing manual phone-based bookings with a structured online system. Cut staff workload by 90% through automated appointment tracking and admin dashboard tooling.',
+        tags: ['Next.js', 'Laravel', 'TypeScript', 'MySQL', 'PHP', 'Admin Dashboard'],
+        image: '/projects/stealthx.png',
+        siteLink: 'https://stealthxperformance.netlify.app/',
+      },
+    ],
+  },
+  {
+    period: '2024 — Present',
+    company: 'Freelance IT & Hardware Support',
+    projects: [
+      {
+        title: 'Independent IT & Hardware Support',
+        role: 'Freelance IT Technician',
+        description:
+          'Provided PC and laptop troubleshooting, hardware diagnosis, and general technical support. Performed Windows installation, system configuration, driver installation, and software troubleshooting. Assisted with hardware upgrades, component replacement, and general PC/laptop maintenance. Diagnosed issues involving storage, RAM, thermals, graphics, peripherals, and system performance.',
+        images: [
+          {
+            url: '/projects/freelance-it-1.jpg',
+            label: 'Hardware Diagnosis & Repair',
+            caption: 'Hands-on troubleshooting, component replacement, and system diagnostics for client devices.',
+          },
+          {
+            url: '/projects/freelance-it-2.jpg',
+            label: 'System Setup & Configuration',
+            caption: 'Windows installation, driver setup, software configuration, and performance optimization.',
+          },
+        ],
+        tags: ['Hardware Diagnosis', 'Windows Installation', 'System Configuration', 'PC Maintenance', 'Troubleshooting'],
+      },
+    ],
+  },
+  {
+    period: '2024',
+    company: 'Universiti Malaysia Pahang Al-Sultan Abdullah (UMPSA)',
+    projects: [
+      {
+        title: 'Heavy Vehicle Recognition System',
+        role: 'Final Year Project (FYP) — Machine Learning Research',
+        description:
+          'Developed a deep learning system to classify heavy vehicles into small, medium, and large categories based on side-view images. Built using a CNN architecture with ResNet50 as the backbone, trained and evaluated in TensorFlow and Python. The system processes real-world vehicle images captured from road-side angles and outputs accurate size classification to support traffic monitoring and road safety applications.',
+        tags: ['TensorFlow', 'Python', 'CNN', 'ResNet50', 'Machine Learning', 'Computer Vision'],
+        docs: [
+          {
+            label: 'FYP Certificate',
+            description: 'Official University Completion & Approval Certificate',
+            viewUrl: '/FYP_Certificate.pdf',
+            downloadName: 'FYP_Certificate_Faiz_Irfan.pdf',
+          },
+          {
+            label: 'Research Paper / Journal',
+            description: 'Full Academic Research Paper & Technical Methodology',
+            viewUrl: '/FYP_Paper.pdf',
+            downloadName: 'FYP_Paper_Faiz_Irfan.pdf',
+          },
+        ],
       },
     ],
   },

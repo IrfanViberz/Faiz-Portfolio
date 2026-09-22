@@ -10,8 +10,8 @@ export default function ProjectsPage() {
       <ProjectsHeader />
       <WebAppsSection />
       <N8nWorkflowsSection />
-      <AIUGCSection />
       <HardwareSection />
+      <AIUGCSection />
     </div>
   );
 }

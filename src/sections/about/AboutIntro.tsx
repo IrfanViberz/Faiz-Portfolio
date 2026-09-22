@@ -78,12 +78,14 @@ export default function AboutIntro() {
             >
               {t('bio1')}
             </motion.p>
-            <motion.p
-              variants={itemVariants}
-              className="text-lg text-[var(--text-secondary)] leading-relaxed max-w-2xl transition-colors duration-500"
-            >
-              {t('bio2')}
-            </motion.p>
+            {t('bio2') ? (
+              <motion.p
+                variants={itemVariants}
+                className="text-lg text-[var(--text-secondary)] leading-relaxed max-w-2xl transition-colors duration-500"
+              >
+                {t('bio2')}
+              </motion.p>
+            ) : null}
           </div>
 
           {/* Right summary card */}

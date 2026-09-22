@@ -8,8 +8,8 @@
   },
   "hero": {
     "badge": "Mudah Suai. Minda Berkembang.",
-    "headline": "Saya bukan sekadar menulis kod. Saya membina sistem dan memacu pemerolehan pengguna.",
-    "description": "Hai, saya Faiz — Pembangun Perisian yang merapatkan jurang antara seni bina perisian berskala (Angular/NestJS) dan ROI pemasaran digital. Saya menganggap cabaran teknikal sebagai masalah perniagaan, menggabungkan kod yang kukuh dengan iklan berbayar berasaskan data (Meta/TikTok/Shopee) untuk mengembangkan operasi.",
+    "headline": "Saya bukan sekadar menulis kod. Saya menyelesaikan masalah merentasi perisian dan perkakasan.",
+    "description": "Hai, saya Faiz — Profesional IT & Perisian dengan pengalaman dalam pembangunan perisian, pembaikan PC & komputer riba, penyelesaian masalah perkakasan, dan sokongan teknikal. Saya gemar menyelesaikan masalah merentasi perisian dan perkakasan, daripada membina aplikasi hingga mendiagnosis dan membaiki isu komputer.",
     "ctaHire": "Ambil Saya Untuk Impak",
     "ctaProjects": "Lihat Operasi Sampingan Saya"
   },
@@ -41,34 +41,6 @@
     "referenceAvailable": "Rujukan Tersedia",
     "items": [
       {
-        "period": "2024",
-        "company": "Universiti Malaysia Pahang Al-Sultan Abdullah (UMPSA)",
-        "projects": [
-          {
-            "title": "Sistem Pengenalan Kenderaan Berat",
-            "role": "Projek Tahun Akhir (FYP) — Penyelidikan Pembelajaran Mesin",
-            "description": "Membangunkan sistem pembelajaran mendalam untuk mengklasifikasikan kenderaan berat kepada kategori kecil, sederhana, dan besar berdasarkan imej pandangan sisi. Dibina menggunakan seni bina CNN dengan ResNet50 sebagai tulang belakang, dilatih dan dinilai dalam TensorFlow dan Python. Sistem ini memproses imej kenderaan dunia sebenar yang diambil dari sudut tepi jalan dan menghasilkan klasifikasi saiz yang tepat untuk menyokong pemantauan trafik dan aplikasi keselamatan jalan raya.",
-            "impact": "",
-            "docs": [
-              { "label": "Sijil FYP", "description": "Sijil Penyiapan & Kelulusan Universiti Rasmi" },
-              { "label": "Kertas Penyelidikan / Jurnal", "description": "Kertas Penyelidikan Akademik Lengkap & Metodologi Teknikal" }
-            ]
-          }
-        ]
-      },
-      {
-        "period": "2025",
-        "company": "StealthX Performance SDN BHD",
-        "projects": [
-          {
-            "title": "Platform Tempahan Bengkel & Dyno",
-            "role": "Pelatih Pembangun Web",
-            "description": "Mereka bentuk dan membangunkan laman web bengkel kereta full-stack dan sistem tempahan, termasuk papan pemuka pengurusan berorientasikan pentadbir. Dibina dengan Next.js, Laravel, TypeScript, dan MySQL. Menampilkan aliran tempahan dalam talian, pengurusan katalog perkhidmatan, penjadualan sesi dyno, dan panel pentadbir untuk kakitangan menguruskan temujanji dan mengurangkan beban kerja manual.",
-            "impact": "Mengurangkan ralat tempahan sebanyak 80% dengan menggantikan tempahan berasaskan telefon manual dengan sistem dalam talian yang berstruktur. Mengurangkan beban kerja kakitangan sebanyak 90% melalui pengesanan temujanji automatik dan alatan papan pemuka pentadbir."
-          }
-        ]
-      },
-      {
         "period": "2025 — 2026",
         "company": "Bugz Studio SDN BHD",
         "projects": [
@@ -95,6 +67,45 @@
             "role": "Automasi Aliran Kerja AI",
             "description": "Membangunkan aliran kerja pembangunan dan pengujian dibantu AI menggunakan OpenClaw dan Telegram untuk memantau kemajuan pengekodan, mengautomasikan pengujian laman web, mengenal pasti kemungkinan pepijat, dan menyampaikan keputusan ujian serta kemas kini status melalui antara muka perbualan.",
             "impact": "Memperkemas gelung maklum balas pembangunan dengan mengautomasikan pengujian laman web dan pengesanan pepijat, menyampaikan status pengekodan dan keputusan ujian secara masa nyata melalui Telegram, sekali gus mengurangkan dengan ketara overhed pemantauan manual."
+          }
+        ]
+      },
+      {
+        "period": "2025",
+        "company": "StealthX Performance SDN BHD",
+        "projects": [
+          {
+            "title": "Platform Tempahan Bengkel & Dyno",
+            "role": "Pelatih Pembangun Web",
+            "description": "Mereka bentuk dan membangunkan laman web bengkel kereta full-stack dan sistem tempahan, termasuk papan pemuka pengurusan berorientasikan pentadbir. Dibina dengan Next.js, Laravel, TypeScript, dan MySQL. Menampilkan aliran tempahan dalam talian, pengurusan katalog perkhidmatan, penjadualan sesi dyno, dan panel pentadbir untuk kakitangan menguruskan temujanji dan mengurangkan beban kerja manual.",
+            "impact": "Mengurangkan ralat tempahan sebanyak 80% dengan menggantikan tempahan berasaskan telefon manual dengan sistem dalam talian yang berstruktur. Mengurangkan beban kerja kakitangan sebanyak 90% melalui pengesanan temujanji automatik dan alatan papan pemuka pentadbir."
+          }
+        ]
+      },
+      {
+        "period": "2024 — Kini",
+        "company": "Sokongan IT & Perkakasan Bebas",
+        "projects": [
+          {
+            "title": "Sokongan IT & Perkakasan Bebas",
+            "role": "Juruteknik IT Bebas",
+            "description": "Menyediakan penyelesaian masalah PC dan komputer riba, diagnosis perkakasan, dan sokongan teknikal am. Melaksanakan pemasangan Windows, konfigurasi sistem, pemasangan pemacu, dan penyelesaian masalah perisian. Membantu dengan naik taraf perkakasan, penggantian komponen, dan penyelenggaraan am PC/komputer riba. Mendiagnosis isu berkaitan storan, RAM, terma, grafik, periferal, dan prestasi sistem."
+          }
+        ]
+      },
+      {
+        "period": "2024",
+        "company": "Universiti Malaysia Pahang Al-Sultan Abdullah (UMPSA)",
+        "projects": [
+          {
+            "title": "Sistem Pengenalan Kenderaan Berat",
+            "role": "Projek Tahun Akhir (FYP) — Penyelidikan Pembelajaran Mesin",
+            "description": "Membangunkan sistem pembelajaran mendalam untuk mengklasifikasikan kenderaan berat kepada kategori kecil, sederhana, dan besar berdasarkan imej pandangan sisi. Dibina menggunakan seni bina CNN dengan ResNet50 sebagai tulang belakang, dilatih dan dinilai dalam TensorFlow dan Python. Sistem ini memproses imej kenderaan dunia sebenar yang diambil dari sudut tepi jalan dan menghasilkan klasifikasi saiz yang tepat untuk menyokong pemantauan trafik dan aplikasi keselamatan jalan raya.",
+            "impact": "",
+            "docs": [
+              { "label": "Sijil FYP", "description": "Sijil Penyiapan & Kelulusan Universiti Rasmi" },
+              { "label": "Kertas Penyelidikan / Jurnal", "description": "Kertas Penyelidikan Akademik Lengkap & Metodologi Teknikal" }
+            ]
           }
         ]
       }
@@ -131,20 +142,12 @@
     "title": "Curriculum Vitae / Resume",
     "viewPdf": "Lihat PDF",
     "downloadCv": "Muat Turun CV",
-    "items": [
-      {
-        "lang": "English",
-        "badge": "EN",
-        "title": "Resume — Versi Bahasa Inggeris",
-        "description": "CV rasmi dalam Bahasa Inggeris yang memperincikan pembangunan perisian full-stack, tindanan teknologi, dan pencapaian kejuruteraan."
-      },
-      {
-        "lang": "Bahasa Melayu",
-        "badge": "BM",
-        "title": "Resume — Versi Bahasa Melayu",
-        "description": "Resume versi Bahasa Melayu merangkumi pengalaman pembangunan perisian, kepakaran teknikal, dan pencapaian projek."
-      }
-    ]
+    "item": {
+      "lang": "English",
+      "badge": "EN",
+      "title": "Resume — Versi Bahasa Inggeris",
+      "description": "CV rasmi dalam Bahasa Inggeris yang memperincikan pembangunan perisian full-stack, tindanan teknologi, dan pencapaian kejuruteraan."
+    }
   },
   "cta": {
     "title": "Bersedia untuk mempercepatkan kejuruteraan anda?",
@@ -158,20 +161,20 @@
   "about": {
     "intro": {
       "badge": "Insan di sebalik kod",
-      "role": "Pembangun Perisian",
+      "role": "Profesional IT & Perisian",
       "location": "Lahir 2001, Kelantan, Malaysia",
-      "bio1": "Saya adalah pembangun perisian yang bersemangat dalam membina penyelesaian digital berskala yang menyelesaikan masalah dunia sebenar dan mencipta nilai tulen untuk pengguna dan perniagaan.",
-      "bio2": "Pendekatan saya menggabungkan asas kejuruteraan yang kukuh dengan minda produk. Saya sangat mengambil berat tentang mengapa sesuatu dibina, bukan sekadar bagaimana. Saya membawa tenaga yang sama dalam merekabentuk sistem backend seperti dalam memahami masalah perniagaan yang ingin diselesaikannya.",
+      "bio1": "Saya seorang Profesional IT & Perisian yang bersemangat dalam menyelesaikan masalah teknikal dunia sebenar merentasi perisian dan perkakasan. Daripada membina aplikasi digital hingga mendiagnosis dan membaiki PC serta komputer riba, saya gemar memahami cara sistem berfungsi dan mencari penyelesaian praktikal.",
+      "bio2": "",
       "quickProfile": "Profil Ringkas",
       "profileFields": [
         { "label": "Nama Penuh", "value": "Mohamad Faiz Irfan bin Mohamad Zaid" },
-        { "label": "Peranan", "value": "Pembangun Perisian" },
-        { "label": "Pengkhususan", "value": "Kejuruteraan Frontend & Mudah Alih" },
-        { "label": "Tindanan", "value": "Angular · NestJS · Ionic · Flutter" }
+        { "label": "Peranan", "value": "Profesional IT & Perisian" },
+        { "label": "Pengkhususan", "value": "Pembangunan Perisian · Sokongan IT · Penyelesaian Masalah Perkakasan" },
+        { "label": "Kemahiran Teknikal", "value": "Angular · NestJS · Ionic · Python · Pembaikan PC/Komputer Riba" }
       ]
     },
     "journey": {
-      "title": "02. Perjalanan & Pendidikan Saya",
+      "title": "02. Perjalanan Saya",
       "items": [
         {
           "period": "2007 hingga 2012",
@@ -211,25 +214,25 @@
       ]
     },
     "philosophy": {
-      "title": "03. Falsafah Kejuruteraan",
-      "statement": "Kejuruteraan perisian bukan sekadar menulis kod.",
-      "statementDetail": "Kemahiran sebenar terletak pada keputusan yang dibuat sebelum, semasa, dan selepas, membentuk cara sistem dibina, cara pasukan berkomunikasi, dan cara teknologi diterjemahkan kepada nilai dunia sebenar.",
+      "title": "03. Falsafah Teknikal",
+      "statement": "Teknologi lebih daripada sekadar menulis kod.",
+      "statementDetail": "Sama ada membina perisian atau menyelesaikan masalah perkakasan, saya fokus untuk memahami masalah utama, mencari penyelesaian praktikal, dan memastikan sistem berfungsi dengan baik.",
       "points": [
         {
-          "label": "Faham dahulu, baru kod",
-          "detail": "Sebelum menulis satu baris pun, saya berusaha memahami sepenuhnya masalah, kekangannya, dan orang yang terlibat. Kod yang baik bermula dengan soalan yang baik."
+          "label": "Faham dahulu, selesai kemudian",
+          "detail": "Sebelum menyentuh kod, perkakasan, atau sistem, saya terlebih dahulu memahami masalah, simptomnya, dan kemungkinan puncanya."
         },
         {
-          "label": "Bina untuk skalabiliti dan penyelenggaraan",
-          "detail": "Setiap keputusan seni bina dibuat dengan mengambil kira masa depan. Kod yang mudah diubah lebih berharga daripada kod yang pintar."
+          "label": "Selesaikan masalah utama",
+          "detail": "Saya fokus untuk mengenal pasti mengapa sesuatu gagal dan bukannya sekadar merawat simptomnya."
         },
         {
-          "label": "Cipta pengalaman pengguna yang bermakna",
-          "detail": "Perisian hanya berjaya apabila orang benar-benar menggunakannya. Merapatkan kualiti teknikal dengan keperluan pengguna sebenar adalah di mana kejuruteraan menjadi berimpak."
+          "label": "Bina dan selenggara sistem yang boleh dipercayai",
+          "detail": "Sama ada aplikasi perisian atau PC, saya menghargai penyelesaian yang stabil, mudah diselenggara, dan boleh dipercayai."
         },
         {
-          "label": "Hubungkan keputusan teknikal dengan matlamat perniagaan",
-          "detail": "Teknologi adalah cara, bukan tujuan. Saya menganggap pilihan kejuruteraan sebagai keputusan perniagaan, memastikan setiap penyelesaian menggerakkan jarum ke arah hasil yang betul."
+          "label": "Terus belajar merentasi teknologi",
+          "detail": "Perisian dan perkakasan sentiasa berkembang. Saya terus mengembangkan pengetahuan teknikal untuk menyelesaikan pelbagai masalah yang lebih luas."
         }
       ]
     },
@@ -272,11 +275,11 @@
         },
         {
           "title": "Penyelesaian Masalah",
-          "description": "Menguraikan sistem kompleks kepada penyelesaian yang jelas dan praktikal. Saya fokus memahami masalah teras sebelum menulis satu baris kod."
+          "description": "Menguraikan isu teknikal yang kompleks kepada penyelesaian yang jelas dan praktikal. Saya fokus memahami masalah utama sebelum memutuskan cara menyelesaikannya."
         },
         {
           "title": "Tanggungjawab",
-          "description": "Saya bertanggungjawab sepenuhnya terhadap kualiti dan hasil kerja saya. Menghantar sesuatu bermakna memiliki keandalannya, bukan sekadar penghantarannya."
+          "description": "Saya bertanggungjawab terhadap kualiti dan kebolehpercayaan penyelesaian yang saya usahakan, sama ada perisian, perkakasan, atau sokongan teknikal."
         },
         {
           "title": "Kerjasama",
@@ -287,14 +290,14 @@
     "goals": {
       "title": "06. Fokus & Matlamat Semasa",
       "heading": "Apa yang saya usahakan sekarang.",
-      "subtext": "Matlamat memastikan arah tetap jelas. Ini adalah bidang yang saya kembangkan secara aktif dan hasil yang saya fokuskan untuk dicapai.",
+      "subtext": "Matlamat saya adalah untuk terus berkembang sebagai profesional IT yang menyeluruh, menggabungkan pembangunan perisian dengan kemahiran teknikal dan perkakasan secara langsung.",
       "cta": "Mari Bekerjasama",
       "items": [
-        "Membina penyelesaian perisian berskala dengan seni bina yang bersih",
-        "Terus meningkatkan kedalaman kejuruteraan dan kualiti kod",
-        "Meneroka aliran kerja pembangunan dan automasi dibantu AI",
-        "Mencipta produk digital yang menyelesaikan masalah dunia sebenar",
-        "Berkembang sebagai jurutera full-stack merentasi domain frontend dan backend"
+        "Membina aplikasi perisian dan penyelesaian digital yang boleh dipercayai",
+        "Meningkatkan kemahiran penyelesaian masalah PC, komputer riba, dan perkakasan",
+        "Meneroka pembangunan dibantu AI dan automasi teknikal",
+        "Mengembangkan pengetahuan merentasi perisian, perkakasan, dan sistem IT",
+        "Menyelesaikan masalah teknikal dunia sebenar melalui penyelesaian praktikal"
       ]
     }
   },
@@ -323,8 +326,14 @@
       "copied": "Disalin!",
       "copyCode": "Salin Kod"
     },
+    "hardware": {
+      "title": "03. Pembaikan Perkakasan & Jualan Barangan Terpakai",
+      "subtitle": "Diagnostik PC dan komputer riba, pembaikan perkakasan, serta penjualan peranti terpakai yang dibaik pulih secara dalam talian.",
+      "cardTitle": "Pemulihan Komputer Riba & Jualan Barangan Terpakai",
+      "cardDesc": "Pengalaman praktikal dalam mencari, mendiagnosis, dan membaiki komputer riba serta PC terpakai. Peranti yang telah dibaiki diuji dan dijual melalui platform seperti Carousell. Bagi menjangkau lebih ramai pembeli, saya turut menjalankan Iklan Facebook dan Iklan Shopee yang disasarkan, menggabungkan kemahiran pembaikan perkakasan dengan pemasaran digital."
+    },
     "aiUgc": {
-      "title": "03. Automasi AI UGC & Pemasaran",
+      "title": "04. Automasi AI UGC & Pemasaran",
       "subtitle": "Saluran paip penciptaan kandungan autonomi dan kempen iklan berbayar yang mengembangkan pemerolehan pengguna organik.",
       "tiktokTitle": "Saluran Paip AI TikTok + Penskalaan Iklan Berbayar",
       "tiktokDesc": "Menggunakan Google Flow dan API generatif untuk mengskrip dan mengedit video User-Generated Content (UGC) secara pemrograman. Yang membezakannya adalah pelaksanaannya: saya terus menggunakan kandungan AI ini sebagai aset kreatif untuk Iklan TikTok, menguji had saluran paip automatik sambil mengoptimumkan perbelanjaan iklan untuk pengekalan dan penukaran penonton.",
@@ -333,12 +342,6 @@
       "youtubeDesc": "Mengendalikan dua saluran YouTube yang menonjolkan kedua-dua hujung pengeluaran kandungan: saluran paip AI automatik (@beforeyouscroll26) dikuasakan oleh aliran kerja n8n automatik, skrip GPT-4o, suara ElevenLabs, dan Flux AI; bersama saluran pengeditan video khusus (@winking2608) di mana saya mencipta edit video motivasi dan naratif, menunjukkan penguasaan pengeditan video praktikal, pacing, dan penceritaan visual.",
       "viewVideoEdits": "Lihat Edit Video (@winking2608)",
       "viewAiChannel": "Lihat Saluran AI (@beforeyouscroll26)"
-    },
-    "hardware": {
-      "title": "04. Arbitraj Perkakasan & E-dagang",
-      "subtitle": "Diagnostik komponen fizikal, pemulihan komputer riba, dan operasi jualan semula dipacu iklan kitaran penuh.",
-      "cardTitle": "Pemulihan Peranti & Jualan Semula Dipacu Iklan",
-      "cardDesc": "Operasi sekunder secara langsung yang memberi tumpuan kepada mencari, mendiagnosis, dan membaiki komputer riba terpakai. Unit yang dipulihkan dihargai secara strategik dan dijual semula di platform seperti Carousell. Untuk meningkatkan volum, saya menjalankan Iklan Facebook dan Iklan Shopee yang disasarkan untuk mendapatkan pembeli dengan cekap. Ini membuktikan bahawa saya memahami kitaran penuh: infrastruktur perkakasan, pemasaran digital, dan ekonomi unit."
     }
   },
   "contact": {

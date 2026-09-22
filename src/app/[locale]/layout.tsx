@@ -30,16 +30,17 @@ const pressStart2P = Press_Start_2P({
 });
 
 export const metadata: Metadata = {
-  title: 'Faiz Irfan — Software Developer',
+  title: 'Faiz Irfan — IT & Software Professional',
   description:
-    'Growth Engineer bridging scalable software architecture (Angular/NestJS) and digital marketing ROI. Open for new roles and complex challenges.',
+    'IT & Software Professional with experience in software development, PC & laptop repair, hardware troubleshooting, and technical support.',
   keywords: [
     'Faiz Irfan',
-    'Growth Engineer',
-    'Software Engineer',
+    'IT Professional',
+    'Software Developer',
+    'Hardware Troubleshooting',
+    'PC Repair',
     'Angular',
     'NestJS',
-    'Digital Marketing',
     'Portfolio',
   ],
   authors: [{ name: 'Mohamad Faiz Irfan' }],
@@ -49,9 +50,9 @@ export const metadata: Metadata = {
     apple: '/logo.png',
   },
   openGraph: {
-    title: 'Faiz Irfan — Growth Engineer',
+    title: 'Faiz Irfan — IT & Software Professional',
     description:
-      'Growth Engineer bridging scalable software architecture and digital marketing ROI.',
+      'IT & Software Professional with experience in software development, PC & laptop repair, hardware troubleshooting, and technical support.',
     type: 'website',
   },
 };

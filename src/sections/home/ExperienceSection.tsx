@@ -196,17 +196,8 @@ export default function ExperienceSection() {
                           </div>
                         )}
 
-                        {/* Business Impact callout (Only rendered if impact exists) */}
-                        {proj.impact && (
-                          <div className="p-4 bg-[var(--bg-tertiary)] border border-[var(--border-color)] rounded-lg mb-5 border-l-4 border-l-amber-500">
-                            <span className="text-xs font-mono font-bold text-amber-500 uppercase tracking-wider block mb-1 transition-colors duration-500">
-                              {t('impact')}:
-                            </span>
-                            <span className="text-sm text-[var(--text-secondary)] transition-colors duration-500">
-                              {proj.impact}
-                            </span>
-                          </div>
-                        )}
+
+
 
                         {/* Tags */}
                         <div className="flex gap-2 flex-wrap mb-5">

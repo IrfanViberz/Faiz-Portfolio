@@ -8,8 +8,8 @@
   },
   "hero": {
     "badge": "Fast Adaptable. Growth Mindset.",
-    "headline": "I don't just write code. I build systems and drive user acquisition.",
-    "description": "Hi, I'm Faiz — a Software Developer, bridging the gap between scalable software architecture (Angular/NestJS) and digital marketing ROI. I treat technical challenges as business problems to solve, combining solid code with data-driven paid advertising (Meta/TikTok/Shopee) to scale operations.",
+    "headline": "I don't just write code. I solve problems across software and hardware.",
+    "description": "Hi, I'm Faiz — an IT & Software Professional with experience in software development, PC & laptop repair, hardware troubleshooting, and technical support. I enjoy solving problems across both software and hardware, from building applications to diagnosing and fixing computer issues.",
     "ctaHire": "Hire Me For Impact",
     "ctaProjects": "See My Side Operations"
   },
@@ -41,34 +41,6 @@
     "referenceAvailable": "Reference Available",
     "items": [
       {
-        "period": "2024",
-        "company": "Universiti Malaysia Pahang Al-Sultan Abdullah (UMPSA)",
-        "projects": [
-          {
-            "title": "Heavy Vehicle Recognition System",
-            "role": "Final Year Project (FYP) — Machine Learning Research",
-            "description": "Developed a deep learning system to classify heavy vehicles into small, medium, and large categories based on side-view images. Built using a CNN architecture with ResNet50 as the backbone, trained and evaluated in TensorFlow and Python. The system processes real-world vehicle images captured from road-side angles and outputs accurate size classification to support traffic monitoring and road safety applications.",
-            "impact": "",
-            "docs": [
-              { "label": "FYP Certificate", "description": "Official University Completion & Approval Certificate" },
-              { "label": "Research Paper / Journal", "description": "Full Academic Research Paper & Technical Methodology" }
-            ]
-          }
-        ]
-      },
-      {
-        "period": "2025",
-        "company": "StealthX Performance SDN BHD",
-        "projects": [
-          {
-            "title": "Workshop & Dyno Booking Platform",
-            "role": "Web Developer Intern",
-            "description": "Designed and developed a full-stack car workshop landing page and booking system, including an admin-facing management dashboard. Built with Next.js, Laravel, TypeScript, and MySQL. Features online booking flows, service catalog management, dyno session scheduling, and an admin panel for staff to manage appointments and reduce manual workload.",
-            "impact": "Reduced booking errors by 80% by replacing manual phone-based bookings with a structured online system. Cut staff workload by 90% through automated appointment tracking and admin dashboard tooling."
-          }
-        ]
-      },
-      {
         "period": "2025 — 2026",
         "company": "Bugz Studio SDN BHD",
         "projects": [
@@ -95,6 +67,45 @@
             "role": "AI Workflow Automation",
             "description": "Built an AI-assisted development and testing workflow using OpenClaw and Telegram to monitor coding progress, automate website testing, identify potential bugs, and communicate test results and status updates through a conversational interface.",
             "impact": "Streamlined the development feedback loop by automating website testing and bug detection, delivering real-time coding status and test results directly via Telegram, significantly reducing manual monitoring overhead."
+          }
+        ]
+      },
+      {
+        "period": "2025",
+        "company": "StealthX Performance SDN BHD",
+        "projects": [
+          {
+            "title": "Workshop & Dyno Booking Platform",
+            "role": "Web Developer Intern",
+            "description": "Designed and developed a full-stack car workshop landing page and booking system, including an admin-facing management dashboard. Built with Next.js, Laravel, TypeScript, and MySQL. Features online booking flows, service catalog management, dyno session scheduling, and an admin panel for staff to manage appointments and reduce manual workload.",
+            "impact": "Reduced booking errors by 80% by replacing manual phone-based bookings with a structured online system. Cut staff workload by 90% through automated appointment tracking and admin dashboard tooling."
+          }
+        ]
+      },
+      {
+        "period": "2024 — Present",
+        "company": "Freelance IT & Hardware Support",
+        "projects": [
+          {
+            "title": "Independent IT & Hardware Support",
+            "role": "Freelance IT Technician",
+            "description": "Provided PC and laptop troubleshooting, hardware diagnosis, and general technical support. Performed Windows installation, system configuration, driver installation, and software troubleshooting. Assisted with hardware upgrades, component replacement, and general PC/laptop maintenance. Diagnosed issues involving storage, RAM, thermals, graphics, peripherals, and system performance."
+          }
+        ]
+      },
+      {
+        "period": "2024",
+        "company": "Universiti Malaysia Pahang Al-Sultan Abdullah (UMPSA)",
+        "projects": [
+          {
+            "title": "Heavy Vehicle Recognition System",
+            "role": "Final Year Project (FYP) — Machine Learning Research",
+            "description": "Developed a deep learning system to classify heavy vehicles into small, medium, and large categories based on side-view images. Built using a CNN architecture with ResNet50 as the backbone, trained and evaluated in TensorFlow and Python. The system processes real-world vehicle images captured from road-side angles and outputs accurate size classification to support traffic monitoring and road safety applications.",
+            "impact": "",
+            "docs": [
+              { "label": "FYP Certificate", "description": "Official University Completion & Approval Certificate" },
+              { "label": "Research Paper / Journal", "description": "Full Academic Research Paper & Technical Methodology" }
+            ]
           }
         ]
       }
@@ -131,20 +142,12 @@
     "title": "Curriculum Vitae / Resume",
     "viewPdf": "View PDF",
     "downloadCv": "Download CV",
-    "items": [
-      {
-        "lang": "English",
-        "badge": "EN",
-        "title": "Resume — English Version",
-        "description": "Official English CV detailing full-stack software development, tech stack, and engineering achievements."
-      },
-      {
-        "lang": "Bahasa Melayu",
-        "badge": "BM",
-        "title": "Resume — Versi Bahasa Melayu",
-        "description": "Resume versi Bahasa Melayu merangkumi pengalaman pembangunan perisian, kepakaran teknikal, dan pencapaian projek."
-      }
-    ]
+    "item": {
+      "lang": "English",
+      "badge": "EN",
+      "title": "Resume — English Version",
+      "description": "Official English CV detailing full-stack software development, tech stack, and engineering achievements."
+    }
   },
   "cta": {
     "title": "Ready to accelerate your engineering?",
@@ -158,20 +161,20 @@
   "about": {
     "intro": {
       "badge": "The person behind the code",
-      "role": "Software Developer",
+      "role": "IT & Software Professional",
       "location": "Born 2001, Kelantan, Malaysia",
-      "bio1": "I am a software developer passionate about building scalable digital solutions that solve real-world problems and create genuine value for users and businesses.",
-      "bio2": "My approach combines a strong engineering foundation with a product mindset. I care deeply about why something is built, not just how. I bring the same energy to architecting a backend system as I do to understanding the business problem it's meant to solve.",
+      "bio1": "I am an IT & Software Professional passionate about solving real-world technical problems across software and hardware. From building digital applications to diagnosing and repairing PCs and laptops, I enjoy understanding how systems work and finding practical solutions.",
+      "bio2": "",
       "quickProfile": "Quick Profile",
       "profileFields": [
         { "label": "Full Name", "value": "Mohamad Faiz Irfan bin Mohamad Zaid" },
-        { "label": "Role", "value": "Software Developer" },
-        { "label": "Specialisation", "value": "Frontend & Mobile Engineering" },
-        { "label": "Stack", "value": "Angular · NestJS · Ionic · Flutter" }
+        { "label": "Role", "value": "IT & Software Professional" },
+        { "label": "Specialisation", "value": "Software Development · IT Support · Hardware Troubleshooting" },
+        { "label": "Technical Skills", "value": "Angular · NestJS · Ionic · Python · PC/Laptop Repair" }
       ]
     },
     "journey": {
-      "title": "02. My Journey & Education",
+      "title": "02. My Journey",
       "items": [
         {
           "period": "2007 to 2012",
@@ -211,25 +214,25 @@
       ]
     },
     "philosophy": {
-      "title": "03. Engineering Philosophy",
-      "statement": "Software engineering is not only about writing code.",
-      "statementDetail": "The real craft is in the decisions made before, during, and after, shaping how a system is built, how a team communicates, and how technology translates to real-world value.",
+      "title": "03. Technical Philosophy",
+      "statement": "Technology is more than writing code.",
+      "statementDetail": "Whether I'm building software or troubleshooting hardware, I focus on understanding the root problem, finding practical solutions, and making systems work reliably.",
       "points": [
         {
-          "label": "Understand first, code second",
-          "detail": "Before writing a single line, I seek to fully understand the problem, its constraints, and the people it affects. Good code starts with good questions."
+          "label": "Understand first, solve second",
+          "detail": "Before touching the code, hardware, or system, I first understand the problem, its symptoms, and its possible causes."
         },
         {
-          "label": "Build for scalability and maintainability",
-          "detail": "Every architectural decision is made with the future in mind. Code that is easy to change is more valuable than code that is clever."
+          "label": "Solve the root problem",
+          "detail": "I focus on identifying why something is failing rather than simply treating the symptoms."
         },
         {
-          "label": "Craft meaningful user experiences",
-          "detail": "Software only succeeds when people actually use it. Bridging technical quality with real user needs is where engineering becomes impactful."
+          "label": "Build and maintain reliable systems",
+          "detail": "Whether it's a software application or a PC, I value solutions that are stable, maintainable, and reliable."
         },
         {
-          "label": "Connect technical decisions with business goals",
-          "detail": "Technology is a means, not an end. I treat engineering choices as business decisions, ensuring every solution moves the needle toward the right outcome."
+          "label": "Keep learning across technology",
+          "detail": "Software and hardware are constantly evolving. I continuously expand my technical knowledge to solve a wider range of problems."
         }
       ]
     },
@@ -272,11 +275,11 @@
         },
         {
           "title": "Problem Solving",
-          "description": "Breaking down complex systems into clear, practical solutions. I focus on understanding the root problem before writing a single line of code."
+          "description": "Breaking down complex technical issues into clear, practical solutions. I focus on understanding the root problem before deciding how to fix it."
         },
         {
           "title": "Ownership",
-          "description": "I take full responsibility for the quality and outcomes of my work. Shipping something means owning its reliability, not just its delivery."
+          "description": "I take responsibility for the quality and reliability of the solutions I work on, whether it's software, hardware, or technical support."
         },
         {
           "title": "Collaboration",
@@ -287,14 +290,14 @@
     "goals": {
       "title": "06. Current Focus & Goals",
       "heading": "What I'm working toward right now.",
-      "subtext": "Goals keep the direction clear. These are the areas I am actively developing and the outcomes I am focused on achieving.",
+      "subtext": "My goal is to continue growing as a well-rounded IT professional, combining software development with hands-on technical and hardware skills.",
       "cta": "Let's Collaborate",
       "items": [
-        "Building scalable software solutions with clean architecture",
-        "Continuously improving engineering depth and code quality",
-        "Exploring AI-assisted development workflows and automation",
-        "Creating digital products that solve real-world problems",
-        "Growing as a full-stack engineer across frontend and backend domains"
+        "Building reliable software applications and digital solutions",
+        "Improving my PC, laptop, and hardware troubleshooting skills",
+        "Exploring AI-assisted development and technical automation",
+        "Expanding my knowledge across software, hardware, and IT systems",
+        "Solving real-world technical problems through practical solutions"
       ]
     }
   },
@@ -323,8 +326,14 @@
       "copied": "Copied!",
       "copyCode": "Copy Code"
     },
+    "hardware": {
+      "title": "03. Hardware Repair & Used Item Seller",
+      "subtitle": "PC and laptop diagnostics, hardware repair, and reselling refurbished devices online.",
+      "cardTitle": "Laptop Restoration & Used Item Sales",
+      "cardDesc": "Hands-on experience in sourcing, diagnosing, and repairing second hand laptops and PCs. Restored devices are tested, refurbished, and sold on platforms like Carousell. To reach more buyers, I run targeted Facebook Ads and Shopee Ads to market products effectively, combining practical hardware repair skills with digital marketing."
+    },
     "aiUgc": {
-      "title": "03. AI UGC Automation & Marketing",
+      "title": "04. AI UGC Automation & Marketing",
       "subtitle": "Autonomous content creation pipelines and paid advertising campaigns scaling organic user acquisition.",
       "tiktokTitle": "TikTok AI Pipeline + Paid Ads Scaling",
       "tiktokDesc": "Utilizing Google Flow and generative APIs to programmatically script and edit User-Generated Content (UGC) videos. What sets this apart is the execution: I directly deploy this AI content as creative assets for TikTok Ads, testing the limits of automated pipelines while optimizing ad spend for audience retention and conversion.",
@@ -333,12 +342,6 @@
       "youtubeDesc": "Operating two YouTube channels highlighting both ends of content production: an automated AI pipeline channel (@beforeyouscroll26) powered by automated n8n workflows, GPT-4o scripting, ElevenLabs voiceovers, and Flux AI; alongside a dedicated video editing channel (@winking2608) where I craft motivational and narrative video edits, demonstrating hands-on video editing mastery, pacing, and visual storytelling.",
       "viewVideoEdits": "View Video Edits (@winking2608)",
       "viewAiChannel": "View AI Channel (@beforeyouscroll26)"
-    },
-    "hardware": {
-      "title": "04. Hardware Arbitrage & E-commerce",
-      "subtitle": "Physical component diagnostics, laptop restoration, and full-lifecycle ad-driven flipping operations.",
-      "cardTitle": "Device Restoration & Ad-Driven Flipping",
-      "cardDesc": "A hands-on secondary operation focused on sourcing, diagnosing, and repairing second-hand laptops. Restored units are strategically priced and flipped on platforms like Carousell. To scale volume, I run targeted Facebook Ads and Shopee Ads to acquire buyers efficiently. This proves I understand the full lifecycle: hardware infrastructure, digital marketing, and unit economics."
     }
   },
   "contact": {
